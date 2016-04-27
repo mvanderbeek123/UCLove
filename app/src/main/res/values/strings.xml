@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">UCLove</string>
     <string name="action_settings">Settings</string>
+    <string name="editText">votre Texte</string>
+    <string name="button">ok</string>
+    <string name="display">UCLove</string>
+
 </resources>

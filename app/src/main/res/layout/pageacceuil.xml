@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/linear_layout_selection"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/grey">
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:id="@+id/text1"
+        android:text="Login : "
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/Login"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:hint="Login"
+        android:inputType="text"
+        android:gravity="left"
+        />
+
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:text="Mot de passe : "
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:gravity="center"
+        />
+    <EditText
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/motdepasse"
+        android:layout_width="254dp"
+        android:layout_height="wrap_content"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        android:gravity="left"
+        />
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/connexion"
+        android:layout_width="244dp"
+        android:layout_height="60dp"
+        android:text="se connecter"
+        android:background="@drawable/buttonshape"
+        android:gravity="center"/>
+</LinearLayout>
+
+
+
