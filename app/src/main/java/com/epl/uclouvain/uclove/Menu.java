@@ -57,7 +57,7 @@ public class Menu extends Activity {
         friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, ProfilActivity.class);
+                Intent intent = new Intent(Menu.this, FriendsActivity.class);
                 startActivity(intent);
             }
         });
