@@ -1,6 +1,7 @@
 package com.epl.uclouvain.uclove;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -23,8 +24,8 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
     @Override
     public boolean onTouch(View view, MotionEvent event) {
         // Comme l'évènement nous donne la vue concernée par le toucher, on le récupère et on le caste en Button
-        Button bouton = (Button)view;
-        bouton.setBackgroundColor(1);
+        Intent intent = new Intent(PageAcceuil.this, Menu.class);
+        startActivity(intent);
         return true;
     }
 }

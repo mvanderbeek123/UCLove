@@ -16,6 +16,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends Activity implements View.OnTouchListener{
 
     private TextView text = null;
@@ -24,13 +26,12 @@ public class MainActivity extends Activity implements View.OnTouchListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button b = (Button) findViewById(R.id.button1);
-        // On crée un utilitaire de configuration pour cette animation
-        Animation animation = AnimationUtils.loadAnimation(this, R.animator.anim);
+        Button connecter = (Button) findViewById(R.id.connecter);
+        Button inscription = (Button) findViewById(R.id.inscription);
         // On l'affecte au widget désiré, et on démarre l'animation
-        b.startAnimation(animation);
+        inscription.setOnTouchListener(this);
         // Puis on lui indique que cette classe sera son listener pour l'évènement Touch
-        b.setOnTouchListener(this);
+        connecter.setOnTouchListener(this);
     }
 
 

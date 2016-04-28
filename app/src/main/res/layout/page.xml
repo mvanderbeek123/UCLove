@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:showIn="@layout/activity_main"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Uclove"
+        android:gravity="center"
+        android:backgroundTint="#d3268e"
+        android:background="#d3268e"
+        android:text="UCLove"
+        android:textColor="#FFFFFF"
+        android:textSize="70dp"
+        android:textStyle="bold|italic"/>
+
+</LinearLayout>

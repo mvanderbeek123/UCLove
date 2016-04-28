@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="UCLove Menu"
+        tools:context=".Menu" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Profil"
+        android:text="Profile"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Preference"
+        android:text="Preference"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/People"
+        android:text="People"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Friends"
+        android:text="Friends"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Requests"
+        android:text="Requests"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Chat"
+        android:text="Chat"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Meet"
+        android:text="Meet"
+        android:textStyle="bold|italic"
+        android:textColor="#ffffff"
+        android:gravity="center"/>
+
+</LinearLayout>
