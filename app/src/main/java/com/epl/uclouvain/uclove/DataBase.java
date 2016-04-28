@@ -13,6 +13,7 @@ public class DataBase extends SQLiteOpenHelper
     public static final String AMIS_KEY = "id";
     public static final String AMIS_LOGIN = "login";
     public static final String AMIS_ISAMI = "isAmi";
+
     public static final String AMIS_TABLE_CREATE =
             "CREATE TABLE " + AMIS_TABLE_NAME + " (" +
                     AMIS_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
