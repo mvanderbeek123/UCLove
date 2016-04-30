@@ -7,14 +7,16 @@ public class Amis
 {
     private long id;
     private String login;
-    private int isAmi ;
+    private int isAmi;
+    private int isFavori; // 1 si favori, 0 sinon.
 
-    public Amis(long id, String login, int isAmi)
+    public Amis(long id, String login, int isAmi, int isFavori)
     {
         super();
         this.id = id;
         this.login = login;
         this.isAmi = isAmi;
+        this.isFavori = isFavori;
     }
 
     public long getId()
@@ -47,4 +49,13 @@ public class Amis
         this.isAmi = isAmi;
     }
 
+    public int getIsFavori()
+    {
+        return isFavori;
+    }
+
+    public void setIsFavori(int isFavori)
+    {
+        this.isFavori = isFavori;
+    }
 }

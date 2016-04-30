@@ -13,14 +13,16 @@ public class AmisDAO extends DAOBase
     public static final String KEY = "id";
     public static final String LOGIN = "login";
     public static final String ISAMI = "isAmi";
+    public static final String ISFAVORI = "isFavori";
 
-    public static final String AMIS_TABLE_CREATE =
+    /* public static final String AMIS_TABLE_CREATE =
             "CREATE TABLE " + TABLE_NAME + " (" +
                     KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     LOGIN + " TEXT, " +
-                    ISAMI + " INTEGER " + ");";
+                    ISAMI + " INTEGER " +
+                    ISFAVORI + " INT " + ");";
     public static final String AMIS_TABLE_DROP =
-            "DROP TABLE IF EXISTS " + TABLE_NAME + ";";
+            "DROP TABLE IF EXISTS " + TABLE_NAME + ";"; */
 
     public AmisDAO(Context pContext)
     {
@@ -53,7 +55,8 @@ public class AmisDAO extends DAOBase
         long id2 = c.getLong(0);
         String login = c.getString(1);
         int isAmi = c.getInt(2);
-        Amis a = new Amis(id2, login, isAmi);
+        int isFavori = c.getInt(3);
+        Amis a = new Amis(id2, login, isAmi, isFavori);
         return a;
     }
 }

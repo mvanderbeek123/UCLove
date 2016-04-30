@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DataBase extends SQLiteOpenHelper
 {
+    // Table amis.
     public static final String AMIS_TABLE_NAME = "Amis";
     public static final String AMIS_KEY = "id";
     public static final String AMIS_LOGIN = "login";
@@ -39,4 +40,6 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(AMIS_TABLE_DROP);
         onCreate(db);
     }
+
+    // Autres tables. A ajouter en suivant le même schéma que j'ai fait pour la table Amis.
 }
