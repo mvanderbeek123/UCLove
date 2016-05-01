@@ -14,5 +14,7 @@
     <string name="details">Afficher plus de détails</string>
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
+    <string name="mes_disponibilit_s">Mes disponibilités</string>
+    <string name="rendez_vous">Rendez-vous</string>
 
 </resources>
