@@ -18,4 +18,5 @@
         android:text="@string/rendez_vous"
         android:id="@+id/rdv"
         android:layout_gravity="center_horizontal" />
+
 </LinearLayout>
