@@ -157,7 +157,7 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-
+            // Coucou
         }
     };
 
