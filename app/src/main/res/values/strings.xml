@@ -5,4 +5,14 @@
     <string name="button">ok</string>
     <string name="display">UCLove</string>
 
+    <string name="listeAmis">Liste d\'amis</string>
+    <string name="noAmis">Vous n'avez pas encore d\'amis.</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="contact">Entrer en contact</string>
+    <string name="favori1">Marquer comme favori</string>
+    <string name="favori2">Retirer des favoris</string>
+    <string name="details">Afficher plus de détails</string>
+    <string name="rencontre">Rencontrer</string>
+    <string name="amis">Amis</string>
+
 </resources>

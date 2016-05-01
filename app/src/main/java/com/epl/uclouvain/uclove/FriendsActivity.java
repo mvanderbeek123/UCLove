@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.content.res.Resources;
 
 /**
  * L'activité sur laquelle on arrive en cliquant sur l'onglet "Amis" du menu de départ.
@@ -30,6 +31,11 @@ public class FriendsActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friends);
 
+        Resources res = getResources();
+        String texte = res.getString(R.string.listeAmis);
+        TextView vue = (TextView)findViewById(R.id.textAmis);
+        vue.setText(texte);
+
         liste = (ListView) findViewById(R.id.listAmis);
         ArrayList<Amis> ListAmis = new ArrayList<Amis>();
         ArrayList<String> ListLogin = new ArrayList<String>();
@@ -39,7 +45,8 @@ public class FriendsActivity extends Activity
         ListAmis = aDAO.selectionner_siAmi(1);
         if(ListAmis == null)
         {
-            ListLogin.add("Vous n'avez pas encore d'amis.");
+            String texte_2 = res.getString(R.string.noAmis);
+            ListLogin.add(texte_2);
         }
         else
         {

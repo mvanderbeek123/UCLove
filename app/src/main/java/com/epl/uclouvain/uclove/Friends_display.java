@@ -2,6 +2,7 @@ package com.epl.uclouvain.uclove;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
@@ -49,6 +50,12 @@ public class Friends_display extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friends_affichage);
 
+        Resources res = getResources();
+        String texte;
+        texte = res.getString(R.string.amis);
+        TextView vue = (TextView)findViewById(R.id.titre);
+        vue.setText(texte);
+
         Intent i = getIntent();
         id = i.getLongExtra("com.epl.uclouvain.uclove.amis.ID",0);
 
@@ -91,10 +98,20 @@ public class Friends_display extends Activity
         // Inclure la photo.
          */
         supprimer = (Button)findViewById(R.id.supprimer);
+        texte = res.getString(R.string.supprimer);
+        supprimer.setText(texte);
         contact = (Button)findViewById(R.id.contact);
+        texte = res.getString(R.string.contact);
+        contact.setText(texte);
         favori = (CheckBox) findViewById(R.id.favori);
+        texte = res.getString(R.string.favori1);
+        favori.setText(texte);
         details = (Button)findViewById(R.id.details);
+        texte = res.getString(R.string.details);
+        details.setText(texte);
         rencontre = (Button)findViewById(R.id.rencontre);
+        texte = res.getString(R.string.rencontre);
+        rencontre.setText(texte);
 
         supprimer.setOnClickListener(supprimerListener);
         contact.setOnClickListener(contactListener);
@@ -133,13 +150,16 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
+            Resources res = getResources();
+            String texte;
             if(favori.isChecked()) // L'ami est déjà en favori, on veut le retirer.
             {
                 aDAO.open();
                 aDAO.supprimer_favori(id);
                 aDAO.close();
                 favori.setChecked(false);
-                favori.setText("Marquer comme favori");
+                texte = res.getString(R.string.favori1);
+                favori.setText(texte);
             }
             else // On veut mettre l'ami en favori.
             {
@@ -147,7 +167,8 @@ public class Friends_display extends Activity
                 aDAO.ajouter_favori(id);
                 aDAO.close();
                 favori.setChecked(true);
-                favori.setText("Retirer des favoris");
+                texte = res.getString(R.string.favori2);
+                favori.setText(texte);
             }
         }
     };
@@ -157,7 +178,7 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            // Coucou
+            // Copier le layout Profil de Marie.
         }
     };
 
