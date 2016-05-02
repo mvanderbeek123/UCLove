@@ -138,7 +138,7 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            /* Intent i = new Intent(Friends_display.this, contact.class);
+            /* Intent i = new Intent(Friends_display.this, MyRequests.class);
             final String CONTACT = "com.epl.uclouvain.uclove.amis_display.CONTACT";
             i.putExtra(CONTACT, profil);
             startActivity(i); */
@@ -187,7 +187,7 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            /* Intent i = new Intent(Friends_display.this, rencontre.class);
+            /* Intent i = new Intent(Friends_display.this, MeetActivity.class);
             final String RENCONTRE = "com.epl.uclouvain.uclove.amis_display.RENCONTRE";
             i.putExtra(RENCONTRE, profil);
             startActivity(i); */

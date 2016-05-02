@@ -50,7 +50,8 @@ public class FriendsActivity extends Activity
         }
         else
         {
-            for (Amis a : ListAmis) {
+            for (Amis a : ListAmis)
+            {
                 String log = a.getLogin();
                 ListLogin.add(log);
             }
