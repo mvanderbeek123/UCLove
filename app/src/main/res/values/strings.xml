@@ -26,4 +26,8 @@
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>
 
+    <!--Pour chat-->
+    <string name="message">Message</string>
+    <string name="envoyer">Envoyer</string>
+
 </resources>
