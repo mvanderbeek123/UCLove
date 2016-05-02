@@ -31,12 +31,12 @@ public class Profil  {
             this.genre=genre;
             this.etude=etude;
             this.localisation=localisation;
-            this.numero_de_telephone=null;
+            //this.numero_de_telephone=null;
             this.cheveux=null;
             this.yeux=null;
             this.peau=null;
             this.tranche_age=null;
-            this.périmètre=null;
+            //this.périmètre=null;
         }
         //les geters
         public String getLogin() {return login;}

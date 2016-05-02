@@ -53,6 +53,13 @@
             android:name=".MyRequests"
             android:label="MyRequests">
         </activity>
+        <activity android:name=".FriendsActivity"
+            android:label="FriendsActivity">
+        </activity>
+        <activity
+            android:name=".Friends_display"
+            android:label="Friends Display">
+        </activity>
     </application>
 
 </manifest>
