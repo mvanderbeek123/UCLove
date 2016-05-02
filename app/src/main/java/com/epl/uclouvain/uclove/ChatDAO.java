@@ -27,7 +27,6 @@ public class ChatDAO extends DAOBase
     }
 
 
-
     public ArrayList<ChatMessage> historique(String l1, String l2)
     {
         Cursor c = mDb.rawQuery("select login1, login2, msg, msg_date" +
