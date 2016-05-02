@@ -61,6 +61,12 @@
             android:name=".MyRequests"
             android:label="MyRequests">
         </activity>
+
+        <activity
+            android:name=".ChatActivity"
+            android:label="Chat">
+        </activity>
+
     </application>
 
 </manifest>

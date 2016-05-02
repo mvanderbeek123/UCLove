@@ -55,7 +55,7 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String GENRE_DROP = "DROP TABLE IF EXISTS " + GENRE_TABLE_NAME+";";
 
-    // Table Cheveux
+    // Table Cheveuxc
     public static final String CHEVEUX_TABLE_NAME="Cheveux";
     public static final String CHEVEUX_LOGIN="login";
     public static final String CHEVEUX_COLOR="couleur";
@@ -105,6 +105,21 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
+    // Table chatmessages
+    public static final String CHAT_TABLE_NAME = "messages";
+    public static final String LOGIN1 = "login1";
+    public static final String LOGIN2 = "login2";
+    public static final String MSG = "msg";
+    public static final String MSGDATE = "msg_date";
+
+    public static final String CHAT_TABLE_CREATE = "CREATE TABLE " + CHAT_TABLE_NAME + " (" +
+            LOGIN1 + " TEXT, " +
+            LOGIN2 + " TEXT, " +
+            MSG + " TEXT " +
+            MSGDATE + " TEXT " +");";
+
+    public static final String CHAT_TABLE_DROP = "DROP TABLE IF EXISTS " + CHAT_TABLE_NAME + ";";
+
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
     {
@@ -116,6 +131,7 @@ public class DataBase extends SQLiteOpenHelper
     {
         db.execSQL(AMIS_TABLE_CREATE);
         db.execSQL(CLIENT_CREATE_TABLE);
+        db.execSQL(CHAT_TABLE_CREATE);
         db.execSQL(GENRE_CREATE_TABLE);
         db.execSQL(CHEVEUX_CREATE_TABLE);
         db.execSQL(YEUX_CREATE_TABLE);
@@ -128,6 +144,7 @@ public class DataBase extends SQLiteOpenHelper
     {
         db.execSQL(AMIS_TABLE_DROP);
         db.execSQL(CLIENT_DROP);
+        db.execSQL(CHAT_TABLE_DROP);
         db.execSQL(GENRE_DROP);
         db.execSQL(CHEVEUX_DROP);
         db.execSQL(YEUX_DROP);
