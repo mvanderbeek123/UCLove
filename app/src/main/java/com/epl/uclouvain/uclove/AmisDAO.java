@@ -12,7 +12,8 @@ public class AmisDAO extends DAOBase
 {
     public static final String TABLE_NAME = "Amis";
     public static final String KEY = "id";
-    public static final String LOGIN = "login";
+    public static final String LOGIN1 = "login1";
+    public static final String LOGIN2 = "login2";
     public static final String ISAMI = "isAmi";
     public static final String ISFAVORI = "isFavori";
 
@@ -33,7 +34,8 @@ public class AmisDAO extends DAOBase
     public void ajouter(Amis a)
     {
         ContentValues value = new ContentValues();
-        value.put(AmisDAO.LOGIN, a.getLogin());
+        value.put(AmisDAO.LOGIN1, a.getLogin1());
+        value.put(AmisDAO.LOGIN2, a.getLogin2());
         value.put(AmisDAO.ISAMI, a.getIsAmi());
         value.put(AmisDAO.ISFAVORI, a.getIsFavori());
         mDb.insert(AmisDAO.TABLE_NAME, null, value);
@@ -60,28 +62,32 @@ public class AmisDAO extends DAOBase
 
     public Amis selectionner_parID(long id)
     {
-        Cursor c = mDb.rawQuery("select " + LOGIN + " from " + TABLE_NAME + " where id = ?", new String[]{String.valueOf(id)});
-        String login = c.getString(1);
-        int isAmi = c.getInt(2);
-        int isFavori = c.getInt(3);
-        Amis a = new Amis(id, login, isAmi, isFavori);
+        /* Cursor c = mDb.rawQuery("select " + LOGIN2 + " from " + TABLE_NAME + " where login1 = ? AND id = ? ", new String[]{login_global, String.valueOf(id)});
+        String login1 = c.getString(1);
+        String login2 = c.getString(2);
+        int isAmi = c.getInt(3);
+        int isFavori = c.getInt(4);
+        Amis a = new Amis(id, login1, login2, isAmi, isFavori);
         c.close();
-        return a;
+        return a; */
+        return null;
     }
 
     public ArrayList<Amis> selectionner_siAmi(int isAmi)
     {
-        Cursor c = mDb.rawQuery("select " + LOGIN + " from " + TABLE_NAME + " where isAmi = ?", new String[]{"1"});
+        /* Cursor c = mDb.rawQuery("select " + LOGIN2 + " from " + TABLE_NAME + " where login1 = ? AND isAmi = ?", new String[]{login_global,"1"});
         ArrayList<Amis> liste = new ArrayList<Amis>();
         while (c.moveToNext())
         {
             long id2 = c.getLong(0);
-            String login = c.getString(1);
-            int isFavori = c.getInt(3);
-            Amis a = new Amis(id2, login, isAmi, isFavori);
+            String login1 = c.getString(1);
+            String login2 = c.getString(2);
+            int isFavori = c.getInt(4);
+            Amis a = new Amis(id2, login1, login2, isAmi, isFavori);
             liste.add(a);
         }
         c.close();
-        return liste;
+        return liste; */
+        return null;
     }
 }

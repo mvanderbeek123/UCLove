@@ -26,15 +26,17 @@ public class DataBase extends SQLiteOpenHelper
     public static final String CLIENT_SKIN="peau";
     public static final String CLIENT_AGE="tranche_age";
     public static final String CLIENT_LOC="périmètre";
-
-    public static final String CLIENT_CREATE_TABLE = "CREATE TABLE" + CLIENT_TABLE_NAME + "(" + CLIENT_LOGIN + "TEXT NOT NULL PRIMARY KEY, " + CLIENT_MDP +"TEXT NOT NULL," + CLIENT_NAME + "TEXT NOT NULL, " + CLIENT_LASTNAME + "TEXT NOT NULL, " + CLIENT_DATE + " TEXT NOT NULL, " + CLIENT_GENRE + " TEXT NOT NULL, " + CLIENT_ETUDE + " TEXT NOT NULL, "+ CLIENT_PLACE + "TEXT NOT NULL, " + CLIENT_NUM + "INTEGER ," + CLIENT_HAIR + "TEXT, " + CLIENT_SKIN + "TEXT, " + CLIENT_EYES + "TEXT, " + CLIENT_AGE + "TEXT, " + CLIENT_LOC + "INTEGER);";
+    public static final String CLIENT_CREATE_TABLE = "CREATE TABLE" + CLIENT_TABLE_NAME + "(" + CLIENT_LOGIN + "TEXT NOT NULL PRIMARY KEY, " + CLIENT_MDP +
+            "TEXT NOT NULL," + CLIENT_NAME + "TEXT NOT NULL, " + CLIENT_LASTNAME + "TEXT NOT NULL, " + CLIENT_DATE + " TEXT NOT NULL, " + CLIENT_GENRE +
+            " TEXT NOT NULL, " + CLIENT_ETUDE + " TEXT NOT NULL, "+ CLIENT_PLACE + "TEXT NOT NULL, " + CLIENT_NUM + "INTEGER ," + CLIENT_HAIR + "TEXT, "
+            + CLIENT_SKIN + "TEXT, " + CLIENT_EYES + "TEXT, " + CLIENT_AGE + "TEXT, " + CLIENT_LOC + "INTEGER);";
     public static final String CLIENT_DROP =
             "DROP TABLE IF EXISTS " + CLIENT_TABLE_NAME + ";";
+
     // Table Genre
     public static final String GENRE_TABLE_NAME="Genre";
     public static final String GENRE_LOGIN="login";
     public static final String GENRE_GENRE="genre";
-
     public static final String GENRE_CREATE_TABLE= "CREATE TABLE" + GENRE_TABLE_NAME + "(" + GENRE_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + GENRE_GENRE + "TEXT NOT NULL );";
     public static final String GENRE_DROP = "DROP TABLE IF EXISTS" + GENRE_TABLE_NAME+";";
 
@@ -42,7 +44,6 @@ public class DataBase extends SQLiteOpenHelper
     public static final String CHEVEUX_TABLE_NAME="Cheveux";
     public static final String CHEVEUX_LOGIN="login";
     public static final String CHEVEUX_COLOR="couleur";
-
     public static final String CHEVEUX_CREATE_TABLE= "CREATE TABLE" + CHEVEUX_TABLE_NAME + "(" + CHEVEUX_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + CHEVEUX_COLOR + "TEXT NOT NULL );";
     public static final String CHEVEUX_DROP = "DROP TABLE IF EXISTS" + CHEVEUX_TABLE_NAME+";";
 
@@ -50,36 +51,36 @@ public class DataBase extends SQLiteOpenHelper
     public static final String YEUX_TABLE_NAME="Yeux";
     public static final String YEUX_LOGIN="login";
     public static final String YEUX_COLOR="couleur";
-
-    public static final String YEUX_CREATE_TABLE= "CREATE TABLE" + YEUX_TABLE_NAME + "(" + YEUX_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + YEUX_COLOR + "TEXT NOT NULL );";
+    public static final String YEUX_CREATE_TABLE= "CREATE TABLE" + YEUX_TABLE_NAME + "(" + YEUX_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + YEUX_COLOR +
+            "TEXT NOT NULL );";
     public static final String YEUX_DROP = "DROP TABLE IF EXISTS" + YEUX_TABLE_NAME+";";
+
     // Table Peau
     public static final String PEAU_TABLE_NAME="Peau";
     public static final String PEAU_LOGIN="login";
     public static final String PEAU_COLOR="couleur";
-
-    public static final String PEAU_CREATE_TABLE= "CREATE TABLE" + PEAU_TABLE_NAME + "(" + PEAU_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + PEAU_COLOR + "TEXT NOT NULL );";
+    public static final String PEAU_CREATE_TABLE= "CREATE TABLE" + PEAU_TABLE_NAME + "(" + PEAU_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + PEAU_COLOR +
+            "TEXT NOT NULL );";
     public static final String PEAU_DROP = "DROP TABLE IF EXISTS" + PEAU_TABLE_NAME+";";
+
     // Table Etude
     public static final String ETUDE_TABLE_NAME="Etude";
     public static final String ETUDE_LOGIN="login";
     public static final String ETUDE="faculte";
-
-    public static final String ETUDE_CREATE_TABLE= "CREATE TABLE" + ETUDE_TABLE_NAME + "(" + ETUDE_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + ETUDE + "TEXT NOT NULL );";
+    public static final String ETUDE_CREATE_TABLE= "CREATE TABLE" + ETUDE_TABLE_NAME + "(" + ETUDE_LOGIN + "TEXT NOT NULL REFERENCES CLIENT, " + ETUDE +
+            "TEXT NOT NULL );";
     public static final String ETUDE_DROP = "DROP TABLE IF EXISTS" + ETUDE_TABLE_NAME+";";
+
     // Table amis.
     public static final String AMIS_TABLE_NAME = "Amis";
     public static final String AMIS_KEY = "id";
-    public static final String AMIS_LOGIN = "login";
+    public static final String AMIS_LOGIN1 = "login1";
+    public static final String AMIS_LOGIN2 = "login2";
     public static final String AMIS_ISAMI = "isAmi";
-
-    public static final String AMIS_TABLE_CREATE =
-            "CREATE TABLE " + AMIS_TABLE_NAME + " (" +
-                    AMIS_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    AMIS_LOGIN + " TEXT, " +
-                    AMIS_ISAMI + " INTEGER " + ");";
-    public static final String AMIS_TABLE_DROP =
-            "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
+    public static final String AMIS_ISFAVORI = "isFavori";
+    public static final String AMIS_TABLE_CREATE = "CREATE TABLE " + AMIS_TABLE_NAME + " (" + AMIS_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " + AMIS_LOGIN1
+            + " TEXT NOT NULL, " +AMIS_LOGIN2 + " TEXT NOT NULL, " + AMIS_ISAMI + " INTEGER, " + AMIS_ISFAVORI + " INTEGER " + ");";
+    public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)

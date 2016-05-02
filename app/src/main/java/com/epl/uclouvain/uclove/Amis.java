@@ -6,15 +6,17 @@ package com.epl.uclouvain.uclove;
 public class Amis
 {
     private long id;
-    private String login;
+    private String login1;
+    private String login2;
     private int isAmi;
     private int isFavori; // 1 si favori, 0 sinon.
 
-    public Amis(long id, String login, int isAmi, int isFavori)
+    public Amis(long id, String login1, String login2, int isAmi, int isFavori)
     {
         super();
         this.id = id;
-        this.login = login;
+        this.login1 = login1;
+        this.login2 = login2;
         this.isAmi = isAmi;
         this.isFavori = isFavori;
     }
@@ -29,14 +31,24 @@ public class Amis
         this.id = id;
     }
 
-    public String getLogin()
+    public String getLogin1()
     {
-        return login;
+        return login1;
     }
 
-    public void setLogin(String login)
+    public void setLogin1(String login1)
     {
-        this.login = login;
+        this.login1 = login1;
+    }
+
+    public String getLogin2()
+    {
+        return login2;
+    }
+
+    public void setLogin2(String login2)
+    {
+        this.login2 = login2;
     }
 
     public float getIsAmi()

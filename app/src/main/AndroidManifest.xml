@@ -47,18 +47,24 @@
         </activity>
         <activity
             android:name=".NewRequest"
-            android:label="NewRequest">
+            android:label="NewRequest"
+            android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".MyRequests"
-            android:label="MyRequests">
+            android:label="MyRequests"
+            android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".FriendsActivity"
-            android:label="FriendsActivity">
+        <activity
+            android:name=".FriendsActivity"
+            android:label="FriendsActivity"
+            android:theme="@style/AppTheme"
+            android:finishOnTaskLaunch="true">
         </activity>
         <activity
             android:name=".Friends_display"
-            android:label="Friends Display">
+            android:label="Friends Display"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 
