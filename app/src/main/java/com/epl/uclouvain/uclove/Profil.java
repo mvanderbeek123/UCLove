@@ -31,12 +31,12 @@ public class Profil  {
             this.genre=genre;
             this.etude=etude;
             this.localisation=localisation;
-            this.numero_de_telephone=null;
+            //this.numero_de_telephone=null;
             this.cheveux=null;
             this.yeux=null;
             this.peau=null;
             this.tranche_age=null;
-            this.périmètre=null;
+            //this.périmètre=null;
         }
         //les geters
         public String getLogin() {return login;}
@@ -94,9 +94,9 @@ public class Profil  {
         this.localisation = localisation;
     }
 
-    public void setNumero_de_telephone(int numero_de_telephone) {
-        this.numero_de_telephone = numero_de_telephone;
-    }
+   //public void setNumero_de_telephone(int numero_de_telephone) {
+     //   this.numero_de_telephone = numero_de_telephone;
+    //}
     public void setCheveux(String cheveux) {
         this.cheveux = cheveux;
     }
@@ -113,7 +113,7 @@ public class Profil  {
         this.tranche_age = tranche_age;
     }
 
-    public void setPérimètre(int périmètre) {
-        this.périmètre = périmètre;
-    }
+    //public void setPérimètre(int périmètre) {
+       // this.périmètre = périmètre;
+    //}
 }

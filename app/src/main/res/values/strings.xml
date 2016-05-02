@@ -6,7 +6,7 @@
     <string name="display">UCLove</string>
 
     <string name="listeAmis">Liste d\'amis</string>
-    <string name="noAmis">Vous n'avez pas encore d\'amis.</string>
+    <string name="noAmis">Vous n\'avez pas encore d\'amis.</string>
     <string name="supprimer">Supprimer</string>
     <string name="contact">Entrer en contact</string>
     <string name="favori1">Marquer comme favori</string>
@@ -21,5 +21,9 @@
     <string name="pseudo">Pseudonyme :</string>
     <string name="pseudoOfFriend">The pseudo of your new friend</string>
     <string name="send">SEND</string>
+
+    <!--ajouté pour compolilé mais c'est pas ma partie steph-->
+    <string name="mes_disponibilit_s">Mes disponibilités</string>
+    <string name="rendez_vous">Rendez-vous</string>
 
 </resources>
