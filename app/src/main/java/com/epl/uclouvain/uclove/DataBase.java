@@ -9,8 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DataBase extends SQLiteOpenHelper
 {
-
-    // Table Client
+// Table Client
     public static final String CLIENT_TABLE_NAME="Client";
     public static final String CLIENT_LOGIN="login";
     public static final String CLIENT_MDP="mot_de_passe";
