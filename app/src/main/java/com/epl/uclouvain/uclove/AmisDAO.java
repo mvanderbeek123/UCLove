@@ -70,6 +70,7 @@ public class AmisDAO extends DAOBase
         Amis a = new Amis(id, login1, login2, isAmi, isFavori);
         c.close();
         return a; */
+        String s = null;
         return null;
     }
 
