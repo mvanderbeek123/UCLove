@@ -25,6 +25,7 @@
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>
+
         <activity
             android:name=".PageAcceuil"
             android:label="LoginDisplay"
@@ -40,6 +41,13 @@
             android:label="ProfilDisplay"
             android:theme="@style/AppTheme">
         </activity>
+
+        <activity
+            android:name=".FriendsActivity"
+            android:label="FriendsDisplay"
+            android:theme="@style/AppTheme">
+        </activity>
+
         <activity
             android:name=".Requests"
             android:label="Requests"
