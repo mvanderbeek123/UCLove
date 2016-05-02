@@ -15,4 +15,11 @@
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
 
+    <!--Pour Request-->
+    <string name="myRequests">My requests</string>
+    <string name="newRequest">New request</string>
+    <string name="pseudo">Pseudonyme :</string>
+    <string name="pseudoOfFriend">The pseudo of your new friend</string>
+    <string name="send">SEND</string>
+
 </resources>
