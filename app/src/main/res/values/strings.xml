@@ -22,4 +22,8 @@
     <string name="pseudoOfFriend">The pseudo of your new friend</string>
     <string name="send">SEND</string>
 
+    <!--ajouté pour compolilé mais c'est pas ma partie steph-->
+    <string name="mes_disponibilit_s">Mes disponibilités</string>
+    <string name="rendez_vous">Rendez-vous</string>
+
 </resources>

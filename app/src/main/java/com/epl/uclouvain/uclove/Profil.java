@@ -94,9 +94,9 @@ public class Profil  {
         this.localisation = localisation;
     }
 
-    public void setNumero_de_telephone(int numero_de_telephone) {
-        this.numero_de_telephone = numero_de_telephone;
-    }
+   //public void setNumero_de_telephone(int numero_de_telephone) {
+     //   this.numero_de_telephone = numero_de_telephone;
+    //}
     public void setCheveux(String cheveux) {
         this.cheveux = cheveux;
     }
@@ -113,7 +113,7 @@ public class Profil  {
         this.tranche_age = tranche_age;
     }
 
-    public void setPérimètre(int périmètre) {
-        this.périmètre = périmètre;
-    }
+    //public void setPérimètre(int périmètre) {
+       // this.périmètre = périmètre;
+    //}
 }
