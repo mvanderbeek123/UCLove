@@ -40,7 +40,19 @@
             android:label="ProfilDisplay"
             android:theme="@style/AppTheme">
         </activity>
-
+        <activity
+            android:name=".Requests"
+            android:label="Requests"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name=".NewRequest"
+            android:label="NewRequest">
+        </activity>
+        <activity
+            android:name=".MyRequests"
+            android:label="MyRequests">
+        </activity>
     </application>
 
 </manifest>
