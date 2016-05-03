@@ -9,6 +9,8 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:paddingTop="10dip"
+        android:paddingLeft="15dip"
         android:text="Liste d'amis"
         />
     <ImageView
@@ -20,7 +22,7 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingBottom="2dp"
-        android:paddingTop="2dp"
+        android:paddingTop="5dp"
         />
     <ListView
         android:id="@+id/listAmis"

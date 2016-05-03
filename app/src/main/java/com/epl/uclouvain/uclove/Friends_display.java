@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,12 +20,15 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.view.View.OnClickListener;
+import java.util.Date;
 
 /**
  * Created by julien on 1/05/16.
  */
 public class Friends_display extends Activity
 {
+    String login_global;
+
     TextView nom_view = null;
     TextView genre_view = null;
     TextView age_view = null;
@@ -32,6 +36,8 @@ public class Friends_display extends Activity
     TextView yeux_view = null;
     TextView localisation_view = null;
     TextView sexpref_view = null;
+
+    ImageView photo_profil = null;
 
     Button supprimer = null;
     Button contact = null;
@@ -59,23 +65,29 @@ public class Friends_display extends Activity
         Intent i = getIntent();
         id = i.getLongExtra("com.epl.uclouvain.uclove.amis.ID",0);
 
+        // Inutile ça non ?
         aDAO = new AmisDAO(this);
         aDAO.open();
-        Amis a = aDAO.selectionner_parID(id);
+        Amis a = aDAO.selectionner_parID(id, login_global);
         aDAO.close();
 
-        /* profil = on cherche dans la base avec le login qui correspond à l'id.
-        String nom = profil.getName();
+        /* ProfilDAO profil_dao = new ProfilDAO(this);
+        profil_dao.open();
+        Profil profil = profil_dao.selectionner_parID(id);
+        profil_dao.close();
+
+        String nom = profil.getNom();
         char genre = profil.getGenre();
-        int age = profil.getAge();
+        Date date_naissance = profil.getDate_de_naissance();
+        int age = ??
         String cheveux = profil.getCheveux();
         String yeux = profil.getYeux();
         String localisation = profil.getLocalisation();
-        // + trouver la préférence je sais pas comment.
+        //sexpref = + trouver la préférence je sais pas comment.
 
         nom_view = (TextView)findViewById(R.id.nomAmi);
         nom_view.setText(nom);
-        nom_view.setTextColor(#112233);
+        nom_view.setTextColor(0x112233);
 
         genre_view = (TextView)findViewById(R.id.genre);
         genre_view.setText(genre);
@@ -95,8 +107,10 @@ public class Friends_display extends Activity
         sexpref_view = (TextView)findViewById(R.id.sexpref);
         sexpref_view.setText(sexpref);
 
-        // Inclure la photo.
-         */
+        // image va être du style R.drawable.image
+        String image = profil.getImage();
+        photo_profil.setImageResource(image); */
+
         supprimer = (Button)findViewById(R.id.supprimer);
         texte = res.getString(R.string.supprimer);
         supprimer.setText(texte);
@@ -126,7 +140,7 @@ public class Friends_display extends Activity
         public void onClick(View v)
         {
             aDAO.open();
-            aDAO.supprimer(id);
+            aDAO.supprimer(id, login_global);
             aDAO.close();
             Intent i = new Intent(Friends_display.this, FriendsActivity.class);
             startActivity(i);
@@ -155,7 +169,7 @@ public class Friends_display extends Activity
             if(favori.isChecked()) // L'ami est déjà en favori, on veut le retirer.
             {
                 aDAO.open();
-                aDAO.supprimer_favori(id);
+                aDAO.supprimer_favori(id, login_global);
                 aDAO.close();
                 favori.setChecked(false);
                 texte = res.getString(R.string.favori1);
@@ -164,7 +178,7 @@ public class Friends_display extends Activity
             else // On veut mettre l'ami en favori.
             {
                 aDAO.open();
-                aDAO.ajouter_favori(id);
+                aDAO.ajouter_favori(id, login_global);
                 aDAO.close();
                 favori.setChecked(true);
                 texte = res.getString(R.string.favori2);

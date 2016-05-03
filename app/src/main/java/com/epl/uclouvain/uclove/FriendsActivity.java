@@ -17,12 +17,14 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.content.res.Resources;
+import java.util.ListIterator;
 
 /**
  * L'activité sur laquelle on arrive en cliquant sur l'onglet "Amis" du menu de départ.
  * */
 public class FriendsActivity extends Activity
 {
+    String login_global;
     ListView liste = null;
     public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.ID";
     @Override
@@ -37,26 +39,24 @@ public class FriendsActivity extends Activity
         vue.setText(texte);
 
         liste = (ListView) findViewById(R.id.listAmis);
-        ArrayList<Amis> ListAmis = new ArrayList<Amis>();
         ArrayList<String> ListLogin = new ArrayList<String>();
 
         final AmisDAO aDAO = new AmisDAO(this);
         aDAO.open();
-        ListAmis = aDAO.selectionner_siAmi(1);
+        final ArrayList<Amis> ListAmis = aDAO.selectionner_siAmi(login_global);
         if(ListAmis == null)
         {
             String texte_2 = res.getString(R.string.noAmis);
-            ListLogin.add(texte_2);
+            vue.setText(texte_2);
         }
         else
         {
             for (Amis a : ListAmis)
             {
-                String log = a.getLogin1();
+                String log = a.getLogin2();
                 ListLogin.add(log);
             }
         }
-        aDAO.close();
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.friends, ListLogin);
         liste.setAdapter(adapter);
@@ -67,21 +67,13 @@ public class FriendsActivity extends Activity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
+                Amis ami = ListAmis.get(position);
+                long id_ami = ami.getId();
                 Intent i = new Intent(FriendsActivity.this, Friends_display.class);
-                i.putExtra(NOM_INTENT, id);
+                i.putExtra(NOM_INTENT, id_ami);
                 startActivity(i);
             }
         });
+        aDAO.close();
     }
 }
-
-/*
-liste = (ListView) findViewById(R.id.listAmis);
-        ArrayList<Amis> ListAmis = new ArrayList<Amis>();
-
-        // Ajout des amis en checkant dans la db
-        // ListAmis.add("ami1");
-
-        ArrayAdapter<Amis> adapter = new ArrayAdapter<Amis>(this, R.layout.friends, ListAmis);
-        liste.setAdapter(adapter);
- */
