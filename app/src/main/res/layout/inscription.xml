@@ -1,97 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Login" />
-    <EditText
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/motdepasse"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:inputType="text"
-        android:gravity="left"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Mot de passe" />
-    <EditText
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/motdepasse"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:inputType="textPassword"
-        android:gravity="left"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Prénom" />
-    <EditText
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/motdepasse"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:inputType="textPassword"
-        android:gravity="left"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Nom" />
-    <EditText
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/motdepasse"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:hint="Mot de passe"
-        android:inputType="textPassword"
-        android:gravity="left"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Date de Naissance" />
-
-    <DatePicker
-        android:id="@+id/datePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:startYear="1926"
-        android:endYear="2016" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="genre" />
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-            <RadioButton
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masculin"
-            android:checked="true" />
-            <RadioButton
+            android:gravity="center_horizontal"
+            android:text="Login" />
+        <EditText
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/motdepasse"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Login"
+            android:inputType="text"
+            android:gravity="left"
+            />
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-                android:text="Féminin"/>
-    </RadioGroup>
+            android:gravity="center_horizontal"
+            android:text="Mot de passe" />
+        <EditText
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/motdepasse"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Mot de passe"
+            android:inputType="textPassword"
+            android:gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Prénom" />
+        <EditText
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/motdepasse"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Prénom"
+            android:inputType="textPassword"
+            android:gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Nom" />
+        <EditText
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/motdepasse"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Nom"
+            android:inputType="textPassword"
+            android:gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Date de Naissance" />
 
-</LinearLayout>
+        <DatePicker
+            android:id="@+id/datePicker"
+            android:layout_width="254dp"
+            android:layout_height="94dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:startYear="1926"
+            android:endYear="2016" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="genre" />
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+                <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masculin"
+                android:checked="true" />
+                <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                    android:text="Féminin"/>
+        </RadioGroup>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Localisation" />
+        <EditText
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/localisation"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Ville"
+            android:inputType="text"
+            android:gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Etude" />
+        <EditText
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/etude"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Etude"
+            android:inputType="text"
+            android:gravity="left"
+            />
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/comptecreation"
+            android:layout_width="254dp"
+            android:textSize="@dimen/activity_horizontal_margin"
+            android:text="créer compte"
+            android:background="@drawable/button"
+            style="@style/ButtonText"/>
+    </LinearLayout>
+</ScrollView>

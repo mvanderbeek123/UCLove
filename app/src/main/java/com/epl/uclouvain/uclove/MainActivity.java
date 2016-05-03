@@ -29,18 +29,20 @@ public class MainActivity extends Activity implements View.OnTouchListener{
         Button connecter = (Button) findViewById(R.id.connecter);
         Button inscription = (Button) findViewById(R.id.inscription);
         // On l'affecte au widget désiré, et on démarre l'animation
-        inscription.setOnTouchListener(this);
+        inscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, InscriptionActivity.class);
+                startActivity(intent);
+            }
+        });
         // Puis on lui indique que cette classe sera son listener pour l'évènement Touch
-        connecter.setOnTouchListener(this);
-    }
-
-
-    @Override
-    public boolean onTouch(View view, MotionEvent event) {
-        // Comme l'évènement nous donne la vue concernée par le toucher, on le récupère et on le caste en Button
-        Button boutonpremier = (Button) view;
-        Intent intent = new Intent(MainActivity.this, PageAcceuil.class);
-        startActivity(intent);
-        return true;
+        connecter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PageAcceuil.class);
+                startActivity(intent);
+            }
+        });
     }
 }
