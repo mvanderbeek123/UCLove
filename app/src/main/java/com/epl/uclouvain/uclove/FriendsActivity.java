@@ -52,7 +52,7 @@ public class FriendsActivity extends Activity
         {
             for (Amis a : ListAmis)
             {
-                String log = a.getLogin();
+                String log = a.getLogin1();
                 ListLogin.add(log);
             }
         }
