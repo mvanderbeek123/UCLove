@@ -26,7 +26,7 @@ public class ProfilDAO extends DAOBase {
     public static final String CLIENT_EYES="yeux";
     public static final String CLIENT_SKIN="peau";
 
-    public ProfilAO(Context pContext)
+    public ProfilDAO(Context pContext)
     {
         super(pContext);
     }

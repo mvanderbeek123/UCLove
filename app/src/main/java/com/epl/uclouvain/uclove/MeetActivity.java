@@ -24,8 +24,8 @@ import android.content.res.Resources;
  * Created by noe on 02/05/16.
  */
 public class MeetActivity extends Activity {
-    private Button dispo = null;
-    private Button rdv = null;
+    Button dispo = null;
+    Button rdv = null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

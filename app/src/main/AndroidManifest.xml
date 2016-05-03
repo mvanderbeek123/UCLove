@@ -78,6 +78,24 @@
             android:label="Chat">
         </activity>
 
+        <activity
+            android:name=".Disponibility"
+            android:label="Disponibilités"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".MeetActivity"
+            android:label="MeetActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".Rdv"
+            android:label="Rdv"
+            android:theme="@style/AppTheme">
+        </activity>
+
     </application>
 
 </manifest>
