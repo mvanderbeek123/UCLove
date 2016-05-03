@@ -26,10 +26,11 @@ public class InscriptionActivity extends Activity {
             }
         });
     }
-    if (compteur==1)
+    /*if (compteur==1)
     {
         //création de la base de données
         //DataBase a= new DataBase(this, "database",NULL,1)
     }
-    public void comptecreation()
+    */
+    public void comptecreation();
 }

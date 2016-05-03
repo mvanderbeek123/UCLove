@@ -27,7 +27,7 @@ public class ProfilDAO extends DAOBase {
     public static final String CLIENT_AGE="tranche_age";
     public static final String CLIENT_LOC="perimetre";
 
-    public ProfilAO(Context pContext)
+    public ProfilDAO(Context pContext)
     {
         super(pContext);
     }
