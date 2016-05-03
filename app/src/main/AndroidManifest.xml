@@ -67,6 +67,11 @@
             android:label="Friends Display"
             android:theme="@style/AppTheme">
         </activity>
+        <activity
+            android:name=".InscriptionActivity"
+            android:label="Inscription"
+            android:theme="@style/AppTheme">
+        </activity>
 
         <activity
             android:name=".ChatActivity"

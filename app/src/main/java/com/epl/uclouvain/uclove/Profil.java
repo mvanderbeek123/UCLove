@@ -1,6 +1,7 @@
 package com.epl.uclouvain.uclove;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 /**
  * Created by marie-marie on 2/05/16.
@@ -47,6 +48,27 @@ public class Profil  {
             this.peau=null;
             this.visibilite_peau=0;
         }
+    public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, char genre, String etude, String localisation,String cheveux,String peau,String yeux)
+    {
+        this.login=login;
+        this.mot_de_passe=mot_de_passe;
+        this.prenom=prenom;
+        this.nom=nom;
+        this.date_de_naissance=date_de_naissance;
+        this.genre=genre;
+        this.etude=etude;
+        this.visibilite_etude=2;
+        this.localisation=localisation;
+        this.visibilite_loc=2;
+        this.numero_de_telephone=null;
+        this.visibilite_num=0;
+        this.cheveux=cheveux;
+        this.visibilite_cheveux=2;
+        this.yeux=yeux;
+        this.visibilite_yeux=2;
+        this.peau=peau;
+        this.visibilite_peau=2;
+    }
         //les geters
 
     public String getLogin()

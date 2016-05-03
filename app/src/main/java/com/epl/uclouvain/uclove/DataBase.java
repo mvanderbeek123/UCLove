@@ -23,8 +23,6 @@ public class DataBase extends SQLiteOpenHelper
     public static final String CLIENT_HAIR="cheveux";
     public static final String CLIENT_EYES="yeux";
     public static final String CLIENT_SKIN="peau";
-    public static final String CLIENT_AGE="tranche_age";
-    public static final String CLIENT_LOC="perimetre";
     public static final String CLIENT_CREATE_TABLE = "CREATE TABLE " + CLIENT_TABLE_NAME + " (" +
             CLIENT_LOGIN + " TEXT NOT NULL PRIMARY KEY, " +
             CLIENT_MDP  + " TEXT NOT NULL, " +
@@ -37,9 +35,7 @@ public class DataBase extends SQLiteOpenHelper
             CLIENT_NUM + " INTEGER ," +
             CLIENT_HAIR + " TEXT, " +
             CLIENT_SKIN + " TEXT, " +
-            CLIENT_EYES + " TEXT, " +
-            CLIENT_AGE + " TEXT, " +
-            CLIENT_LOC + " INTEGER);";
+            CLIENT_EYES + " TEXT " + ");";
     public static final String CLIENT_DROP =
             "DROP TABLE IF EXISTS " + CLIENT_TABLE_NAME + ";";
 
@@ -52,7 +48,7 @@ public class DataBase extends SQLiteOpenHelper
             GENRE_GENRE + " TEXT NOT NULL);";
     public static final String GENRE_DROP = "DROP TABLE IF EXISTS " + GENRE_TABLE_NAME+";";
 
-    // Table Cheveuxc
+    // Table Cheveux
     public static final String CHEVEUX_TABLE_NAME="Cheveux";
     public static final String CHEVEUX_LOGIN="login";
     public static final String CHEVEUX_COLOR="couleur";
