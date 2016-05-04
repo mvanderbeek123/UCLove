@@ -56,8 +56,16 @@ public class FriendsActivity extends Activity
         {
             for (Amis a : ListAmis)
             {
-                String log = a.getLogin2();
-                ListLogin.add(log);
+                String log1 = a.getLogin1();
+                String log2 = a.getLogin2();
+                if(log1 == login_global)
+                {
+                    ListLogin.add(log2);
+                }
+                if(log2 == login_global)
+                {
+                    ListLogin.add(log1);
+                }
             }
         }
 
