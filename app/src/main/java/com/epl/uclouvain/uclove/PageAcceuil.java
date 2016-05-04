@@ -42,7 +42,7 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
         }
         else {
             Toast toast=Toast.makeText(getApplicationContext(),"Vous n'êtes actuellement pas encore inscrit. Enregistrez-vous et venez nous rejoindre!",Toast.LENGTH_LONG);
-            return true
+            return true;
         }
     }
 }

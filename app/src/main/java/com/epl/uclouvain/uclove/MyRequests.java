@@ -22,6 +22,8 @@ public class MyRequests extends Activity {
     Button no = null;
     final Context context = this;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

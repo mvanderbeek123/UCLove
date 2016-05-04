@@ -21,6 +21,13 @@ public class InscriptionActivity extends Activity {
     private int month;
     private int day;
     private ProfilDAO profildao;
+    String inlogin;
+    String inmdp;
+    String inprénom;
+    String innom;
+    String inloc;
+    String inetude;
+    char genre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,27 +37,25 @@ public class InscriptionActivity extends Activity {
         year = c.get(Calendar.YEAR);
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DAY_OF_MONTH);
-        DatePicker date=(DatePicker) findViewById(R.id.datePicker);
+        final DatePicker date=(DatePicker) findViewById(R.id.datePicker);
         date.init(year, month, day, null);
-        EditText login=(EditText) findViewById(R.id.login_inscription);
+        final EditText login=(EditText) findViewById(R.id.login_inscription);
         final EditText mdp=(EditText) findViewById(R.id.motdepasse);
         final EditText prénom=(EditText) findViewById(R.id.prénom);
-        EditText nom=(EditText) findViewById(R.id.nom);
-        RadioGroup group=(RadioGroup) findViewById(R.id.group);
-        EditText loc=(EditText) findViewById(R.id.localisation);
+        final EditText nom=(EditText) findViewById(R.id.nom);
+        final RadioGroup group=(RadioGroup) findViewById(R.id.group);
+        final EditText loc=(EditText) findViewById(R.id.localisation);
         final EditText etude=(EditText) findViewById(R.id.etude);
-        Button valider = (Button) findViewById(R.id.comptecreation);
+        final Button valider = (Button) findViewById(R.id.comptecreation);
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                String inlogin = login.getText().toString();
-                String inmdp = mdp.getText().toString();
-                String inprénom = prénom.getText().toString();
-                String innom=nom.getText().toString();
-                String inloc=loc.getText().toString();
-                String inetude=etude.getText().toString();
-                char genre;
+                inlogin = login.getText().toString();
+                inmdp = mdp.getText().toString();
+                inprénom = prénom.getText().toString();
+                innom=nom.getText().toString();
+                inloc=loc.getText().toString();
+                inetude=etude.getText().toString();
                 if(group.getCheckedRadioButtonId()==R.id.masculin){
                     genre='M';
                 }
@@ -58,10 +63,12 @@ public class InscriptionActivity extends Activity {
                     genre='F';
                 }
                 Date datedenaissance=new Date(date.getYear(),date.getMonth(),date.getDayOfMonth());
-                Profil profil = new Profil(inlogin,inmdp,inprénom,innom,Date,genre,inetude,inloc);
-                profildao=new ProfilDAO(this);
+                Profil profil = new Profil(inlogin,inmdp,inprénom,innom,datedenaissance,genre,inetude,inloc);
+                profildao=new ProfilDAO(getApplicationContext());
                 profildao.ajouter(profil);
-                Intent intent = new Intent(this, ProfilActivity.class);
+                Intent intent = new Intent(InscriptionActivity.this, ProfilActivity.class);
                 startActivity(intent);
+    }
+});
     }
 }
