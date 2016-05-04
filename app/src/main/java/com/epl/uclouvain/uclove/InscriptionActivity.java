@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.RadioGroup;
 
 import java.sql.Date;
@@ -33,7 +35,8 @@ public class InscriptionActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.inscription);
-        final Calendar c = Calendar.getInstance();
+
+       /* final Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
         month = c.get(Calendar.MONTH);
         day = c.get(Calendar.DAY_OF_MONTH);
@@ -69,6 +72,6 @@ public class InscriptionActivity extends Activity {
                 Intent intent = new Intent(InscriptionActivity.this, ProfilActivity.class);
                 startActivity(intent);
     }
-});
+});*/
     }
 }
