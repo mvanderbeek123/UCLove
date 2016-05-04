@@ -2,24 +2,27 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/Profil"
             android:id="@+id/Profil2"
+            android:layout_above="@+id/photo"
             android:background="@color/grey"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
             />
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/photo"
             android:layout_centerHorizontal="true"
-            android:layout_below="@+id/Profil2"
+            android:layout_above="@+id/nom2"
             android:contentDescription="@string/Nom"
             android:src="@android:drawable/divider_horizontal_textfield"/>
 
@@ -28,7 +31,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Nom"
             android:id="@+id/nom2"
-            android:layout_below="@id/photo"
+            android:layout_alignTop="@id/photo"
             android:layout_alignParentLeft="true"
             />
         <Button
@@ -37,7 +40,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/button2"
-            android:layout_below="@id/photo"
+            android:layout_alignTop="@id/photo"
             android:layout_alignBottom="@id/nom2"/>
         <EditText
             android:layout_width="200dp"
@@ -102,6 +105,7 @@
         <ToggleButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button6"
             android:layout_alignTop="@id/button6"/>
@@ -123,6 +127,7 @@
         <ToggleButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button7"
             android:layout_alignTop="@id/button7"/>
@@ -144,6 +149,7 @@
         <ToggleButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button8"
             android:layout_alignTop="@id/button8"/>
@@ -165,6 +171,7 @@
         <ToggleButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button9"
             android:layout_alignTop="@id/button9"/>
@@ -186,6 +193,7 @@
         <ToggleButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button10"
             android:layout_alignTop="@id/button10"/>
@@ -208,9 +216,125 @@
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button11"
             android:layout_alignTop="@id/button11"/>
 
-
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/Preference"
+            android:id="@+id/Preference2"
+            android:layout_below="@id/nom11"
+            android:background="@color/grey"
+            android:layout_alignParentLeft="true"
+            />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Genre"
+            android:id="@+id/nom12"
+            android:layout_alignTop="@id/Preference2"
+            android:layout_alignParentLeft="true"
+            />
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/button12"
+            android:layout_alignTop="@id/nom12"
+            android:layout_alignBottom="@id/nom12"/>
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/prefAge"
+            android:id="@+id/nom13"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/nom12"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button13"
+            android:layout_alignBottom="@id/nom13"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Cheveux"
+            android:id="@+id/nom14"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/nom13"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button14"
+            android:layout_alignBottom="@id/nom14"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/yeux"
+            android:id="@+id/nom15"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/nom14"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button15"
+            android:layout_alignBottom="@id/nom15"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Peau"
+            android:id="@+id/nom16"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/nom15"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button16"
+            android:layout_alignBottom="@id/nom16"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Etude"
+            android:id="@+id/nom17"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/nom16"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button17"
+            android:layout_alignBottom="@id/nom17"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@string/perimetre"
+            android:id="@+id/nom18"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/nom17"/>
+        <Button
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/button18"
+            android:layout_alignBottom="@id/nom18"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
     </RelativeLayout>
+
 </ScrollView>
