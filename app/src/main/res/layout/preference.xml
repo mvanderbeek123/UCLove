@@ -11,7 +11,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/Preference"
                 android:id="@+id/Preference2"
-                android:layout_below="@id/nom11"
+                android:layout_alignParentTop="true"
                 android:background="@color/grey"
                 android:layout_alignParentLeft="true"
                 />
