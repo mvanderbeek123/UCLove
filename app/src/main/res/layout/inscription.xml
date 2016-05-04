@@ -84,7 +84,7 @@
             android:gravity="center_horizontal"
             android:text="genre" />
         <RadioGroup
-            android:layout_width="wrap_content"
+            android:layout_width="254dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:id="@+id/group">

@@ -20,6 +20,8 @@ public class Menu extends Activity {
     private Button requests = null;
     private Button chat = null;
     private Button meet = null;
+    private String login=null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,11 +34,14 @@ public class Menu extends Activity {
         requests = (Button) findViewById(R.id.Requests);
         chat = (Button) findViewById(R.id.Chat);
         meet = (Button) findViewById(R.id.Meet);
+        Intent i=getIntent();
+        login=i.getExtras("login");
         // Puis on lui indique que cette classe sera son listener pour l'évènement Touch
         profil.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, ProfilActivity.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
@@ -44,6 +49,7 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, ProfilActivity.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
@@ -51,6 +57,7 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, ProfilActivity.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
@@ -58,6 +65,7 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, FriendsActivity.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
@@ -65,6 +73,7 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, Requests.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
@@ -72,6 +81,7 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, ChatActivity.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
@@ -79,6 +89,7 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, MeetActivity.class);
+                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
