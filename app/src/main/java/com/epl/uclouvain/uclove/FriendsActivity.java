@@ -77,7 +77,6 @@ public class FriendsActivity extends Activity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
-                // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                 Amis ami = ListAmis.get(position);
                 String login_ami = ami.getLogin2();
                 Intent i = new Intent(FriendsActivity.this, Friends_display.class);

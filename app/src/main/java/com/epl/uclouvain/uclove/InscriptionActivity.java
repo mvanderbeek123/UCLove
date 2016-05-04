@@ -30,8 +30,6 @@ public class InscriptionActivity extends Activity {
     String inloc;
     String inetude;
     String genre;
-    private ListView mListSexe = null;
-    private String[] mSexes = {"Masculin", "Feminin"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

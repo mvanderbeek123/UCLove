@@ -36,7 +36,7 @@ public class DataBase extends SQLiteOpenHelper
             CLIENT_NUM + " INTEGER ," +
             CLIENT_HAIR + " TEXT, " +
             CLIENT_SKIN + " TEXT, " +
-            CLIENT_EYES + " TEXT, " + ");";
+            CLIENT_EYES + " TEXT " + ");";
     public static final String CLIENT_DROP =
             "DROP TABLE IF EXISTS " + CLIENT_TABLE_NAME + ";";
 
@@ -94,7 +94,7 @@ public class DataBase extends SQLiteOpenHelper
     public static final String AMIS_TABLE_CREATE = "CREATE TABLE " + AMIS_TABLE_NAME + " (" +
             AMIS_LOGIN1 + " TEXT, " +
             AMIS_LOGIN2 + " TEXT, " +
-            AMIS_FAVORI + " TEXT, " +
+            AMIS_FAVORI + " INTEGER " +
             AMIS_ISAMI + " INTEGER " + ");";
     public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 

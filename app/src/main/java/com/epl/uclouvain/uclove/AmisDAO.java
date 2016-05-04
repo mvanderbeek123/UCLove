@@ -16,15 +16,6 @@ public class AmisDAO extends DAOBase
     public static final String ISAMI = "isAmi";
     public static final String ISFAVORI = "isFavori";
 
-    /* public static final String AMIS_TABLE_CREATE =
-            "CREATE TABLE " + TABLE_NAME + " (" +
-                    KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                    LOGIN + " TEXT, " +
-                    ISAMI + " INTEGER " +
-                    ISFAVORI + " INT " + ");";
-    public static final String AMIS_TABLE_DROP =
-            "DROP TABLE IF EXISTS " + TABLE_NAME + ";"; */
-
     public AmisDAO(Context pContext)
     {
        super(pContext);
@@ -87,5 +78,27 @@ public class AmisDAO extends DAOBase
         }
         c.close();
         return liste;
+    }
+    public ArrayList<Amis> selectionner_Ami_Msg(String login_user)
+    {
+        String requete = "select login1, login2 " +
+                " from " + DataBase.AMIS_TABLE_NAME +
+                " where (login1 = \"" + login_user + "\" or login2 = \"" + login_user + "\")"+
+                " and   (isAmi = 1);" ;
+
+        Cursor c = mDb.rawQuery(requete, new String[]{});
+
+        ArrayList<Amis> liste = new ArrayList<Amis>();
+        while (c.moveToNext())
+        {
+            String login1 = c.getString(0); ;
+            String login2 = c.getString(1);
+
+            Amis a = new Amis(login1 , login2, 1,0);
+            liste.add(a);
+        }
+        c.close();
+        return liste;
+
     }
 }
