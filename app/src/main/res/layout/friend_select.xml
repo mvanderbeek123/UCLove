@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Liste d'amis"
-        />
+        android:elegantTextHeight="false" />
 
     <ListView
         android:id="@+id/listAmis"

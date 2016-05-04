@@ -30,6 +30,7 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
     // Fonction qui sera lancée à chaque fois qu'un toucher est détecté sur le bouton rattaché
     @Override
     public boolean onTouch(View view, MotionEvent event) {
+        Controler.logged_user = login.getText().toString();
         profildao=new ProfilDAO(this);
         String log=login.getText().toString();
         String motdepasse=mdp.getText().toString();

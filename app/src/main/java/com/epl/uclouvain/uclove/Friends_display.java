@@ -15,11 +15,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.view.View.OnClickListener;
+
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -28,6 +32,7 @@ import java.util.Date;
 public class Friends_display extends Activity
 {
     String login_global;
+    String login_ami;
 
     TextView nom_view = null;
     TextView genre_view = null;
@@ -45,10 +50,9 @@ public class Friends_display extends Activity
     Button details = null;
     Button rencontre = null;
 
-    // Profil profil = null;
+    Profil profil = null;
 
     AmisDAO aDAO = null;
-    long id = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -63,27 +67,33 @@ public class Friends_display extends Activity
         vue.setText(texte);
 
         Intent i = getIntent();
-        id = i.getLongExtra("com.epl.uclouvain.uclove.amis.ID",0);
+        login_ami = i.getStringExtra("com.epl.uclouvain.uclove.amis.LOGIN2");
+        login_global = i.getStringExtra("login");
 
         // Inutile ça non ?
         aDAO = new AmisDAO(this);
         aDAO.open();
-        Amis a = aDAO.selectionner_parID(id, login_global);
+        Amis a = aDAO.selectionner_ami(login_global, login_ami);
         aDAO.close();
 
-        /* ProfilDAO profil_dao = new ProfilDAO(this);
+        ProfilDAO profil_dao = new ProfilDAO(this);
         profil_dao.open();
-        Profil profil = profil_dao.selectionner_parID(id);
+        profil = profil_dao.selectionner(login_ami);
         profil_dao.close();
 
         String nom = profil.getNom();
-        char genre = profil.getGenre();
-        Date date_naissance = profil.getDate_de_naissance();
-        int age = ??
+        String genre = profil.getGenre();
+        String date_naissance = new SimpleDateFormat("YYYY").format(profil.getDate_de_naissance());
+        String date_actuelle = new SimpleDateFormat("YYYY").format(Calendar.getInstance().getTime());
+        int age = Integer.parseInt(date_actuelle) - Integer.parseInt(date_naissance);
         String cheveux = profil.getCheveux();
         String yeux = profil.getYeux();
         String localisation = profil.getLocalisation();
-        //sexpref = + trouver la préférence je sais pas comment.
+
+        /* PreferenceDAO pref_dao = new PreferenceDAO(this);
+        sex =
+        */
+
 
         nom_view = (TextView)findViewById(R.id.nomAmi);
         nom_view.setText(nom);
@@ -104,7 +114,7 @@ public class Friends_display extends Activity
         localisation_view = (TextView)findViewById(R.id.localisation);
         localisation_view.setText(localisation);
 
-        sexpref_view = (TextView)findViewById(R.id.sexpref);
+        /* sexpref_view = (TextView)findViewById(R.id.sexpref);
         sexpref_view.setText(sexpref);
 
         // image va être du style R.drawable.image
@@ -140,7 +150,7 @@ public class Friends_display extends Activity
         public void onClick(View v)
         {
             aDAO.open();
-            aDAO.supprimer(id, login_global);
+            aDAO.supprimer(login_global, login_ami);
             aDAO.close();
             Intent i = new Intent(Friends_display.this, FriendsActivity.class);
             startActivity(i);
@@ -152,10 +162,9 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            /* Intent i = new Intent(Friends_display.this, MyRequests.class);
+             Intent i = new Intent(Friends_display.this, ChatActivity.class);
             final String CONTACT = "com.epl.uclouvain.uclove.amis_display.CONTACT";
-            i.putExtra(CONTACT, profil);
-            startActivity(i); */
+            startActivity(i);
         }
     };
 
@@ -169,7 +178,7 @@ public class Friends_display extends Activity
             if(favori.isChecked()) // L'ami est déjà en favori, on veut le retirer.
             {
                 aDAO.open();
-                aDAO.supprimer_favori(id, login_global);
+                aDAO.supprimer_favori(login_global, login_ami);
                 aDAO.close();
                 favori.setChecked(false);
                 texte = res.getString(R.string.favori1);
@@ -178,7 +187,7 @@ public class Friends_display extends Activity
             else // On veut mettre l'ami en favori.
             {
                 aDAO.open();
-                aDAO.ajouter_favori(id, login_global);
+                aDAO.ajouter_favori(login_global, login_ami);
                 aDAO.close();
                 favori.setChecked(true);
                 texte = res.getString(R.string.favori2);
@@ -201,10 +210,9 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            /* Intent i = new Intent(Friends_display.this, MeetActivity.class);
+            Intent i = new Intent(Friends_display.this, MeetActivity.class);
             final String RENCONTRE = "com.epl.uclouvain.uclove.amis_display.RENCONTRE";
-            i.putExtra(RENCONTRE, profil);
-            startActivity(i); */
+            startActivity(i);
         }
     };
 }

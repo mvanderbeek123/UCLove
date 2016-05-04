@@ -78,6 +78,11 @@
         </activity>
 
         <activity
+            android:name=".ChatSelectActivity"
+            android:label="Chat">
+        </activity>
+
+        <activity
             android:name=".Disponibility"
             android:label="Disponibilités"
             android:theme="@style/AppTheme">

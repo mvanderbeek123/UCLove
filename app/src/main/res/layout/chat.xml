@@ -6,8 +6,10 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="328dp"
+        android:layout_height="250dp"
         android:id="@+id/listView"
+        android:transcriptMode="alwaysScroll"
+        android:stackFromBottom="true"
         android:layout_gravity="center_horizontal" />
 
     <TextView android:layout_width="wrap_content"
@@ -16,11 +18,12 @@
 
     <EditText android:id="@+id/message"
         android:layout_width="fill_parent"
-        android:layout_height="100sp" />
+        android:layout_height="70dp" />
 
     <Button android:id="@+id/envoyer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
         android:text="@string/envoyer" />
 
 </LinearLayout>
