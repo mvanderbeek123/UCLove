@@ -33,7 +33,7 @@ public class ChatSelectActivity extends Activity
 
         adao = new AmisDAO(this);
         adao.open();
-        ArrayList<Amis> alist = adao.selectionner_Ami(Controler.logged_user);
+        ArrayList<Amis> alist = adao.selectionner_listAmis(Controler.logged_user);
         adao.close();
 
 

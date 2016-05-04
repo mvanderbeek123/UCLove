@@ -23,6 +23,7 @@ public class DataBase extends SQLiteOpenHelper
     public static final String CLIENT_HAIR="cheveux";
     public static final String CLIENT_EYES="yeux";
     public static final String CLIENT_SKIN="peau";
+
     public static final String CLIENT_CREATE_TABLE = "CREATE TABLE " + CLIENT_TABLE_NAME + " (" +
             CLIENT_LOGIN + " TEXT NOT NULL PRIMARY KEY, " +
             CLIENT_MDP  + " TEXT NOT NULL, " +
