@@ -35,7 +35,7 @@ public class Menu extends Activity {
         chat = (Button) findViewById(R.id.Chat);
         meet = (Button) findViewById(R.id.Meet);
         Intent i=getIntent();
-        login=i.getExtras("login");
+        login=i.getStringExtra("login");
         // Puis on lui indique que cette classe sera son listener pour l'évènement Touch
         profil.setOnClickListener(new View.OnClickListener() {
             @Override
