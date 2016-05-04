@@ -12,7 +12,7 @@ public class Profil  {
         private String prenom;
         private String nom;
         private Date date_de_naissance;
-        private char genre;
+        private String genre;
         private String etude;
         private int visibilite_etude;
         private String localisation;
@@ -27,7 +27,7 @@ public class Profil  {
         private int visibilite_peau;
 
 
-        public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, char genre, String etude, String localisation)
+        public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, String genre, String etude, String localisation)
         {
             this.login=login;
             this.mot_de_passe=mot_de_passe;
@@ -39,7 +39,7 @@ public class Profil  {
             this.visibilite_etude=2;
             this.localisation=localisation;
             this.visibilite_loc=2;
-            this.numero_de_telephone=null;
+            this.numero_de_telephone=0;
             this.visibilite_num=0;
             this.cheveux=null;
             this.visibilite_cheveux=0;
@@ -48,7 +48,7 @@ public class Profil  {
             this.peau=null;
             this.visibilite_peau=0;
         }
-    public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, char genre, String etude, String localisation,String cheveux,String peau,String yeux)
+    public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, String genre, String etude, String localisation,String cheveux,String peau,String yeux)
     {
         this.login=login;
         this.mot_de_passe=mot_de_passe;
@@ -60,7 +60,7 @@ public class Profil  {
         this.visibilite_etude=2;
         this.localisation=localisation;
         this.visibilite_loc=2;
-        this.numero_de_telephone=null;
+        this.numero_de_telephone=0;
         this.visibilite_num=0;
         this.cheveux=cheveux;
         this.visibilite_cheveux=2;
@@ -87,7 +87,7 @@ public class Profil  {
     public Date getDate_de_naissance() {
         return date_de_naissance;
     }
-    public char getGenre() {
+    public String getGenre() {
         return genre;
     }
     public String getEtude()
@@ -141,7 +141,7 @@ public class Profil  {
         this.date_de_naissance = date_de_naissance;
     }
 
-    public void setGenre(char genre) {
+    public void setGenre(String genre) {
         this.genre = genre;
     }
 

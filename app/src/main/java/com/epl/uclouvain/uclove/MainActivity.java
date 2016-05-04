@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class MainActivity extends Activity implements View.OnTouchListener{
+public class MainActivity extends Activity{
 
     private TextView text = null;
 

@@ -38,7 +38,7 @@ public class ProfilDAO extends DAOBase {
         value.put(ProfilDAO.CLIENT_MDP, a.getMot_de_passe());
         value.put(ProfilDAO.CLIENT_NAME, a.getPrenom());
         value.put(ProfilDAO.CLIENT_LASTNAME, a.getNom());
-        value.put(ProfilDAO.CLIENT_DATE, a.getDate_de_naissance());
+        value.put(ProfilDAO.CLIENT_DATE, a.getDate_de_naissance().toString());
         value.put(ProfilDAO.CLIENT_GENRE, a.getGenre());
         value.put(ProfilDAO.CLIENT_ETUDE, a.getEtude());
         value.put(ProfilDAO.CLIENT_PLACE, a.getLocalisation());
@@ -67,15 +67,15 @@ public class ProfilDAO extends DAOBase {
         mDb.update(CLIENT_TABLE_NAME, value, CLIENT_LOGIN + " = ?", new String[]{a.getLogin()});
 
     }
-    public Profil selectionner(String login){
-        Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where" + CLIENT_LOGIN + "= ?", new String[]{login});
+    public Profil selectionner(String login2){
+        Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where" + CLIENT_LOGIN + "= ?", new String[]{login2});
         String login = c.getString(1);
         String mdp = c.getString(2);
         String name  = c.getString(3);
         String lastname= c.getString(4);
         String date=c.getString(5);
         Date date1=Date.valueOf(date);
-        char genre=(c.getString(6)).charAt(0);
+        String genre=c.getString(6);
         String etude=c.getString(7);
         String place=c.getString(8);
         int num=c.getInt(9);

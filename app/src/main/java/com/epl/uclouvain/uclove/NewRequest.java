@@ -16,7 +16,7 @@ import android.app.AlertDialog;
  * demande d'amitié lui soit envoyée
  */
 
-//Il reste juste a modifier la base de donnée
+//Il reste juste a modifier la base de donnée, mais j'ai besoin de la table client pour faire ca :)
 //Si vous voulez tester, mettez 0 ca retourne une boite de dialogue d'erreur
 //Pour tout le reste, ca demande une confirmation et puis envoie le formulaire !
 public class NewRequest extends Activity {
