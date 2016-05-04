@@ -95,6 +95,7 @@ public class DataBase extends SQLiteOpenHelper
             AMIS_LOGIN1 + " TEXT, " +
             AMIS_LOGIN2 + " TEXT, " +
             AMIS_ISAMI + " INTEGER " + ");";
+    public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
     // INSERT INTO table_name (column1,column2,column3,...)     VALUES (value1,value2,value3,...);
 
@@ -118,10 +119,6 @@ public class DataBase extends SQLiteOpenHelper
             " (" +
             AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
             ") VALUES ( \"MM\", \"Step\", 1);";
-
-
-
-    public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
     // Table chatmessages
     public static final String CHAT_TABLE_NAME = "chatmsg";

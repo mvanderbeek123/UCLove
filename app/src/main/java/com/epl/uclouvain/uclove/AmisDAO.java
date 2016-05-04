@@ -59,18 +59,17 @@ public class AmisDAO extends DAOBase
         mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
     }
 
-    public Amis selectionner_parID(long id, String login1)
+    public Amis selectionner_ami(String login1, String login2)
     {
-        Cursor c = mDb.rawQuery("select " + LOGIN2 + " from " + TABLE_NAME + " where login1 = ? AND id = ? ", new String[]{login1, String.valueOf(id)});
-        String login2 = c.getString(2);
-        int isAmi = c.getInt(3);
-        int isFavori = c.getInt(4);
-        Amis a = new Amis(id, login1, login2, isAmi, isFavori);
+        Cursor c = mDb.rawQuery("select " + LOGIN1 + ", " + LOGIN2 + " from " + TABLE_NAME + " where login1 = ? AND login2 = ? ", new String[]{login1, login2});
+        int isAmi = c.getInt(2);
+        int isFavori = c.getInt(3);
+        Amis a = new Amis(login1, login2, isAmi, isFavori);
         c.close();
         return a;
     }
 
-    public ArrayList<Amis> selectionner_Ami(String login_user)
+    public ArrayList<Amis> selectionner_listAmis(String login_user)
     {
         String requete = "select login1, login2 " +
                 " from " + DataBase.AMIS_TABLE_NAME +
@@ -84,7 +83,7 @@ public class AmisDAO extends DAOBase
             String login1 = c.getString(0); ;
             String login2 = c.getString(1);
             int isFavori = c.getInt(4);
-            Amis a = new Amis(0,login1 , login2, 1,isFavori);
+            Amis a = new Amis(login1 , login2, 1, isFavori);
             liste.add(a);
         }
         c.close();

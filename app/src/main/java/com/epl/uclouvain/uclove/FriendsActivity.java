@@ -46,7 +46,7 @@ public class FriendsActivity extends Activity
 
         final AmisDAO aDAO = new AmisDAO(this);
         aDAO.open();
-        final ArrayList<Amis> ListAmis = aDAO.selectionner_Ami(login_global);
+        final ArrayList<Amis> ListAmis = aDAO.selectionner_listAmis(login_global);
         if(ListAmis == null)
         {
             String texte_2 = res.getString(R.string.noAmis);
