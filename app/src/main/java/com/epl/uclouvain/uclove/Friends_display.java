@@ -50,7 +50,7 @@ public class Friends_display extends Activity
     Button details = null;
     Button rencontre = null;
 
-    // Profil profil = null;
+    Profil profil = null;
 
     AmisDAO aDAO = null;
 
@@ -78,7 +78,7 @@ public class Friends_display extends Activity
 
         ProfilDAO profil_dao = new ProfilDAO(this);
         profil_dao.open();
-        Profil profil = profil_dao.selectionner(login_ami);
+        profil = profil_dao.selectionner(login_ami);
         profil_dao.close();
 
         String nom = profil.getNom();
@@ -162,10 +162,9 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            /* Intent i = new Intent(Friends_display.this, MyRequests.class);
+             Intent i = new Intent(Friends_display.this, ChatActivity.class);
             final String CONTACT = "com.epl.uclouvain.uclove.amis_display.CONTACT";
-            i.putExtra(CONTACT, profil);
-            startActivity(i); */
+            startActivity(i);
         }
     };
 
@@ -211,10 +210,9 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            /* Intent i = new Intent(Friends_display.this, MeetActivity.class);
+            Intent i = new Intent(Friends_display.this, MeetActivity.class);
             final String RENCONTRE = "com.epl.uclouvain.uclove.amis_display.RENCONTRE";
-            i.putExtra(RENCONTRE, profil);
-            startActivity(i); */
+            startActivity(i);
         }
     };
 }
