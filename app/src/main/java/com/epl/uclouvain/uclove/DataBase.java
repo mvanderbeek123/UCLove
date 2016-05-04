@@ -89,11 +89,12 @@ public class DataBase extends SQLiteOpenHelper
     public static final String AMIS_TABLE_NAME = "Amis";
     public static final String AMIS_LOGIN1 = "login1";
     public static final String AMIS_LOGIN2 = "login2";
-    public static final String AMIS_FAVORI = "isAmi";
-    public static final String AMIS_ISAMI = "isFavori";
+    public static final String AMIS_FAVORI = "isFavori";
+    public static final String AMIS_ISAMI = "isAmi";
     public static final String AMIS_TABLE_CREATE = "CREATE TABLE " + AMIS_TABLE_NAME + " (" +
             AMIS_LOGIN1 + " TEXT, " +
             AMIS_LOGIN2 + " TEXT, " +
+            AMIS_FAVORI + " TEXT, " +
             AMIS_ISAMI + " INTEGER " + ");";
     public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
