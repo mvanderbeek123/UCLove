@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class AmisDAO extends DAOBase
 {
     public static final String TABLE_NAME = "Amis";
-    public static final String KEY = "id";
     public static final String LOGIN1 = "login1";
     public static final String LOGIN2 = "login2";
     public static final String ISAMI = "isAmi";
@@ -41,23 +40,23 @@ public class AmisDAO extends DAOBase
         mDb.insert(AmisDAO.TABLE_NAME, null, value);
     }
 
-    public void supprimer(long id, String login1)
+    public void supprimer(String login1, String login2)
     {
-        mDb.delete(TABLE_NAME, KEY + " = ?" + " AND login1 = ?", new String[] {String.valueOf(id), login1});
+        mDb.delete(TABLE_NAME, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
     }
 
-    public void ajouter_favori(long id, String login1)
+    public void ajouter_favori(String login1, String login2)
     {
         ContentValues value = new ContentValues();
         value.put(ISFAVORI, 1);
-        mDb.update(TABLE_NAME, value, KEY  + " = ?" + " AND login1 = ?", new String[] {String.valueOf(id), login1});
+        mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
     }
 
-    public void supprimer_favori(long id, String login1)
+    public void supprimer_favori(String login1, String login2)
     {
         ContentValues value = new ContentValues();
         value.put(ISFAVORI, 0);
-        mDb.update(TABLE_NAME, value, KEY  + " = ?" + " AND login1 = ?", new String[] {String.valueOf(id), login1});
+        mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
     }
 
     public Amis selectionner_parID(long id, String login1)
@@ -71,17 +70,21 @@ public class AmisDAO extends DAOBase
         return a;
     }
 
-    public ArrayList<Amis> selectionner_siAmi(String login1)
+    public ArrayList<Amis> selectionner_Ami(String login_user)
     {
-        Cursor c = mDb.rawQuery("select " + LOGIN2 + " from " + TABLE_NAME + " where login1 = ? AND isAmi = ?", new String[]{login1,"1"});
+        String requete = "select login1, login2 " +
+                " from " + DataBase.AMIS_TABLE_NAME +
+                " where (login1 = \"" + login_user + "\" or login2 = \"" + login_user + "\")"+
+                " and   (isAmi = 1);" ;
+        Cursor c = mDb.rawQuery(requete, new String[]{});
+
         ArrayList<Amis> liste = new ArrayList<Amis>();
         while (c.moveToNext())
         {
-            long id2 = c.getLong(0);
-            String login2 = c.getString(2);
-            int isAmi = c.getInt(3);
+            String login1 = c.getString(0); ;
+            String login2 = c.getString(1);
             int isFavori = c.getInt(4);
-            Amis a = new Amis(id2, login1, login2, isAmi, isFavori);
+            Amis a = new Amis(0,login1 , login2, 1,isFavori);
             liste.add(a);
         }
         c.close();

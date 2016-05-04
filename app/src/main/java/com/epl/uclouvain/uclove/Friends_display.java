@@ -63,7 +63,8 @@ public class Friends_display extends Activity
         vue.setText(texte);
 
         Intent i = getIntent();
-        id = i.getLongExtra("com.epl.uclouvain.uclove.amis.ID",0);
+        String login_ami = i.getStringExtra("com.epl.uclouvain.uclove.amis.LOGIN2");
+        login_global = i.getStringExtra("login");
 
         // Inutile ça non ?
         aDAO = new AmisDAO(this);

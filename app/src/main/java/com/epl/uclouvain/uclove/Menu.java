@@ -80,7 +80,7 @@ public class Menu extends Activity {
         chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, ChatActivity.class);
+                Intent intent = new Intent(Menu.this, ChatSelectActivity.class);
                 intent.putExtra("login",login);
                 startActivity(intent);
             }

@@ -87,25 +87,55 @@ public class DataBase extends SQLiteOpenHelper
     // Table amis.
     public static final String AMIS_TABLE_NAME = "Amis";
     public static final String AMIS_KEY = "id";
-    public static final String AMIS_LOGIN = "login";
+    public static final String AMIS_LOGIN1 = "login1";
+    public static final String AMIS_LOGIN2 = "login2";
     public static final String AMIS_ISAMI = "isAmi";
     public static final String AMIS_TABLE_CREATE = "CREATE TABLE " + AMIS_TABLE_NAME + " (" +
             AMIS_KEY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-            AMIS_LOGIN + " TEXT, " +
+            AMIS_LOGIN1 + " TEXT, " +
+            AMIS_LOGIN2 + " TEXT, " +
             AMIS_ISAMI + " INTEGER " + ");";
+
+    // INSERT INTO table_name (column1,column2,column3,...)     VALUES (value1,value2,value3,...);
+
+    public static final String  AMIS_TABLE_EX1 = " INSERT INTO " + AMIS_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
+            ") VALUES ( \"Del\", \"Jul\", 1);";
+    public static final String  AMIS_TABLE_EX2 = " INSERT INTO " + AMIS_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
+            ") VALUES ( \"Del\", \"MM\", 1);";
+    public static final String  AMIS_TABLE_EX3 = " INSERT INTO " + AMIS_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
+            ") VALUES ( \"Step\", \"Jul\", 1);";
+    public static final String  AMIS_TABLE_EX4 = " INSERT INTO " + AMIS_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
+            ") VALUES ( \"MM\", \"Jul\", 0);";
+    public static final String  AMIS_TABLE_EX5 = " INSERT INTO " + AMIS_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
+            ") VALUES ( \"MM\", \"Step\", 1);";
+
+
+
     public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
     // Table chatmessages
-    public static final String CHAT_TABLE_NAME = "messages";
+    public static final String CHAT_TABLE_NAME = "chatmsg";
     public static final String LOGIN1 = "login1";
     public static final String LOGIN2 = "login2";
     public static final String MSG = "msg";
-    public static final String MSGDATE = "msg_date";
-    public static final String CHAT_CREATE_TABLE = "CREATE TABLE " + CHAT_TABLE_NAME + " (" +
+    public static final String MSGDATE = "msgdate";
+
+    public static final String CHAT_TABLE_CREATE = "CREATE TABLE " + CHAT_TABLE_NAME + " (" +
             LOGIN1 + " TEXT, " +
             LOGIN2 + " TEXT, " +
-            MSG + " TEXT " +
+            MSG + " TEXT, " +
             MSGDATE + " TEXT " +");";
+
     public static final String CHAT_TABLE_DROP = "DROP TABLE IF EXISTS " + CHAT_TABLE_NAME + ";";
 
 
@@ -118,8 +148,13 @@ public class DataBase extends SQLiteOpenHelper
     public void onCreate(SQLiteDatabase db)
     {
         db.execSQL(AMIS_TABLE_CREATE);
+        db.execSQL(AMIS_TABLE_EX1);
+        db.execSQL(AMIS_TABLE_EX2);
+        db.execSQL(AMIS_TABLE_EX3);
+        db.execSQL(AMIS_TABLE_EX4);
+        db.execSQL(AMIS_TABLE_EX5);
         db.execSQL(CLIENT_CREATE_TABLE);
-        db.execSQL(CHAT_CREATE_TABLE);
+        db.execSQL(CHAT_TABLE_CREATE);
         db.execSQL(GENRE_CREATE_TABLE);
         db.execSQL(CHEVEUX_CREATE_TABLE);
         db.execSQL(YEUX_CREATE_TABLE);
@@ -140,6 +175,5 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(ETUDE_DROP);
         onCreate(db);
     }
-
     // Autres tables. A ajouter en suivant le même schéma que j'ai fait pour la table Amis.
 }

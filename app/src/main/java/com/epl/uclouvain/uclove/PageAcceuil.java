@@ -30,6 +30,7 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
     // Fonction qui sera lancée à chaque fois qu'un toucher est détecté sur le bouton rattaché
     @Override
     public boolean onTouch(View view, MotionEvent event) {
+        Controler.logged_user = login.getText().toString();
         profildao=new ProfilDAO(this);
         String log=login.getText().toString();
         String motdepasse=mdp.getText().toString();
@@ -42,7 +43,7 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
         }
         else {
             Toast toast=Toast.makeText(getApplicationContext(),"Vous n'êtes actuellement pas encore inscrit. Enregistrez-vous et venez nous rejoindre!",Toast.LENGTH_LONG);
-            return true
+            return true;
         }
     }
 }

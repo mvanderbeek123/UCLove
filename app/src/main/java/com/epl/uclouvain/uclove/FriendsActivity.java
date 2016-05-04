@@ -26,12 +26,15 @@ public class FriendsActivity extends Activity
 {
     String login_global;
     ListView liste = null;
-    public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.ID";
+    public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.LOGIN2";
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friends);
+
+        Intent i=getIntent();
+        login_global = i.getStringExtra("login");
 
         Resources res = getResources();
         String texte = res.getString(R.string.listeAmis);
@@ -43,7 +46,7 @@ public class FriendsActivity extends Activity
 
         final AmisDAO aDAO = new AmisDAO(this);
         aDAO.open();
-        final ArrayList<Amis> ListAmis = aDAO.selectionner_siAmi(login_global);
+        final ArrayList<Amis> ListAmis = aDAO.selectionner_Ami(login_global);
         if(ListAmis == null)
         {
             String texte_2 = res.getString(R.string.noAmis);
@@ -68,9 +71,10 @@ public class FriendsActivity extends Activity
             {
                 // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                 Amis ami = ListAmis.get(position);
-                long id_ami = ami.getId();
+                String login_ami = ami.getLogin2();
                 Intent i = new Intent(FriendsActivity.this, Friends_display.class);
-                i.putExtra(NOM_INTENT, id_ami);
+                i.putExtra(NOM_INTENT, login_ami);
+                i.putExtra("login", login_global);
                 startActivity(i);
             }
         });
