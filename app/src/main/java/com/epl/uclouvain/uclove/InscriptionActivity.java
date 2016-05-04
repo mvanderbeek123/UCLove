@@ -27,7 +27,7 @@ public class InscriptionActivity extends Activity {
     String innom;
     String inloc;
     String inetude;
-    char genre;
+    String genre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +57,10 @@ public class InscriptionActivity extends Activity {
                 inloc=loc.getText().toString();
                 inetude=etude.getText().toString();
                 if(group.getCheckedRadioButtonId()==R.id.masculin){
-                    genre='M';
+                    genre="Masculin";
                 }
                 else {
-                    genre='F';
+                    genre="Féminin";
                 }
                 Date datedenaissance=new Date(date.getYear(),date.getMonth(),date.getDayOfMonth());
                 Profil profil = new Profil(inlogin,inmdp,inprénom,innom,datedenaissance,genre,inetude,inloc);
