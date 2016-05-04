@@ -88,7 +88,9 @@ public class ProfilDAO extends DAOBase {
     }
     public boolean identifier(String login, String mdp)
     {
-        Cursor c=mDb.rawQuery("select " + "COUNT(*)" + " from " + CLIENT_TABLE_NAME + " where" + CLIENT_LOGIN + "= ?" + "AND" + CLIENT_MDP + "=?", new String[]{login,mdp});
+        Cursor c=mDb.rawQuery("SELECT COUNT(*) from " + CLIENT_TABLE_NAME +
+                " where " + CLIENT_LOGIN + " = ? AND " + CLIENT_MDP + " = ? ", new String[]{login,mdp});
+
         if (c.getInt(0)==1){
             return true;
         }
