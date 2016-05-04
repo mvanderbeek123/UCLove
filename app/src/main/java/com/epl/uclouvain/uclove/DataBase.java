@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.sql.Date;
+import java.sql.Time;
+
 /**
  * La base de données.
  */
@@ -135,6 +138,19 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String CHAT_TABLE_DROP = "DROP TABLE IF EXISTS " + CHAT_TABLE_NAME + ";";
 
+    // Table meet
+    public static final String MEET_TABLE_NAME = "Meet";
+    public static final String LOGIN = "login";
+    public static final String DATE = "date";
+    public static final String HOUR = "hour";
+
+    public static final String MEET_TABLE_CREATE = "CREATE TABLE " + MEET_TABLE_NAME + " (" +
+            LOGIN + " TEXT, " +
+            DATE + " DATE, " +
+            HOUR + " TIME " +");";
+
+    public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
+
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
     {
@@ -152,6 +168,7 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(AMIS_TABLE_EX5);
         db.execSQL(CLIENT_CREATE_TABLE);
         db.execSQL(CHAT_TABLE_CREATE);
+        db.execSQL(MEET_TABLE_CREATE);
         db.execSQL(GENRE_CREATE_TABLE);
         db.execSQL(CHEVEUX_CREATE_TABLE);
         db.execSQL(YEUX_CREATE_TABLE);
@@ -163,6 +180,7 @@ public class DataBase extends SQLiteOpenHelper
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
     {
         db.execSQL(AMIS_TABLE_DROP);
+        db.execSQL(MEET_TABLE_DROP);
         db.execSQL(CLIENT_DROP);
         db.execSQL(CHAT_TABLE_DROP);
         db.execSQL(GENRE_DROP);
