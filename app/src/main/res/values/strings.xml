@@ -37,7 +37,7 @@
     <string name="non">Non</string>
     <string name="oui">Oui</string>
     <string name="blockRequestConfirmation">Es tu sûre de vouloir bloquer cette demande ?</string>
-    <string name="confirmation">Confirmationne</string>
+    <string name="confirmation">Confirmation</string>
 
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>
@@ -62,5 +62,13 @@
     <string name="perimetre">Périmètre </string>
 
     <string name="info"> Veuillez remplir vos informations personnelles </string>
+
+    <string name="people">Personnes</string>
+    <string name="preferences">Préférences</string>
+    <string name="profil">Profil</string>
+    <string name="amis">Amis</string>
+    <string name="requete">Requêtes</string>
+    <string name="chat">Conversation</string>
+    <string name="rencontre">Rencontre</string>
 
 </resources>

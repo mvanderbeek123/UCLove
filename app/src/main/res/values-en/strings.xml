@@ -49,4 +49,15 @@
     <string name="vert">Green</string>
     <string name="bi">Bisexual</string>
     <string name="chauve">Bald</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="deleteRequest">You deleted the information</string>
+    <string name="newFriend">Nice, you have a new friend !</string>
+    <string name="non">No</string>
+    <string name="oui">Yes</string>
+    <string name="people">People</string>
+    <string name="preferences">Preferences</string>
+    <string name="profil">Profil</string>
+    <string name="requete">Requests</string>
+    <string name="blockRequestConfirmation">Are you sure you want to block this request ?</string>
+    <string name="chat">Chat</string>
 </resources>
