@@ -11,6 +11,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="UCLove Menu"
+        android:textColor="@color/colorAccent"
+        android:textSize="50sp"
+        android:textStyle="italic"
         tools:context=".Menu" />
 
     <Button
@@ -22,7 +25,7 @@
         android:textColor="#ffffff"
         android:gravity="center"
         android:background="@drawable/button"
-        android:/>
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

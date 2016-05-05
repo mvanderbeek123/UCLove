@@ -66,7 +66,8 @@ public class NewRequest extends Activity {
                         Toast toast=Toast.makeText(getApplicationContext(),R.string.envoiNewRequest,Toast.LENGTH_SHORT);
                         toast.show();
                         NewRequest.this.finish();
-                        //si la demande existe deja dans un sens ou l'autre + changer message
+                        //si la demande existe deja dans un sens ou l'autre + changer message+empecher qqn de s'auto amis
+
                     }
                 });
                 alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
