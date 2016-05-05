@@ -45,9 +45,9 @@ public class GenreDAO extends DAOBase {
         ArrayList<Genre> liste = new ArrayList<Genre>();
         while (c.moveToNext())
         {
-            String login = c.getString(0); ;
+            String login1 = c.getString(0); ;
             String genre = c.getString(1);
-            Genre a = new Genre(login , genre);
+            Genre a = new Genre(login1 , genre);
             liste.add(a);
         }
         c.close();
