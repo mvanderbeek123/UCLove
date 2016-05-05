@@ -9,42 +9,41 @@
         android:id="@+id/calendarView"
         android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:gravity="left"
-        android:layout_below="@+id/calendarView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="time"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_alignTop="@+id/editText"
-        android:layout_toRightOf="@+id/editText"
-        android:layout_toEndOf="@+id/editText" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/editText" />
+        android:layout_below="@+id/calendarView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirmer disponibilité"
+        android:text="Confirmer demande de rdv"
         android:id="@+id/button"
-        android:layout_below="@+id/editText"
         android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
+        android:layout_toEndOf="@+id/textView"
+        android:layout_below="@+id/calendarView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:layout_alignBottom="@+id/calendarView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPostalAddress"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:layout_alignBottom="@+id/calendarView"
+        android:layout_toRightOf="@+id/editText3"
+        android:layout_toEndOf="@+id/editText3"
+        android:text="Lieu" />
 
 </RelativeLayout>

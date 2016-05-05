@@ -169,16 +169,15 @@ public class DataBase extends SQLiteOpenHelper
 
     // Table meet
     public static final String MEET_TABLE_NAME = "Meet";
-    public static final String LOGIN = "login";
+    public static final String LOG1 = "login1";
+    public static final String LOG2 = "login2";
     public static final String DATE = "date";
-    public static final String HOURSTART = "hourStart";
-    public static final String HOUREND= "hourEnd";
-
+    public static final String LIEU = "lieu";
     public static final String MEET_TABLE_CREATE = "CREATE TABLE " + MEET_TABLE_NAME + " (" +
-            LOGIN + " TEXT, " +
+            LOG1 + " TEXT, " +
+            LOG2 + " TEXT, " +
             DATE + " LONG, " +
-            HOURSTART + " INTEGER, " +
-            HOUREND + " INTEGER " +");";
+            LIEU + " TEXT, " + ");";
 
     public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
 
