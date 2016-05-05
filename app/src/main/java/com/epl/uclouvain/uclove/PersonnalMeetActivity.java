@@ -40,7 +40,7 @@ public class PersonnalMeetActivity extends Activity {
         for (int i=0; i<mlist.size(); i++)
         {
             Meet histo = mlist.get(i);
-            meets.add(histo.getLogin1() + " vous propose un rendez-vous le " + new Date(histo.getDate()).toString() + "\n" + "Celui-ci aurait lieu à " + histo.getLieu()) ;
+            meets.add(histo.getLogin1() + " propose un rendez-vous le " + new Date(histo.getDate()).toString() + "\n" + "Celui-ci aurait lieu à " + histo.getLieu()) ;
         }
 
         meetsAdapteur = new ArrayAdapter<String>(PersonnalMeetActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, meets);
