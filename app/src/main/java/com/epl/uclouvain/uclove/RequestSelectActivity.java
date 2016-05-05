@@ -65,10 +65,11 @@ public class RequestSelectActivity extends Activity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Controler.chat_user = logins.get(position);
+                    Controler.requete_user = logins.get(position);
                     // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                     Intent i = new Intent(RequestSelectActivity.this, MyRequests.class);
                     startActivity(i);
+                    RequestSelectActivity.this.finish();
                 }
             });
 

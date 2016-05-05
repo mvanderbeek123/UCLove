@@ -11,12 +11,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 /**
  * Created by Steph on 2/05/2016.
  * Sur cette activité, une liste s'affiche si il y a des demandes d'amis, sinon une petite boite
  * de dialogue s'affiche pour lui dire qu'il 'y a pas de nouvelles demandes
  */
 public class MyRequests extends Activity {
+    AmisDAO aDAO;
     Button profile = null;
     Button yes = null;
     Button no = null;
@@ -27,6 +30,9 @@ public class MyRequests extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myrequest);
+
+        aDAO = new AmisDAO(this);
+
         profile = (Button) findViewById(R.id.viewProfile);
         profile.setOnClickListener(goToProfileListerner);
         yes = (Button) findViewById(R.id.yesbutton);
@@ -45,8 +51,14 @@ public class MyRequests extends Activity {
     private View.OnClickListener yesListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            aDAO.open();
+            aDAO.modif_requete_oui(Controler.requete_user,Controler.logged_user);
+            aDAO.close();
             Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
             toast.show();
+            MyRequests.this.finish();
+
+
         }
     };
     private View.OnClickListener noListener = new View.OnClickListener() {
@@ -58,8 +70,13 @@ public class MyRequests extends Activity {
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
+                    aDAO.open();
+                    aDAO.modif_requete_non(Controler.requete_user,Controler.logged_user);
+                    aDAO.close();
                     //On confirme que la demande est supprimée/bloquée
-                    showDialog(1);
+                    Toast toast=Toast.makeText(getApplicationContext(),"La demande a bien été annulée",Toast.LENGTH_SHORT);
+                    toast.show();
+                    MyRequests.this.finish();
                 }
             });
             alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
@@ -72,16 +89,4 @@ public class MyRequests extends Activity {
             theAlert.show();
         }
     };
-
-    @Override
-    public Dialog onCreateDialog(int id) {
-        Dialog myBox = null;
-        switch (id) {
-            case 1:
-                myBox = new Dialog(this);
-                myBox.setTitle(R.string.deleteRequest);
-                break;
-        }
-        return myBox;
-    }
 }
