@@ -72,6 +72,8 @@ public class FriendsActivity extends Activity
         listCheveux.add(str);
         str = res.getString(R.string.gris);
         listCheveux.add(str);
+        str = res.getString(R.string.chauve);
+        listCheveux.add(str);
         ArrayAdapter<String> adapter_cheveux = new ArrayAdapter<String>(FriendsActivity.this, android.R.layout.simple_spinner_item, listCheveux);
         adapter_cheveux.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cheveux.setAdapter(adapter_cheveux);
