@@ -207,8 +207,8 @@ public class DataBase extends SQLiteOpenHelper
     public static final String LOGIN="login";
     public static final String PHOTO_NOM="nom";
     public static final String PHOTO_PROFIL="profil";
-    public static final String PHOTO_TABLE_CREATE="CREATE TABLE " + PHOTO_TABLE_NAME + " ( " + LOGIN + " TEXT, " + PHOTO_NOM + " TEXT, " + PHOTO_PROFIL
-
+    public static final String PHOTO_TABLE_CREATE="CREATE TABLE " + PHOTO_TABLE_NAME + " ( " + LOGIN + " TEXT, " + PHOTO_NOM + " TEXT, " + PHOTO_PROFIL + " INTEGER);";
+    public static final String PHOTO_TABLE_DROP="DROP TABLE IF EXISTS " + PHOTO_TABLE_NAME + ";";
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
     {
         super(context, name, factory, version);
@@ -245,6 +245,7 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(YEUX_CREATE_TABLE);
         db.execSQL(PEAU_CREATE_TABLE);
         db.execSQL(ETUDE_CREATE_TABLE);
+        db.execSQL(PHOTO_TABLE_CREATE);
     }
 
     @Override
@@ -259,6 +260,7 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(YEUX_DROP);
         db.execSQL(PEAU_DROP);
         db.execSQL(ETUDE_DROP);
+        db.execSQL(PHOTO_TABLE_DROP);
         onCreate(db);
     }
 }
