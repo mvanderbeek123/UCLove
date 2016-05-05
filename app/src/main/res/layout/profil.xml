@@ -16,14 +16,24 @@
             android:background="@color/grey"
             android:layout_alignParentLeft="true"
             />
+        <Button
+            android:id="@+id/btnSelectPhoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sélectionner une photo"
+            android:layout_alignBaseline="@+id/button2"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_alignRight="@+id/nom2"
+            android:layout_alignEnd="@+id/nom2" />
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/photo"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@id/Profil2"
             android:contentDescription="@string/Nom"
-            android:src="@android:drawable/divider_horizontal_textfield"/>
+            android:src="@android:drawable/divider_horizontal_textfield"
+            android:layout_below="@+id/Profil2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <EditText
             android:layout_width="200dp"
