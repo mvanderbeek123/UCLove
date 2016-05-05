@@ -69,6 +69,7 @@ public class RequestSelectActivity extends Activity {
                     // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                     Intent i = new Intent(RequestSelectActivity.this, MyRequests.class);
                     startActivity(i);
+                    RequestSelectActivity.this.finish();
                 }
             });
 

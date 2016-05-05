@@ -56,6 +56,9 @@ public class MyRequests extends Activity {
             aDAO.close();
             Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
             toast.show();
+            MyRequests.this.finish();
+
+
         }
     };
     private View.OnClickListener noListener = new View.OnClickListener() {
@@ -71,7 +74,9 @@ public class MyRequests extends Activity {
                     aDAO.modif_requete_non(Controler.requete_user,Controler.logged_user);
                     aDAO.close();
                     //On confirme que la demande est supprimée/bloquée
-                    showDialog(1);
+                    Toast toast=Toast.makeText(getApplicationContext(),"La demande a bien été annulée",Toast.LENGTH_SHORT);
+                    toast.show();
+                    MyRequests.this.finish();
                 }
             });
             alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
@@ -84,16 +89,4 @@ public class MyRequests extends Activity {
             theAlert.show();
         }
     };
-
-    @Override
-    public Dialog onCreateDialog(int id) {
-        Dialog myBox = null;
-        switch (id) {
-            case 1:
-                myBox = new Dialog(this);
-                myBox.setTitle(R.string.deleteRequest);
-                break;
-        }
-        return myBox;
-    }
 }
