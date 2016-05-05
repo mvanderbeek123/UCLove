@@ -6,10 +6,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.app.AlertDialog;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Steph on 2/05/2016.
@@ -17,9 +21,6 @@ import android.widget.Toast;
  * demande d'amitié lui soit envoyée
  */
 
-//Il reste juste a modifier la base de donnée, mais j'ai besoin de la table client pour faire ca :)
-//Si vous voulez tester, mettez 0 ca retourne une boite de dialogue d'erreur
-//Pour tout le reste, ca demande une confirmation et puis envoie le formulaire !
 public class NewRequest extends Activity {
     private EditText pseudo=null;
     private Button toSend=null;
