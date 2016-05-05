@@ -156,18 +156,15 @@ public class FriendsActivity extends Activity
         adapter = new ArrayAdapter<String>(FriendsActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, ListLogin);
         liste.setAdapter(adapter);
 
-        liste.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        liste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                Amis ami = ListAmis.get(position);
-                String login_ami = ami.getLogin2();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Controler.friend_user = ListLogin.get(position);
+                // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                 Intent i = new Intent(FriendsActivity.this, Friends_display.class);
-                i.putExtra(NOM_INTENT, login_ami);
-                i.putExtra("login", login_global);
                 startActivity(i);
             }
         });
+
     }
 }
