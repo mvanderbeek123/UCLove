@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by Steph on 2/05/2016.
@@ -46,18 +47,8 @@ public class MyRequests extends Activity {
     private View.OnClickListener yesListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            alertDialogBuilder.setTitle("Request Message");
-            alertDialogBuilder.setMessage(R.string.newFriend);
-            alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    //Rajouter la requete dans la base de donnée
-                    Intent intent = new Intent(MyRequests.this, RequestSelectActivity.class);
-                    startActivity(intent);
-                }
-            });
-            AlertDialog theAlert = alertDialogBuilder.create();
-            theAlert.show();
+            Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
+            toast.show();
         }
     };
     private View.OnClickListener noListener = new View.OnClickListener() {
