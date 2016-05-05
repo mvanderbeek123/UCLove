@@ -49,6 +49,14 @@
     <string name="vert">Green</string>
     <string name="bi">Bisexual</string>
     <string name="chauve">Bald</string>
+    <string name="error_entree">No match found . Make sure that you haven\'t a typo</string>
+    <string name="clic_to_confirm">Click Yes to confirm</string>
+    <string name="ok_text">Ok</string>
+    <string name="noNewRequest">You don\'t have new request</string>
+    <string name="requestMessage">Request Message</string>
+    <string name="amisMessage">Friend Message</string>
+    <string name="blockRequestConfirmation">Do you want to block this demand?</string>
+    <string name="chatMessage">Chat Message</string>
     <string name="confirmation">Confirmation</string>
     <string name="deleteRequest">You deleted the information</string>
     <string name="newFriend">Nice, you have a new friend !</string>

@@ -79,7 +79,7 @@ public class Friends_display extends Activity
         String nom = profil.getPrenom() + " " + profil.getNom();
         nom_view = (TextView)findViewById(R.id.nomAmi);
         nom_view.setText(nom);
-        nom_view.setTextColor(0x112233);
+        //nom_view.setTextColor(0x112233);
 
         String genre = profil.getGenre();
         genre_view = (TextView)findViewById(R.id.genre);
@@ -103,7 +103,7 @@ public class Friends_display extends Activity
         localisation_view = (TextView)findViewById(R.id.localisation);
         localisation_view.setText(localisation);
 
-        gDAO = new GenreDAO(this);
+        /*gDAO = new GenreDAO(this);
         gDAO.open();
         ArrayList<Genre> listGenre = gDAO.selectionner(Controler.friend_user);
         gDAO.close();
@@ -122,7 +122,7 @@ public class Friends_display extends Activity
         {
             sexpref_view = (TextView)findViewById(R.id.sexpref);
             sexpref_view.setText("");
-        }
+        }*/
 
 
 

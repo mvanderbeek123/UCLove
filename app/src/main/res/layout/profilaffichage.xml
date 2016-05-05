@@ -6,12 +6,12 @@
     android:paddingRight="20dip">
 
     <TextView
-        android:id="@+id/titre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
-        android:text="Amis"
+        android:paddingTop="11dp"
+        android:text="Population"
         android:layout_centerHorizontal="true"
+        android:id="@+id/titrepop"
         />
     <ImageView
         android:src="@android:drawable/divider_horizontal_textfield"
@@ -19,37 +19,37 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
-        android:layout_below="@id/titre"
+        android:layout_below="@id/titrepop"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:paddingBottom="2dp"
         android:paddingTop="10dp"
         />
     <TextView
-        android:id="@+id/nomAmi"
+        android:id="@+id/nompop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom amis"
+        android:text="@string/Nom"
         android:paddingTop="20dip"
         android:layout_below="@id/separation"
         android:layout_alignParentLeft="true"
         />
     <Button
-        android:id="@+id/supprimer"
+        android:id="@+id/ajout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Supprimer"
+        android:text="@string/ajoutamis"
         android:paddingTop="20dip"
         android:layout_below="@+id/separation"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
     <ImageView
         android:id="@+id/photo_profil"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/supprimer"/>
+        android:layout_below="@id/ajout"/>
     <TextView
-        android:id="@+id/genre"
+        android:id="@+id/genrepop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="genre"
@@ -58,84 +58,65 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <TextView
-        android:id="@+id/cheveux"
+        android:id="@+id/cheveuxpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="cheveux"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/genrepop"
         android:paddingTop="15dip"
-        android:layout_below="@+id/genre"
-        android:layout_toRightOf="@+id/nomAmi"
-        android:layout_toEndOf="@+id/nomAmi" />
+        />
     <TextView
-        android:id="@+id/localisation"
+        android:id="@+id/localisationpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="localisation"
         android:paddingTop="15dip"
-        android:layout_below="@+id/cheveux"
+        android:layout_below="@id/cheveuxpop"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
     <TextView
-        android:id="@+id/age"
+        android:id="@+id/agepop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="age"
         android:paddingTop="10dip"
         android:layout_below="@+id/photo_profil"
-        android:layout_alignRight="@+id/yeux"
-        android:layout_alignEnd="@+id/yeux" />
+        android:layout_alignRight="@+id/yeuxpop"
+        android:layout_alignEnd="@+id/yeuxpop" />
     <TextView
-        android:id="@+id/yeux"
+        android:id="@+id/yeuxpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="yeux"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/age"
+        android:layout_below="@id/agepop"
         android:paddingTop="15dip"
         />
+    <TextView
 
-    <Button
-        android:id="@+id/contact"
+        android:id="@+id/sexprefpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrer en contact"
-        android:layout_below="@+id/localisation"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <CheckBox
-        android:id="@+id/favori"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Marquer comme favori"
-        android:layout_below="@id/contact"
-        android:layout_toRightOf="@id/contact"
-        android:layout_alignParentLeft="true"
-        android:checked="false"
+        android:text="orientation sexuelle"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/yeuxpop"
+        android:paddingTop="15dip"
         />
     <Button
-        android:id="@+id/rencontre"
+        android:id="@+id/suivant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recontrer"
-        android:layout_above="@+id/favori"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
+        android:text="@string/suivant"
+        android:layout_below="@+id/sexprefpop"
+        android:layout_alignRight="@+id/sexprefpop"
+        android:layout_alignEnd="@+id/sexprefpop" />
+    <Button
+        android:id="@+id/precedent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cheveux:"
-        android:id="@+id/textView7"
-        android:layout_above="@+id/localisation"
+        android:text="@string/precedent"
+        android:layout_below="@+id/localisationpop"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yeux:"
-        android:id="@+id/textView8"
-        android:layout_alignBottom="@+id/yeux"
-        android:layout_alignLeft="@+id/supprimer"
-        android:layout_alignStart="@+id/supprimer" />
 </RelativeLayout>
