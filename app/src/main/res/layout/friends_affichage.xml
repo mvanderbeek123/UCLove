@@ -29,7 +29,7 @@
         android:id="@+id/nomAmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom Ami"
+        android:text="Nom amis"
         android:paddingTop="20dip"
         android:layout_below="@id/separation"
         android:layout_alignParentLeft="true"

@@ -54,7 +54,6 @@
     <!--Pour chat-->
     <string name="message">Message</string>
     <string name="envoyer">Envoyer</string>
-    <string name="chatMessage">Message de chat</string>
 
     <string name="Profil">Profil</string>
     <string name="Preference">Préference</string>
@@ -72,6 +71,11 @@
     <string name="perimetre">Périmètre </string>
 
     <string name="info"> Veuillez remplir vos informations personnelles </string>
+    <string name="ajoutamis"> Ajouter </string>
+    <string name="suivant"> Suivant </string>
+    <string name="precedent"> Précedent </string>
+    <string name="valider"> valider </string>
+
     <string name="pseudoFriend">Pseudo de ton ami</string>
     <string name="lieuRdv">Lieu</string>
     <string name="bi">Bi</string>

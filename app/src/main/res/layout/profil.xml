@@ -7,104 +7,95 @@
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1">
-
-        <EditText
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/Profil"
-            android:id="@+id/Profil2"
-            android:background="@color/grey"
-            android:layout_alignParentLeft="true"
-            />
-        <Button
-            android:id="@+id/btnSelectPhoto"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sélectionner une photo"
-            android:layout_alignBaseline="@+id/button2"
-            android:layout_alignBottom="@+id/button2"
-            android:layout_alignRight="@+id/nom2"
-            android:layout_alignEnd="@+id/nom2" />
+            android:text="@string/Profil"
+            android:id="@+id/Profil"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorAccent"
+            android:layout_alignParentLeft="true"
+            android:textSize="30dp"
+            android:textColor="@color/blanc"
+            android:gravity="center"/>
         <ImageView
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/photo"
             android:contentDescription="@string/Nom"
             android:src="@android:drawable/divider_horizontal_textfield"
-            android:layout_below="@+id/Profil2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_below="@+id/Profil"
+            android:layout_centerHorizontal="true" />
 
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Nom"
             android:id="@+id/nom2"
-            android:layout_below="@id/photo"
             android:layout_alignParentLeft="true"
-            />
-        <Button
+            android:layout_below="@+id/photo" />
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:id="@+id/button2"
-            android:layout_alignTop="@id/photo"
-            android:layout_alignBottom="@id/nom2"/>
-        <EditText
+            android:layout_alignBottom="@id/nom2"
+            android:layout_below="@+id/photo" />
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Prénom"
             android:id="@+id/nom3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom2"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button3"
             android:layout_alignBottom="@id/nom3"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Date_de_naissance"
             android:id="@+id/nom4"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom3"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button4"
             android:layout_alignBottom="@id/nom4"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Genre"
             android:id="@+id/nom5"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom4"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button5"
             android:layout_alignBottom="@id/nom5"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Etude"
             android:id="@+id/nom6"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom5"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button6"
@@ -118,15 +109,15 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button6"
             android:layout_alignTop="@id/button6"/>
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Localisation"
             android:id="@+id/nom7"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom6"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button7"
@@ -140,15 +131,15 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button7"
             android:layout_alignTop="@id/button7"/>
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Numéro"
             android:id="@+id/nom8"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom7"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button8"
@@ -162,15 +153,15 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button8"
             android:layout_alignTop="@id/button8"/>
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Cheveux"
             android:id="@+id/nom9"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom8"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button9"
@@ -184,21 +175,22 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button9"
             android:layout_alignTop="@id/button9"/>
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/yeux"
             android:id="@+id/nom10"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom9"/>
-        <Button
+        <TextView
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button10"
             android:layout_alignBottom="@id/nom10"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/button9" />
         <ToggleButton
             android:layout_width="60dp"
             android:layout_height="wrap_content"
@@ -206,15 +198,15 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button10"
             android:layout_alignTop="@id/button10"/>
-        <EditText
+        <TextView
             android:layout_width="200dp"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:text="@string/Peau"
             android:id="@+id/nom11"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom10"/>
-        <Button
+        <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button11"
@@ -228,123 +220,18 @@
             android:layout_alignParentEnd="true"
             android:layout_alignBottom="@id/button11"
             android:layout_alignTop="@id/button11"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/valider"
+            android:layout_below="@+id/nom11"
+            android:background="@drawable/button"
+            android:layout_alignRight="@+id/photo"
+            android:layout_alignEnd="@+id/photo"
+            android:layout_alignLeft="@+id/photo"
+            android:layout_alignStart="@+id/photo" />
 
-        <!--<EditText
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/Preference"
-            android:id="@+id/Preference2"
-            android:layout_below="@id/nom11"
-            android:background="@color/grey"
-            android:layout_alignParentLeft="true"
-            />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Genre"
-            android:id="@+id/nom12"
-            android:layout_alignTop="@id/Preference2"
-            android:layout_alignParentLeft="true"
-            />
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:id="@+id/button12"
-            android:layout_alignTop="@id/nom12"
-            android:layout_alignBottom="@id/nom12"/>
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/prefAge"
-            android:id="@+id/nom13"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom12"/>
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button13"
-            android:layout_alignBottom="@id/nom13"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Cheveux"
-            android:id="@+id/nom14"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom13"/>
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button14"
-            android:layout_alignBottom="@id/nom14"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/yeux"
-            android:id="@+id/nom15"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom14"/>
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button15"
-            android:layout_alignBottom="@id/nom15"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Peau"
-            android:id="@+id/nom16"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom15"/>
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button16"
-            android:layout_alignBottom="@id/nom16"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Etude"
-            android:id="@+id/nom17"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom16"/>
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button17"
-            android:layout_alignBottom="@id/nom17"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:text="@string/perimetre"
-            android:id="@+id/nom18"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom17"/>
-        <Button
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button18"
-            android:layout_alignBottom="@id/nom18"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-           -->
     </RelativeLayout>
 
 </ScrollView>
