@@ -106,4 +106,20 @@ public class AmisDAO extends DAOBase
         return liste;
     }
 
+    public void modif_requete_oui(String login1, String login2)
+    {
+        ContentValues value = new ContentValues();
+        value.put(ISAMI, 1);
+        mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
+    }
+
+    public void modif_requete_non(String login1, String login2)
+    {
+        ContentValues value = new ContentValues();
+        value.put(ISAMI, 2);
+        mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
+    }
+
+
+
 }

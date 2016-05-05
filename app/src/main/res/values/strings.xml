@@ -37,7 +37,14 @@
     <string name="non">Non</string>
     <string name="oui">Oui</string>
     <string name="blockRequestConfirmation">Es tu sûre de vouloir bloquer cette demande ?</string>
-    <string name="confirmation">Confirmationne</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="error_entree">Pas de correspondance.</string>
+    <string name="clic_to_confirm">Clique sur oui pour confirmer</string>
+    <string name="envoiNewRequest">Votre requête à bien été envoyée</string>
+    <string name="ok_text">Ok</string>
+    <string name="noNewRequest">Vous n\'avez pas de nouvelle requête</string>
+    <string name="requestMessage">Message de requête</string>
+    <string name="persoRequest">Tu ne peux pas être amis avec toi même </string>
 
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>
@@ -67,5 +74,7 @@
     <string name="precedent"> Précedent </string>
     <string name="valider"> valider </string>
 
+    <string name="pseudoFriend">Pseudo de ton ami</string>
+    <string name="lieuRdv">Lieu</string>
 
 </resources>

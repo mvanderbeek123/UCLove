@@ -93,15 +93,7 @@
         android:layout_below="@id/age"
         android:paddingTop="15dip"
         />
-    <TextView
-        android:id="@+id/sexpref"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="orientation sexuelle"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/yeux"
-        android:paddingTop="15dip"
-        />
+
     <Button
         android:id="@+id/contact"
         android:layout_width="wrap_content"
@@ -125,15 +117,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recontrer"
-        android:layout_below="@id/sexpref"
+        android:layout_above="@+id/favori"
         android:layout_alignParentRight="true"
-        />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/supprimer"
-        android:layout_toStartOf="@+id/rencontre"
-        android:layout_above="@+id/age"
-        android:layout_toLeftOf="@+id/rencontre" />
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

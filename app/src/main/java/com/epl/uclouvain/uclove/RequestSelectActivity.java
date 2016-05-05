@@ -37,10 +37,10 @@ public class RequestSelectActivity extends Activity {
 
         if (alist.size() == 0) {
             setContentView(R.layout.blank);
-            alertDialogBuilder.setTitle("Request Message");
-            alertDialogBuilder.setMessage("You don't have new request");
+            alertDialogBuilder.setTitle(R.string.requestMessage);
+            alertDialogBuilder.setMessage(R.string.noNewRequest);
             alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     //Rajouter la requete dans la base de donnée
                     RequestSelectActivity.this.finish();
@@ -65,10 +65,11 @@ public class RequestSelectActivity extends Activity {
             listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Controler.chat_user = logins.get(position);
+                    Controler.requete_user = logins.get(position);
                     // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                     Intent i = new Intent(RequestSelectActivity.this, MyRequests.class);
                     startActivity(i);
+                    RequestSelectActivity.this.finish();
                 }
             });
 

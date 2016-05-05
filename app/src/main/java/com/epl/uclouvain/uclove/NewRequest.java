@@ -6,10 +6,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.app.AlertDialog;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Steph on 2/05/2016.
@@ -17,14 +21,13 @@ import android.widget.Toast;
  * demande d'amitié lui soit envoyée
  */
 
-//Il reste juste a modifier la base de donnée, mais j'ai besoin de la table client pour faire ca :)
-//Si vous voulez tester, mettez 0 ca retourne une boite de dialogue d'erreur
-//Pour tout le reste, ca demande une confirmation et puis envoie le formulaire !
 public class NewRequest extends Activity {
     private EditText pseudo=null;
     private Button toSend=null;
-    private final static String NULL_VALUE="0";
     final Context context = this;
+    ProfilDAO list;
+    AmisDAO adao;
+    ArrayList listamis;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -33,6 +36,9 @@ public class NewRequest extends Activity {
         pseudo=(EditText) findViewById(R.id.edit_pseudonyme);
         toSend=(Button)findViewById(R.id.send);
         toSend.setOnClickListener(toSendListener);
+        list=new ProfilDAO(this);
+        adao = new AmisDAO(this);
+        listamis=new ArrayList<String>();
     }
     private View.OnClickListener toSendListener = new View.OnClickListener() {
         @Override
@@ -40,24 +46,51 @@ public class NewRequest extends Activity {
         {
             String text=pseudo.getText().toString();
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-            if(text.equals(NULL_VALUE))
+            list.open();
+            Boolean isExist= list.existant(pseudo.getText().toString());
+            list.close();
+            adao.open();
+            listamis=adao.selectionner_listAmis(Controler.logged_user);
+            adao.close();
+            boolean checked=listamis.contains(pseudo.getText().toString());
+            if(isExist==false)
             {
+                //si le loggin n'existe pas
                 showDialog(0);
+            }
+            else if(pseudo.getText().toString().compareTo(Controler.logged_user)==0)
+            {
+                //Si l'utilisateur essaye de s'ajouter lui meme
+                showDialog(1);
+            }
+            else if(checked==true)
+            {
+                //Dans ce cas-ci, soit la demande est deja envoyée, donc l'utilisateur ne voit pas d'erreur
+                //il a simplement une nouvelle requete mais ne l'as pas encore consultée
+                //L'autre possibilité c'est que cet utilisateur est déjà bloqué et il n'a pas a le savoir.
+                Toast toast=Toast.makeText(getApplicationContext(),R.string.envoiNewRequest,Toast.LENGTH_SHORT);
+                toast.show();
+                NewRequest.this.finish();
             }
             else
             {
-                alertDialogBuilder.setTitle("Confirmation");
-                alertDialogBuilder.setMessage("Click Yes to confirm");
+                alertDialogBuilder.setTitle(R.string.confirmation);
+                alertDialogBuilder.setMessage(R.string.clic_to_confirm);
                 alertDialogBuilder.setCancelable(false);
-                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Rajouter la requete dans la base de donnée
-                        Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
+                        Amis a= new Amis(Controler.logged_user,pseudo.getText().toString(),0,0);
+                        adao.open();
+                        adao.ajouter(a);
+                        adao.close();
+                        Toast toast=Toast.makeText(getApplicationContext(),R.string.envoiNewRequest,Toast.LENGTH_SHORT);
                         toast.show();
                         NewRequest.this.finish();
+
                     }
                 });
-                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //On retourne juste en arrièr en gardant le texte, car si c'est une long
                         //pseudo, il ne devra pas le retapper.
@@ -76,7 +109,11 @@ public class NewRequest extends Activity {
         switch (id) {
             case 0:
                 myBox = new Dialog(this);
-                myBox.setTitle("No match found . Make sure that you haven't a typo");
+                myBox.setTitle(R.string.error_entree);
+                break;
+            case 1:
+                myBox = new Dialog(this);
+                myBox.setTitle(R.string.persoRequest);
                 break;
         }
         return myBox;

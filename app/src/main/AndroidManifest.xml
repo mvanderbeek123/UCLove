@@ -86,7 +86,7 @@
         </activity>
 
         <activity
-            android:name=".Disponibility"
+            android:name=".DisponibilityActivity"
             android:label="Disponibility"
             android:theme="@style/AppTheme">
         </activity>
@@ -98,8 +98,14 @@
         </activity>
 
         <activity
-            android:name=".Rdv"
+            android:name=".RdvActivity"
             android:label="Rdv"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".PersonnalMeetActivity"
+            android:label="PersonnalMeetActivity"
             android:theme="@style/AppTheme">
         </activity>
 

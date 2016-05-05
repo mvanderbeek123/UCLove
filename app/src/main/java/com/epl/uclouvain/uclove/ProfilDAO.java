@@ -79,10 +79,10 @@ public class ProfilDAO extends DAOBase {
 
     }
 
-    public Profil selectionner(String login2){
-        Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where " + CLIENT_LOGIN + " = ?", new String[]{login2});
+    public Profil selectionner(String login){
+        Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where " + CLIENT_LOGIN + " = ?", new String[]{login});
         c.moveToFirst();
-        String login = c.getString(0);
+        String log = c.getString(0);
         String mdp = c.getString(1);
         String name  = c.getString(2);
         String lastname= c.getString(3);
@@ -95,7 +95,7 @@ public class ProfilDAO extends DAOBase {
         String cheveux=c.getString(9);
         String peau=c.getString(10);
         String yeux=c.getString(11);
-        Profil a = new Profil(login,mdp,name,lastname,date1,genre,etude,place,cheveux,peau,yeux);
+        Profil a = new Profil(log,mdp,name,lastname, date1,genre,etude,place,cheveux,peau,yeux);
         c.close();
         return a;
     }

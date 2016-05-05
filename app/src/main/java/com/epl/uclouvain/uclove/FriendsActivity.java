@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.ArrayAdapter;
@@ -37,6 +39,7 @@ public class FriendsActivity extends Activity
     Spinner cheveux;
     Spinner yeux;
     Spinner sexe;
+    ProfilDAO pDAO;
 
     public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.LOGIN2";
     @Override
@@ -108,26 +111,52 @@ public class FriendsActivity extends Activity
         sexe.setAdapter(adapter_sexe);
 
 
-
         aDAO = new AmisDAO(this);
         aDAO.open();
+
+        pDAO = new ProfilDAO(FriendsActivity.this);
+        pDAO.open();
+
+        ArrayList<String> list_login_cheveux = null;
+        ArrayList<String> list_login_yeux = null;
+        ArrayList<String> list_login_sexe = null;
+
         String selection_cheveux = String.valueOf(cheveux.getSelectedItem());
-        if(selection_cheveux.equals("Pas de filtres"))
+        if(selection_cheveux.equals(res.getString(R.string.noFilters))) {}
+        else
         {
-            selection_cheveux = null ;
+            list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
         }
         String selection_yeux = String.valueOf(yeux.getSelectedItem());
-        if(selection_yeux.equals("Pas de filtres"))
+        if(selection_yeux.equals(res.getString(R.string.noFilters))) {}
+        else
         {
-            selection_yeux = null;
+            list_login_yeux = pDAO.filtreYeux(selection_yeux);
         }
         String selection_sexe = String.valueOf(sexe.getSelectedItem());
-        if(selection_sexe.equals("Pas de filtres"))
+        if(selection_sexe.equals(res.getString(R.string.noFilters))) {}
+        else
         {
-            selection_sexe = null;
+            list_login_sexe = pDAO.filtreGenre(selection_sexe);
+        }
+        pDAO.close();
+
+        if(selection_cheveux.equals(res.getString(R.string.noFilters)) && selection_yeux.equals(res.getString(R.string.noFilters)) && selection_sexe.equals(res.getString(R.string.noFilters)))
+        {
+            ListAmis = aDAO.selectionner_listAmis(login_global);
+        }
+        else
+        {
+            for (String login : list_login_sexe)
+            {
+                if (list_login_cheveux.contains(login) && list_login_yeux.contains(login))
+                {
+                    Amis a = aDAO.selectionner_ami(login_global, login);
+                    ListAmis.add(a);
+                }
+            }
         }
 
-        ListAmis = aDAO.selectionner_listAmis(login_global);
         aDAO.close();
 
         if(ListAmis == null)
@@ -156,18 +185,15 @@ public class FriendsActivity extends Activity
         adapter = new ArrayAdapter<String>(FriendsActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, ListLogin);
         liste.setAdapter(adapter);
 
-        liste.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        liste.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                Amis ami = ListAmis.get(position);
-                String login_ami = ami.getLogin2();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Controler.friend_user = ListLogin.get(position);
+                // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                 Intent i = new Intent(FriendsActivity.this, Friends_display.class);
-                i.putExtra(NOM_INTENT, login_ami);
-                i.putExtra("login", login_global);
                 startActivity(i);
             }
         });
+
     }
 }
