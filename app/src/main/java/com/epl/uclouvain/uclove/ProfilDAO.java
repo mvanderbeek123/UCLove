@@ -68,7 +68,7 @@ public class ProfilDAO extends DAOBase {
 
     }
     public Profil selectionner(String login2){
-        Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where" + CLIENT_LOGIN + "= ?", new String[]{login2});
+        Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where " + CLIENT_LOGIN + " = ?", new String[]{login2});
         String login = c.getString(1);
         String mdp = c.getString(2);
         String name  = c.getString(3);
