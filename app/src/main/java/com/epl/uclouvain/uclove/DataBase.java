@@ -105,24 +105,28 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String  AMIS_TABLE_EX1 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
-            ") VALUES ( \"Del\", \"Jul\", 1);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
+            ") VALUES ( \"Del\", \"Jul\", 1, 0);";
     public static final String  AMIS_TABLE_EX2 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
-            ") VALUES ( \"Del\", \"MM\", 1);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
+            ") VALUES ( \"Del\", \"MM\", 1 ,0);";
     public static final String  AMIS_TABLE_EX3 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
-            ") VALUES ( \"Step\", \"Jul\", 1);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
+            ") VALUES ( \"Step\", \"Jul\", 1, 1);";
     public static final String  AMIS_TABLE_EX4 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
-            ") VALUES ( \"MM\", \"Jul\", 0);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
+            ") VALUES ( \"MM\", \"Jul\", 0 ,0);";
     public static final String  AMIS_TABLE_EX5 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI +
-            ") VALUES ( \"MM\", \"Step\", 1);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
+            ") VALUES ( \"MM\", \"Step\", 1, 1);";
+    public static final String  AMIS_TABLE_EX6 = " INSERT INTO " + AMIS_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
+            ") VALUES ( \"Noe\", \"Step\", 0, 0);";
 
     // Table chatmessages
     public static final String CHAT_TABLE_NAME = "chatmsg";
@@ -169,6 +173,7 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(AMIS_TABLE_EX3);
         db.execSQL(AMIS_TABLE_EX4);
         db.execSQL(AMIS_TABLE_EX5);
+        db.execSQL(AMIS_TABLE_EX6);
         db.execSQL(CLIENT_CREATE_TABLE);
         db.execSQL(CHAT_TABLE_CREATE);
         db.execSQL(MEET_TABLE_CREATE);

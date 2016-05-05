@@ -3,10 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
+
     <LinearLayout
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/info"
+            android:background="@color/grey"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,49 +84,59 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:startYear="1926"
-            android:endYear="2016" />
+            android:endYear="2016"
+            android:calendarViewShown="false"/>
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="genre" />
-        <!--IL FAUT RAJOUTTER LES RADIO BUTTONS !!!!!! -->
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner"
+            android:layout_gravity="center_horizontal" />
+
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Localisation" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Localisation" />
         <EditText
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/localisation"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:hint="Ville"
-        android:inputType="text"
-        android:gravity="left"
-        />
-        <TextView android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:text="Etude" />
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/localisation"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Ville"
+            android:inputType="text"
+            android:gravity="left"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Etude" />
         <EditText
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/etude"
-        android:layout_width="254dp"
-        android:layout_height="wrap_content"
-        android:hint="Etude"
-        android:inputType="text"
-        android:gravity="left"
-        />
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/etude"
+            android:layout_width="254dp"
+            android:layout_height="wrap_content"
+            android:hint="Etude"
+            android:inputType="text"
+            android:gravity="left" />
+
         <Button
-        android:layout_gravity="center_horizontal"
-        android:id="@+id/comptecreation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:text="créer compte"
-        android:background="@drawable/button"
-        style="@style/ButtonText"/>
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/comptecreation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="créer compte"
+            android:background="@drawable/button"
+            style="@style/ButtonText"/>
+
     </LinearLayout>
 </ScrollView>

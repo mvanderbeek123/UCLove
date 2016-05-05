@@ -52,7 +52,13 @@ public class AmisDAO extends DAOBase
 
     public Amis selectionner_ami(String login1, String login2)
     {
-        Cursor c = mDb.rawQuery("select " + LOGIN1 + ", " + LOGIN2 + ", " + ISFAVORI + " from " + TABLE_NAME + " where login1 = ? AND login2 = ? ", new String[]{login1, login2});
+        String requete = "select login1, login2, isFavori " +
+                " from " + TABLE_NAME +
+                " where (login1 = \"" + login1 + "\" and login2 = \"" + login2 + "\")"+
+                " or (login1 = \"" + login2 + "\" and login2 = \"" + login1 + "\")"+
+                " and (isAmi = 1);" ;
+        Cursor c = mDb.rawQuery(requete, new String[]{});
+        c.moveToFirst();
         int isFavori = c.getInt(2);
         Amis a = new Amis(login1, login2, 1, isFavori);
         c.close();
@@ -66,7 +72,6 @@ public class AmisDAO extends DAOBase
                 " where (login1 = \"" + login_user + "\" or login2 = \"" + login_user + "\")"+
                 " and   (isAmi = 1);" ;
         Cursor c = mDb.rawQuery(requete, new String[]{});
-
         ArrayList<Amis> liste = new ArrayList<Amis>();
         while (c.moveToNext())
         {
@@ -79,13 +84,13 @@ public class AmisDAO extends DAOBase
         c.close();
         return liste;
     }
-    public ArrayList<Amis> selectionner_Ami_Msg(String login_user)
-    {
-        String requete = "select login1, login2 " +
-                " from " + DataBase.AMIS_TABLE_NAME +
-                " where (login1 = \"" + login_user + "\" or login2 = \"" + login_user + "\")"+
-                " and   (isAmi = 1);" ;
 
+    public ArrayList<Amis> selectionner_listRequetes(String login_user)
+    {
+        String requete = "select login1, login2, isFavori " +
+                " from " + DataBase.AMIS_TABLE_NAME +
+                " where (login2 = \"" + login_user + "\")"+
+                " and   (isAmi = 0);" ;
         Cursor c = mDb.rawQuery(requete, new String[]{});
 
         ArrayList<Amis> liste = new ArrayList<Amis>();
@@ -93,12 +98,12 @@ public class AmisDAO extends DAOBase
         {
             String login1 = c.getString(0); ;
             String login2 = c.getString(1);
-
-            Amis a = new Amis(login1 , login2, 1,0);
+            int isFavori = c.getInt(2);
+            Amis a = new Amis(login1 , login2, 0, isFavori);
             liste.add(a);
         }
         c.close();
         return liste;
-
     }
+
 }

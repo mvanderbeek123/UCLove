@@ -26,14 +26,14 @@ public class ChatSelectActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.friend_select);
+        setContentView(R.layout.friends);
 
         listView = (ListView) findViewById(R.id.listAmis);
         logins = new ArrayList<String>();
 
         adao = new AmisDAO(this);
         adao.open();
-        ArrayList<Amis> alist = adao.selectionner_Ami_Msg(Controler.logged_user);
+        ArrayList<Amis> alist = adao.selectionner_listAmis(Controler.logged_user);
         adao.close();
 
 
