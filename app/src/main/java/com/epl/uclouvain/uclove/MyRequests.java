@@ -16,11 +16,11 @@ import android.widget.Button;
  * de dialogue s'affiche pour lui dire qu'il 'y a pas de nouvelles demandes
  */
 public class MyRequests extends Activity {
-    private final static int nberOfRequest = 1;
     Button profile = null;
     Button yes = null;
     Button no = null;
     final Context context = this;
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
 
 
@@ -46,8 +46,18 @@ public class MyRequests extends Activity {
     private View.OnClickListener yesListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            showDialog(0);
-            MyRequests.this.finish();
+            alertDialogBuilder.setTitle("Request Message");
+            alertDialogBuilder.setMessage(R.string.newFriend);
+            alertDialogBuilder.setCancelable(false);
+            alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    //Rajouter la requete dans la base de donnée
+                    Intent intent = new Intent(MyRequests.this, RequestSelectActivity.class);
+                    startActivity(intent);
+                }
+            });
+            AlertDialog theAlert = alertDialogBuilder.create();
+            theAlert.show();
         }
     };
     private View.OnClickListener noListener = new View.OnClickListener() {
@@ -78,10 +88,6 @@ public class MyRequests extends Activity {
     public Dialog onCreateDialog(int id) {
         Dialog myBox = null;
         switch (id) {
-            case 0:
-                myBox = new Dialog(this);
-                myBox.setTitle(R.string.newFriend);
-                break;
             case 1:
                 myBox = new Dialog(this);
                 myBox.setTitle(R.string.deleteRequest);
