@@ -51,7 +51,6 @@ public class Friends_display extends Activity
     Button rencontre = null;
 
     Profil profil = null;
-
     AmisDAO aDAO = null;
 
     @Override
