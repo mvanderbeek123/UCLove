@@ -77,7 +77,7 @@ public class InscriptionActivity extends Activity {
                     Profil profil = new Profil(inlogin, inmdp, inprénom, innom, datedenaissance, genre, inetude, inloc);
                     profildao.ajouter(profil);
                     profildao.close();
-                    Intent intent = new Intent(InscriptionActivity.this, ProfilActivity.class);
+                    Intent intent = new Intent(InscriptionActivity.this, Menu.class);
                     startActivity(intent);
                 }
                 else
