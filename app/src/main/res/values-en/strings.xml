@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Cheveux">Hair color</string>
+    <string name="Date_de_naissance">Birth date</string>
+    <string name="Etude">Studies</string>
+    <string name="Genre">Sex</string>
+    <string name="Localisation">City</string>
+    <string name="Nom">Name</string>
+    <string name="Numéro">Phone number</string>
+    <string name="Peau">Skin color</string>
+    <string name="Preference">Preference</string>
+    <string name="Profil">Profile</string>
+    <string name="Prénom">Name</string>
+    <string name="action_settings">Settings</string>
+    <string name="amis">Friends</string>
+    <string name="contact">Get in touch</string>
+    <string name="details"></string>
+    <string name="display"></string>
+    <string name="editText">Your text</string>
+    <string name="envoyer">Send</string>
+    <string name="favori1">Mark as favorite</string>
+    <string name="favori2">Delete from favorites</string>
+    <string name="listeAmis">List of friends</string>
+    <string name="mes_disponibilit_s">My disponibility</string>
+    <string name="message">Message</string>
+    <string name="myRequests">My requests</string>
+    <string name="newRequest">New request</string>
+    <string name="noAmis">You don\'t have any friends</string>
+    <string name="perimetre">Perimeter</string>
+    <string name="prefAge">Age range</string>
+    <string name="pseudo">Pseudo :</string>
+    <string name="pseudoOfFriend">The pseudo of your new friend</string>
+    <string name="rencontre">Meet</string>
+    <string name="rendez_vous">Appointment</string>
+    <string name="send">SEND</string>
+    <string name="supprimer">Delete</string>
+    <string name="yeux">Eye color</string>
+</resources>

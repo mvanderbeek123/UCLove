@@ -9,16 +9,16 @@ import android.content.Context;
  */
 public class MeetDAO extends DAOBase {
 
-    /*public static final String TABLE_NAME = "Meet";
+    public static final String TABLE_NAME = "Meet";
     public static final String LOGIN = "login"; //voir si on travaille par login ou par id
     public static final String DATE = "date";
     public static final String HOUR = "hour";
 
-    */public MeetDAO(Context pContext)
+    public MeetDAO(Context pContext)
     {
         super(pContext);
     }
-    /*
+
     public void ajouter(Meet m)
     {
         ContentValues value = new ContentValues();
@@ -28,7 +28,7 @@ public class MeetDAO extends DAOBase {
         mDb.insert(MeetDAO.TABLE_NAME, null, value);
     }
 
-    //public void ajouter_dispo{}*/
+    //public void ajouter_dispo{}
 
 
 }

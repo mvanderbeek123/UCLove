@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">UCLove</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name" translatable="false">UCLove</string>
+    <string name="action_settings">Réglages</string>
     <string name="editText">votre Texte</string>
-    <string name="button">ok</string>
-    <string name="display">UCLove</string>
+    <string name="button" translatable="false">ok</string>
+    <string name="display" translatable="false">UCLove</string>
 
     <string name="listeAmis">Liste d\'amis</string>
     <string name="noAmis">Vous n\'avez pas encore d\'amis.</string>
@@ -11,16 +11,15 @@
     <string name="contact">Entrer en contact</string>
     <string name="favori1">Marquer comme favori</string>
     <string name="favori2">Retirer des favoris</string>
-    <string name="details">Afficher plus de détails</string>
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
 
     <!--Pour Request-->
-    <string name="myRequests">My requests</string>
-    <string name="newRequest">New request</string>
+    <string name="myRequests">Mes requêtes</string>
+    <string name="newRequest">Nouvelle requête</string>
     <string name="pseudo">Pseudonyme :</string>
-    <string name="pseudoOfFriend">The pseudo of your new friend</string>
-    <string name="send">SEND</string>
+    <string name="pseudoOfFriend">Le pseudo de ton nouvel ami</string>
+    <string name="send">ENVOYER</string>
 
     <!--ajouté pour compolilé mais c'est pas ma partie steph-->
     <string name="mes_disponibilit_s">Mes disponibilités</string>
