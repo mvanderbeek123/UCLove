@@ -66,6 +66,5 @@
     <string name="preferences">Preferences</string>
     <string name="profil">Profil</string>
     <string name="requete">Requests</string>
-    <string name="blockRequestConfirmation">Are you sure you want to block this request ?</string>
     <string name="chat">Chat</string>
 </resources>

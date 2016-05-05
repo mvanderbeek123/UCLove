@@ -81,9 +81,7 @@
     <string name="people">Personnes</string>
     <string name="preferences">Préférences</string>
     <string name="profil">Profil</string>
-    <string name="amis">Amis</string>
     <string name="requete">Requêtes</string>
     <string name="chat">Conversation</string>
-    <string name="rencontre">Rencontre</string>
 
 </resources>
