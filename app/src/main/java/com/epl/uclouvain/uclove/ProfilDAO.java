@@ -99,4 +99,20 @@ public class ProfilDAO extends DAOBase {
         }
         else {return false;}
     }
+    public boolean existant(String login)
+    {
+        Cursor c=mDb.rawQuery("SELECT COUNT(*) from " + CLIENT_TABLE_NAME +
+                " where " + CLIENT_LOGIN + " = ?", new String[]{login});
+        c.moveToFirst();
+        int i = c.getInt(0);
+        c.close();
+        if (i==1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
