@@ -89,11 +89,11 @@ public class ProfilDAO extends DAOBase {
         Date date1=Date.valueOf(date);
         String genre=c.getString(5);
         String etude=c.getString(6);
-        String place=c.getString(9);
-        int num=c.getInt(10);
-        String cheveux=c.getString(11);
-        String peau=c.getString(12);
-        String yeux=c.getString(13);
+        String place=c.getString(7);
+        int num=c.getInt(8);
+        String cheveux=c.getString(9);
+        String peau=c.getString(10);
+        String yeux=c.getString(11);
         Profil a = new Profil(login,mdp,name,lastname,date1,genre,etude,place,cheveux,peau,yeux);
         c.close();
         return a;
@@ -170,4 +170,5 @@ public class ProfilDAO extends DAOBase {
         c.close();
         return liste;
     }
+
 }
