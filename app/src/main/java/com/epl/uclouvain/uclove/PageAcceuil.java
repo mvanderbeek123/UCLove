@@ -14,7 +14,7 @@ import android.widget.Toast;
  * Created by marie-marie on 21/04/16.
  */
 public class PageAcceuil extends Activity implements View.OnTouchListener{
-
+    boolean bool;
     private ProfilDAO profildao;
     EditText login;
     EditText mdp;
@@ -33,18 +33,22 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
         profildao=new ProfilDAO(this);
         String log=login.getText().toString();
         String motdepasse=mdp.getText().toString();
-
-        //boolean bool = profildao.identifier(log,motdepasse);
-        //if (bool==true) {
-            Controler.logged_user = log;
+        profildao.open();
+        bool = profildao.identifier(log,motdepasse);
+        if (bool==true) {
+            //Controler.logged_user = log;
+            profildao.close();
             Intent intent = new Intent(PageAcceuil.this, Menu.class);
             intent.putExtra("login",log);
             startActivity(intent);
             return true;
-       // }
-        //else {
-         //   Toast toast=Toast.makeText(getApplicationContext(),"Vous n'êtes actuellement pas encore inscrit. Enregistrez-vous et venez nous rejoindre!",Toast.LENGTH_LONG);
-           // return true;
-        //}
+        }
+        else {
+            profildao.close();
+            Toast toast=Toast.makeText(getApplicationContext(),"Vous n'êtes actuellement pas encore inscrit. Enregistrez-vous et venez nous rejoindre!",Toast.LENGTH_LONG);
+            toast.show();
+            return true;
+        }
+
     }
 }

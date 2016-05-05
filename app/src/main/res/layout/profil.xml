@@ -13,7 +13,6 @@
             android:layout_height="match_parent"
             android:text="@string/Profil"
             android:id="@+id/Profil2"
-            android:layout_above="@+id/photo"
             android:background="@color/grey"
             android:layout_alignParentLeft="true"
             />
@@ -22,7 +21,7 @@
             android:layout_height="200dp"
             android:id="@+id/photo"
             android:layout_centerHorizontal="true"
-            android:layout_above="@+id/nom2"
+            android:layout_below="@id/Profil2"
             android:contentDescription="@string/Nom"
             android:src="@android:drawable/divider_horizontal_textfield"/>
 
@@ -31,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="@string/Nom"
             android:id="@+id/nom2"
-            android:layout_alignTop="@id/photo"
+            android:layout_below="@id/photo"
             android:layout_alignParentLeft="true"
             />
         <Button
@@ -220,7 +219,7 @@
             android:layout_alignBottom="@id/button11"
             android:layout_alignTop="@id/button11"/>
 
-        <EditText
+        <!--<EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="@string/Preference"
@@ -335,6 +334,7 @@
             android:layout_alignBottom="@id/nom18"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
+           -->
     </RelativeLayout>
 
 </ScrollView>
