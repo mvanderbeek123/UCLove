@@ -24,6 +24,7 @@
     <string name="bleu">Bleu</string>
     <string name="masculin">Masculin</string>
     <string name="féminin">Féminin</string>
+    <string name="chauve">Chauve</string>
 
     <!--Pour Request-->
     <string name="myRequests">Mes requêtes</string>

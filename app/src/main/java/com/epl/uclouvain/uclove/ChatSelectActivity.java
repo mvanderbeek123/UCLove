@@ -26,7 +26,7 @@ public class ChatSelectActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.friends);
+        setContentView(R.layout.friends_select);
         listView = (ListView) findViewById(R.id.listAmis);
         logins = new ArrayList<String>();
 

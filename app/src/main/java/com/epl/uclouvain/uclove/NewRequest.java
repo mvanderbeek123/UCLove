@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.app.AlertDialog;
+import android.widget.Toast;
 
 /**
  * Created by Steph on 2/05/2016.
@@ -51,6 +52,8 @@ public class NewRequest extends Activity {
                 alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Rajouter la requete dans la base de donnée
+                        Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
+                        toast.show();
                         NewRequest.this.finish();
                     }
                 });
