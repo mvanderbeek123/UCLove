@@ -38,7 +38,7 @@ public class RequestSelectActivity extends Activity {
         if (alist.size() == 0) {
             setContentView(R.layout.blank);
             alertDialogBuilder.setTitle(R.string.requestMessage);
-            alertDialogBuilder.setMessage(R.string.noAmis);
+            alertDialogBuilder.setMessage(R.string.noNewRequest);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
