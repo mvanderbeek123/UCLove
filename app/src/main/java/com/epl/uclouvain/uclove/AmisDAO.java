@@ -58,6 +58,7 @@ public class AmisDAO extends DAOBase
                 " or (login1 = \"" + login2 + "\" and login2 = \"" + login1 + "\")"+
                 " and (isAmi = 1);" ;
         Cursor c = mDb.rawQuery(requete, new String[]{});
+        c.moveToFirst();
         int isFavori = c.getInt(2);
         Amis a = new Amis(login1, login2, 1, isFavori);
         c.close();
@@ -71,7 +72,6 @@ public class AmisDAO extends DAOBase
                 " where (login1 = \"" + login_user + "\" or login2 = \"" + login_user + "\")"+
                 " and   (isAmi = 1);" ;
         Cursor c = mDb.rawQuery(requete, new String[]{});
-
         ArrayList<Amis> liste = new ArrayList<Amis>();
         while (c.moveToNext())
         {
