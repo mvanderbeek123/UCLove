@@ -165,10 +165,6 @@ public class FriendsActivity extends Activity
                 i.putExtra(NOM_INTENT, login_ami);
                 i.putExtra("login", login_global);
                 startActivity(i);
-
-
-
-
             }
         });
     }

@@ -38,20 +38,18 @@ public class GenreDAO extends DAOBase {
         value.put(GENRE_GENRE, nouvelleVal);
         mDb.update(GENRE_TABLE_NAME, value, GENRE_LOGIN + " = ? AND " + GENRE_GENRE + " = ?", new String[]{a.getLogin(), a.getGenre()});
     }
-    public ArrayList<Genre> selectionner(String login)
-    {
-        Cursor c = mDb.rawQuery("SELECT * FROM " + GENRE_TABLE_NAME + "WHERE " + GENRE_LOGIN + " = ?" , new String[]{login});
+    public ArrayList<Genre> selectionner(String login) {
+        Cursor c = mDb.rawQuery("SELECT * FROM " + GENRE_TABLE_NAME + "WHERE " + GENRE_LOGIN + " = ?", new String[]{login});
         c.moveToFirst();
         ArrayList<Genre> liste = new ArrayList<Genre>();
-        while (c.moveToNext())
-        {
-            String login1 = c.getString(0); ;
+        while (c.moveToNext()) {
+            String login1 = c.getString(0);
+            ;
             String genre = c.getString(1);
-            Genre a = new Genre(login1 , genre);
+            Genre a = new Genre(login1, genre);
             liste.add(a);
         }
         c.close();
         return liste;
     }
-
 }
