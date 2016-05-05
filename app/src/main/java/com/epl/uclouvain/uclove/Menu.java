@@ -56,8 +56,8 @@ public class Menu extends Activity {
         people.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, ProfilActivity.class);
-                intent.putExtra("login",login);
+                Intent intent = new Intent(Menu.this, ProfilAffichageActivity.class);
+                intent.putExtra("login","aleatoire");
                 startActivity(intent);
             }
         });

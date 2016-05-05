@@ -62,5 +62,10 @@
     <string name="perimetre">Périmètre </string>
 
     <string name="info"> Veuillez remplir vos informations personnelles </string>
+    <string name="ajoutamis"> Ajouter </string>
+    <string name="suivant"> Suivant </string>
+    <string name="precedent"> Précedent </string>
+    <string name="valider"> valider </string>
+
 
 </resources>

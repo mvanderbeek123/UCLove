@@ -81,6 +81,7 @@ public class ProfilDAO extends DAOBase {
 
     public Profil selectionner(String login2){
         Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where " + CLIENT_LOGIN + " = ?", new String[]{login2});
+        c.moveToFirst();
         String login = c.getString(0);
         String mdp = c.getString(1);
         String name  = c.getString(2);
@@ -97,6 +98,18 @@ public class ProfilDAO extends DAOBase {
         Profil a = new Profil(login,mdp,name,lastname,date1,genre,etude,place,cheveux,peau,yeux);
         c.close();
         return a;
+    }
+    public ArrayList<String> selectionnerAleatoire(){
+        Cursor c = mDb.rawQuery("select " + CLIENT_LOGIN + " from " + CLIENT_TABLE_NAME, new String[]{});
+        c.moveToFirst();
+        ArrayList<String> liste=new ArrayList<>();
+        while (c.isAfterLast() == false) {
+            String login = c.getString(0);
+            liste.add(login);
+            c.moveToNext();
+        }
+        c.close();
+        return liste;
     }
     public boolean identifier(String login, String mdp)
     {

@@ -70,7 +70,11 @@
             android:label="Inscription"
             android:theme="@style/AppTheme">
         </activity>
-
+        <activity
+            android:name=".ProfilAffichageActivity"
+            android:label="Inscription"
+            android:theme="@style/AppTheme">
+        </activity>
         <activity
             android:name=".ChatActivity"
             android:label="Chat">
