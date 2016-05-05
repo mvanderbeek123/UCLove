@@ -84,11 +84,11 @@ public class DataBase extends SQLiteOpenHelper
     public static final String  GENRE_TABLE_EX1 = " INSERT INTO " + GENRE_TABLE_NAME +
             " (" +
             GENRE_LOGIN + " , " + GENRE_GENRE  +
-            ") VALUES ( \"Del\", \"Homme\");";
+            ") VALUES ( \"Del\", \"Masculin\");";
     public static final String  GENRE_TABLE_EX2 = " INSERT INTO " + GENRE_TABLE_NAME +
             " (" +
             GENRE_LOGIN + " , " + GENRE_GENRE  +
-            ") VALUES ( \"Jul\", \"Femme\");";
+            ") VALUES ( \"Jul\", \"Féminin\");";
 
     // Table Cheveux
     public static final String CHEVEUX_TABLE_NAME="Cheveux";

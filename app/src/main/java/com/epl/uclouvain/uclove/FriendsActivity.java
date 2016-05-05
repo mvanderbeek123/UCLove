@@ -1,6 +1,8 @@
 package com.epl.uclouvain.uclove;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -47,6 +49,8 @@ public class FriendsActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friends);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
         Intent i=getIntent();
         login_global = i.getStringExtra("login");
@@ -159,10 +163,19 @@ public class FriendsActivity extends Activity
 
         aDAO.close();
 
-        if(ListAmis == null)
-        {
-            String texte_2 = res.getString(R.string.noAmis);
-            vue.setText(texte_2);
+        if (ListAmis.size() == 0) {
+            setContentView(R.layout.blank);
+            alertDialogBuilder.setTitle(R.string.amisMessage);
+            alertDialogBuilder.setMessage(R.string.noAmis);
+            alertDialogBuilder.setCancelable(false);
+            alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    FriendsActivity.this.finish();
+                }
+            });
+            AlertDialog theAlert = alertDialogBuilder.create();
+            theAlert.show();
+
         }
         else
         {

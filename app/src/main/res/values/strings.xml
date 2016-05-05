@@ -5,6 +5,7 @@
     <string name="button" translatable="false">ok</string>
     <string name="display" translatable="false">UCLove</string>
 
+
     <string name="listeAmis">Liste d\'amis</string>
     <string name="noAmis">Vous n\'avez pas encore d\'amis.</string>
     <string name="supprimer">Supprimer</string>
@@ -13,6 +14,7 @@
     <string name="favori2">Retirer des favoris</string>
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
+    <string name="amisMessage">Message Ami</string>
 
     <string name="noFilters">Pas de filtres</string>
     <string name="brun">Brun</string>
@@ -37,7 +39,7 @@
     <string name="non">Non</string>
     <string name="oui">Oui</string>
     <string name="blockRequestConfirmation">Es tu sûre de vouloir bloquer cette demande ?</string>
-    <string name="confirmation">Confirmation</string>
+    <string name="confirmation" translatable="false">Confirmation</string>
     <string name="error_entree">Pas de correspondance.</string>
     <string name="clic_to_confirm">Clique sur oui pour confirmer</string>
     <string name="envoiNewRequest">Votre requête à bien été envoyée</string>
@@ -72,5 +74,6 @@
     <string name="info"> Veuillez remplir vos informations personnelles </string>
     <string name="pseudoFriend">Pseudo de ton ami</string>
     <string name="lieuRdv">Lieu</string>
+    <string name="bi">Bi</string>
 
 </resources>
