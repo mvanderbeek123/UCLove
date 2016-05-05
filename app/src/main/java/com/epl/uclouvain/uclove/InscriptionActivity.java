@@ -76,6 +76,7 @@ public class InscriptionActivity extends Activity {
                 profildao.open();
                 profildao.ajouter(profil);
                 profildao.close();
+
                 //Intent intent = new Intent(InscriptionActivity.this, ProfilActivity.class);
                 //startActivity(intent);
                 Toast toast=Toast.makeText(getApplicationContext(),"Vous n'êtes actuellement pas encore inscrit. Enregistrez-vous et venez nous rejoindre!",Toast.LENGTH_LONG);
