@@ -24,10 +24,10 @@ import java.util.List;
 public class NewRequest extends Activity {
     private EditText pseudo=null;
     private Button toSend=null;
-    private final static String NULL_VALUE="0";
     final Context context = this;
     ProfilDAO list;
     AmisDAO adao;
+    ArrayList listamis;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -38,6 +38,7 @@ public class NewRequest extends Activity {
         toSend.setOnClickListener(toSendListener);
         list=new ProfilDAO(this);
         adao = new AmisDAO(this);
+        listamis=new ArrayList<String>();
     }
     private View.OnClickListener toSendListener = new View.OnClickListener() {
         @Override
@@ -47,9 +48,29 @@ public class NewRequest extends Activity {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
             list.open();
             Boolean isExist= list.existant(pseudo.getText().toString());
+            list.close();
+            adao.open();
+            listamis=adao.selectionner_listAmis(Controler.logged_user);
+            adao.close();
+            boolean checked=listamis.contains(pseudo.getText().toString());
             if(isExist==false)
             {
+                //si le loggin n'existe pas
                 showDialog(0);
+            }
+            else if(pseudo.getText().toString().compareTo(Controler.logged_user)==0)
+            {
+                //Si l'utilisateur essaye de s'ajouter lui meme
+                showDialog(1);
+            }
+            else if(checked==true)
+            {
+                //Dans ce cas-ci, soit la demande est deja envoyée, donc l'utilisateur ne voit pas d'erreur
+                //il a simplement une nouvelle requete mais ne l'as pas encore consultée
+                //L'autre possibilité c'est que cet utilisateur est déjà bloqué et il n'a pas a le savoir.
+                Toast toast=Toast.makeText(getApplicationContext(),R.string.envoiNewRequest,Toast.LENGTH_SHORT);
+                toast.show();
+                NewRequest.this.finish();
             }
             else
             {
@@ -66,7 +87,6 @@ public class NewRequest extends Activity {
                         Toast toast=Toast.makeText(getApplicationContext(),R.string.envoiNewRequest,Toast.LENGTH_SHORT);
                         toast.show();
                         NewRequest.this.finish();
-                        //si la demande existe deja dans un sens ou l'autre + changer message+empecher qqn de s'auto amis
 
                     }
                 });
@@ -90,6 +110,10 @@ public class NewRequest extends Activity {
             case 0:
                 myBox = new Dialog(this);
                 myBox.setTitle(R.string.error_entree);
+                break;
+            case 1:
+                myBox = new Dialog(this);
+                myBox.setTitle(R.string.persoRequest);
                 break;
         }
         return myBox;

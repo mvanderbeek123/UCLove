@@ -37,10 +37,10 @@ public class RequestSelectActivity extends Activity {
 
         if (alist.size() == 0) {
             setContentView(R.layout.blank);
-            alertDialogBuilder.setTitle("Request Message");
-            alertDialogBuilder.setMessage("You don't have new request");
+            alertDialogBuilder.setTitle(R.string.requestMessage);
+            alertDialogBuilder.setMessage(R.string.noAmis);
             alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     //Rajouter la requete dans la base de donnée
                     RequestSelectActivity.this.finish();
