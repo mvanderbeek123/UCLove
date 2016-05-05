@@ -49,16 +49,9 @@ public class ProfilAffichageActivity extends Activity {
         profildao=new ProfilDAO(this);
         genredao=new GenreDAO(this);
         profildao.open();
-        genredao.open();
-        liste=new ArrayList<String>();
+        liste=profildao.selectionnerAleatoire();
+        profildao.close();
         afficher(liste.get(i));
-        if(login.compareTo("aleatoire")==0)
-        {
-            liste=profildao.selectionnerAleatoire();
-        }
-        else {
-            //liste=profildao.
-            }
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -88,13 +81,17 @@ public class ProfilAffichageActivity extends Activity {
 
     public void afficher(String login)
     {
+        profildao.open();
         Profil a=profildao.selectionner(login);
+        profildao.close();
         name.setText(a.getPrenom()+" "+a.getNom());
         cheveux.setText("cheveux de couleur " + a.getCheveux());
         genre.setText(a.getGenre());
         localisation.setText(a.getLocalisation());
         yeux.setText("yeux de couleur " + a.getYeux());
+        genredao.open();
         ArrayList<Genre> genrelist=genredao.selectionner(login);
+        genredao.close();
         if (genrelist.size()==2){
             sexpref.setText("bi");
         }
