@@ -20,9 +20,7 @@ public class MyRequests extends Activity {
     Button profile = null;
     Button yes = null;
     Button no = null;
-    final Context context = this;
-    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-
+    Context context=this;
 
 
     @Override
