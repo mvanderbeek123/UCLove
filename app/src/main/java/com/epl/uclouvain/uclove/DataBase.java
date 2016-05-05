@@ -147,12 +147,14 @@ public class DataBase extends SQLiteOpenHelper
     public static final String MEET_TABLE_NAME = "Meet";
     public static final String LOGIN = "login";
     public static final String DATE = "date";
-    public static final String HOUR = "hour";
+    public static final String HOURSTART = "hourStart";
+    public static final String HOUREND= "hourEnd";
 
     public static final String MEET_TABLE_CREATE = "CREATE TABLE " + MEET_TABLE_NAME + " (" +
             LOGIN + " TEXT, " +
-            DATE + " DATE, " +
-            HOUR + " TIME " +");";
+            DATE + " INTEGER, " +
+            HOURSTART + " INTEGER, " +
+            HOUREND + " INTEGER " +");";
 
     public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
 

@@ -38,14 +38,14 @@ public class MeetActivity extends Activity {
         dispo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MeetActivity.this, Disponibility.class);
+                Intent intent = new Intent(MeetActivity.this, DisponibilityActivity.class);
                 startActivity(intent);
             }
         });
         rdv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MeetActivity.this, Rdv.class);
+                Intent intent = new Intent(MeetActivity.this, RdvActivity.class);
                 startActivity(intent);
             }
         });

@@ -8,40 +8,42 @@ import java.sql.Time;
  */
 public class Meet {
     private String login;   //toujours voir si login ou id
-    private Date date;
-    private Time hour;      //voir comment on fonctionne: intervalle d'heures exactes ou à peu près
+    private int date;
+    private int hourStart;      //voir comment on fonctionne: intervalle d'heures exactes ou à peu près
+    private int hourEnd;
 
-    public Meet(String login, Date date,Time hour)
+    public Meet(String login, int date,int hourStart,int hourEnd)
     {
         super();
         this.login=login;
         this.date=date;
-        this.hour=hour;
+        this.hourStart=hourStart;
+        this.hourEnd=hourEnd;
     }
 
     public String getLogin() {
         return login;
     }
 
-    public Date getDate() {
+    public int getDate() {
         return date;
     }
 
-    public Time getHour() {
-        return hour;
-    }
+    public int getHourStart() { return hourStart; }
+
+    public int getHourEnd() { return hourEnd; }
 
     public void setLogin(String login) {
         this.login = login;
     }
 
-    public void setDate(Date date) {
+    public void setDate(int date) {
         this.date = date;
     }
 
-    public void setHour(Time hour) {
-        this.hour = hour;
-    }
+    public void setHourStart(int hourStart) { this.hourStart = hourStart; }
+
+    public void setHourEnd(int hourEnd) { this.hourEnd = hourEnd; }
 
     // ajouter les méthodes style comparer disponibilités ?
 }
