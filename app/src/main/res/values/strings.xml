@@ -62,6 +62,12 @@
 
     <string name="info"> Veuillez remplir vos informations personnelles </string>
 
+    <string name="newFriend">Super, you have a new friend !</string>
+    <string name="deleteRequest">You delete this request</string>
+    <string name="non">No</string>
+    <string name="oui">Yes</string>
+    <string name="blockRequestConfirmation">Are you sure to block this request</string>
+    <string name="confirmation">Confirmation</string>
 
 
 </resources>
