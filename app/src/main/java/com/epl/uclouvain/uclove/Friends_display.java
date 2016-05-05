@@ -61,15 +61,12 @@ public class Friends_display extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friends_affichage);
 
-        /*Resources res = getResources();
+        Resources res = getResources();
         String texte;
         texte = res.getString(R.string.amis);
         TextView vue = (TextView)findViewById(R.id.titre);
-        vue.setText(texte);*/
+        vue.setText(texte);
 
-        /*Intent i = getIntent();
-        login_ami = i.getStringExtra("com.epl.uclouvain.uclove.amis.LOGIN2");
-        login_global = i.getStringExtra("login");*/
 
         aDAO = new AmisDAO(this);
 
@@ -79,21 +76,20 @@ public class Friends_display extends Activity
         profil = profil_dao.selectionner(Controler.friend_user);
         profil_dao.close();
 
-        String nom = profil.getPrenom() + profil.getNom();
+        String nom = profil.getPrenom() + " " + profil.getNom();
         nom_view = (TextView)findViewById(R.id.nomAmi);
         nom_view.setText(nom);
-        //nom_view.setTextColor(0x112233);
+        nom_view.setTextColor(0x112233);
 
         String genre = profil.getGenre();
         genre_view = (TextView)findViewById(R.id.genre);
         genre_view.setText(genre);
 
 
-        String date_naissance = new SimpleDateFormat("YYYY").format(profil.getDate_de_naissance());
-        String date_actuelle = new SimpleDateFormat("YYYY").format(Calendar.getInstance().getTime());
-        int age = Integer.parseInt(date_actuelle) - Integer.parseInt(date_naissance);
+        Date datenaissance = profil.getDate_de_naissance();
+        String date = datenaissance.toString();
         age_view = (TextView)findViewById(R.id.age);
-        age_view.setText(age);
+        age_view.setText(date);
 
         String cheveux = profil.getCheveux();
         cheveux_view = (TextView)findViewById(R.id.cheveux);
@@ -109,32 +105,44 @@ public class Friends_display extends Activity
 
         gDAO = new GenreDAO(this);
         gDAO.open();
-        ArrayList<Genre> listGenre = gDAO.selectionner(login_ami);
+        ArrayList<Genre> listGenre = gDAO.selectionner(Controler.friend_user);
         gDAO.close();
-        String sexpref;
 
-        if(listGenre.size() == 2) {sexpref = "Bi";}
-        else {sexpref = listGenre.get(0).getGenre();}
+        if(listGenre.size()>0)
+        {
+            String sexpref;
 
-        sexpref_view = (TextView)findViewById(R.id.sexpref);
-        sexpref_view.setText(sexpref);
+            if(listGenre.size() == 2) {sexpref = "Bi";}
+            else {sexpref = listGenre.get(0).getGenre();}
+
+            sexpref_view = (TextView)findViewById(R.id.sexpref);
+            sexpref_view.setText(sexpref);
+        }
+        else
+        {
+            sexpref_view = (TextView)findViewById(R.id.sexpref);
+            sexpref_view.setText("");
+        }
+
+
+
 
         // image va être du style R.drawable.image
         /* String image = profil.getImage();
         photo_profil.setImageResource(image); */
 
         supprimer = (Button)findViewById(R.id.supprimer);
-        //texte = res.getString(R.string.supprimer);
-        //supprimer.setText(texte);
+        texte = res.getString(R.string.supprimer);
+        supprimer.setText(texte);
         contact = (Button)findViewById(R.id.contact);
-        //texte = res.getString(R.string.contact);
-        //contact.setText(texte);
+        texte = res.getString(R.string.contact);
+        contact.setText(texte);
         favori = (CheckBox) findViewById(R.id.favori);
-        //texte = res.getString(R.string.favori1);
-        //favori.setText(texte);
+        texte = res.getString(R.string.favori1);
+        favori.setText(texte);
         rencontre = (Button)findViewById(R.id.rencontre);
-        //texte = res.getString(R.string.rencontre);
-        //rencontre.setText(texte);
+        texte = res.getString(R.string.rencontre);
+        rencontre.setText(texte);
 
         supprimer.setOnClickListener(supprimerListener);
         contact.setOnClickListener(contactListener);
@@ -173,26 +181,26 @@ public class Friends_display extends Activity
         public void onClick(View v)
         {
 
-            //Resources res = getResources();
-            //String texte;
+            Resources res = getResources();
+            String texte;
             CheckBox ch = (CheckBox)v;
             if(ch.isChecked()) // L'ami est déjà en favori, on veut le retirer.
             {
                 aDAO.open();
-                aDAO.supprimer_favori(login_global, login_ami);
+                aDAO.ajouter_favori(Controler.logged_user, Controler.friend_user);
                 aDAO.close();
-                ch.setChecked(false);
-                //texte = res.getString(R.string.favori1);
-                //ch.setText(texte);
+                //ch.setChecked(false);
+                texte = res.getString(R.string.favori2);
+                ch.setText(texte);
             }
             else // On veut mettre l'ami en favori.
             {
                 aDAO.open();
-                aDAO.ajouter_favori(login_global, login_ami);
+                aDAO.supprimer_favori(Controler.logged_user, Controler.friend_user);
                 aDAO.close();
-                ch.setChecked(true);
-                //texte = res.getString(R.string.favori2);
-                //ch.setText(texte);
+                //ch.setChecked(true);
+                texte = res.getString(R.string.favori1);
+                ch.setText(texte);
             }
         }
     };

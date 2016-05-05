@@ -39,7 +39,7 @@ public class GenreDAO extends DAOBase {
         mDb.update(GENRE_TABLE_NAME, value, GENRE_LOGIN + " = ? AND " + GENRE_GENRE + " = ?", new String[]{a.getLogin(), a.getGenre()});
     }
     public ArrayList<Genre> selectionner(String login) {
-        Cursor c = mDb.rawQuery("SELECT * FROM " + GENRE_TABLE_NAME + "WHERE " + GENRE_LOGIN + " = ?", new String[]{login});
+        Cursor c = mDb.rawQuery("SELECT * FROM " + GENRE_TABLE_NAME + " WHERE " + GENRE_LOGIN + " = ?", new String[]{login});
         c.moveToFirst();
         ArrayList<Genre> liste = new ArrayList<Genre>();
         while (c.moveToNext()) {
