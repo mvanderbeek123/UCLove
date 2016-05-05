@@ -47,7 +47,6 @@ public class Friends_display extends Activity
     Button supprimer = null;
     Button contact = null;
     CheckBox favori = null;
-    //Button details = null;
     Button rencontre = null;
 
     Profil profil = null;
@@ -128,9 +127,6 @@ public class Friends_display extends Activity
         favori = (CheckBox) findViewById(R.id.favori);
         texte = res.getString(R.string.favori1);
         favori.setText(texte);
-        //details = (Button)findViewById(R.id.details);
-        //texte = res.getString(R.string.details);
-        //details.setText(texte);
         rencontre = (Button)findViewById(R.id.rencontre);
         texte = res.getString(R.string.rencontre);
         rencontre.setText(texte);
@@ -138,7 +134,6 @@ public class Friends_display extends Activity
         supprimer.setOnClickListener(supprimerListener);
         contact.setOnClickListener(contactListener);
         favori.setOnClickListener(favoriListener);
-        //details.setOnClickListener(detailsListener);
         rencontre.setOnClickListener(rencontreListener);
     }
 
@@ -194,15 +189,6 @@ public class Friends_display extends Activity
         }
     };
 
-    /* private OnClickListener detailsListener = new OnClickListener()
-    {
-        @Override
-        public void onClick(View v)
-        {
-            // Copier le layout Profil de Marie.
-        }
-    }; */
-
     private OnClickListener rencontreListener = new OnClickListener()
     {
         @Override
@@ -210,6 +196,7 @@ public class Friends_display extends Activity
         {
             Intent i = new Intent(Friends_display.this, MeetActivity.class);
             final String RENCONTRE = "com.epl.uclouvain.uclove.amis_display.RENCONTRE";
+            i.putExtra(RENCONTRE,login_ami);
             startActivity(i);
         }
     };
