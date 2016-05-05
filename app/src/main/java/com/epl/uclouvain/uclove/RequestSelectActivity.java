@@ -24,7 +24,7 @@ public class RequestSelectActivity extends Activity
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.friend_select);
+        setContentView(R.layout.request_select);
 
         listView = (ListView) findViewById(R.id.listAmis);
         logins = new ArrayList<String>();
