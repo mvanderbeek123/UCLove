@@ -26,6 +26,10 @@ public class FriendsActivity extends Activity
 {
     String login_global;
     ListView liste = null;
+
+    AmisDAO aDAO;
+    ArrayList<Amis> ListAmis;
+    ArrayList<String> ListLogin;
     public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.LOGIN2";
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -41,12 +45,11 @@ public class FriendsActivity extends Activity
         TextView vue = (TextView)findViewById(R.id.textAmis);
         vue.setText(texte);
 
-        liste = (ListView) findViewById(R.id.listAmis);
-        ArrayList<String> ListLogin = new ArrayList<String>();
+        liste = (ListView) findViewById(R.id.listAmis);ListLogin = new ArrayList<String>();
 
-        final AmisDAO aDAO = new AmisDAO(this);
+        aDAO = new AmisDAO(this);
         aDAO.open();
-        final ArrayList<Amis> ListAmis = aDAO.selectionner_listAmis(login_global);
+        ListAmis = aDAO.selectionner_listAmis(login_global);
         if(ListAmis == null)
         {
             String texte_2 = res.getString(R.string.noAmis);
