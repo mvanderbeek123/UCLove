@@ -105,24 +105,24 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String  AMIS_TABLE_EX1 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_FAVORI + " , "+ AMIS_ISAMI +
-            ") VALUES ( \"Del\", \"Jul\", 1, 1);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , "+ AMIS_FAVORI +
+            ") VALUES ( \"Del\", \"Jul\", 1, 0);";
     public static final String  AMIS_TABLE_EX2 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_FAVORI + " , "+ AMIS_ISAMI +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , "+ AMIS_FAVORI +
             ") VALUES ( \"Del\", \"MM\", 1, 0);";
     public static final String  AMIS_TABLE_EX3 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_FAVORI + " , "+ AMIS_ISAMI +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , "+ AMIS_FAVORI +
             ") VALUES ( \"Step\", \"Jul\", 1, 1);";
     public static final String  AMIS_TABLE_EX4 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_FAVORI + " , "+ AMIS_ISAMI +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , "+ AMIS_FAVORI +
             ") VALUES ( \"MM\", \"Jul\", 0 ,0);";
     public static final String  AMIS_TABLE_EX5 = " INSERT INTO " + AMIS_TABLE_NAME +
             " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_FAVORI + " , "+ AMIS_ISAMI +
-            ") VALUES ( \"MM\", \"Step\", 1, 0);";
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , "+ AMIS_FAVORI +
+            ") VALUES ( \"MM\", \"Step\", 1, 1);";
 
     // Table chatmessages
     public static final String CHAT_TABLE_NAME = "chatmsg";
