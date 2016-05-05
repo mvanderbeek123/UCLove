@@ -43,6 +43,33 @@ public class DataBase extends SQLiteOpenHelper
     public static final String CLIENT_DROP =
             "DROP TABLE IF EXISTS " + CLIENT_TABLE_NAME + ";";
 
+    public static final String  CLIENT_TABLE_EX1 = " INSERT INTO " + CLIENT_TABLE_NAME +
+            " (" +
+            CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
+            ") VALUES ( \"Del\", \"dt\", \"Delphine\", \"DT\", \"1995-06-09\", \"Féminin\", \"EPL\" ,\"LLN\" );";
+
+    public static final String  CLIENT_TABLE_EX2 = " INSERT INTO " + CLIENT_TABLE_NAME +
+            " (" +
+            CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
+            ") VALUES ( \"MM\", \"vdb\", \"Marie-Marie\", \"VDB\", \"1995-12-20\", \"Féminin\", \"EPL\" ,\"LLN\" );";
+
+    public static final String  CLIENT_TABLE_EX3 = " INSERT INTO " + CLIENT_TABLE_NAME +
+            " (" +
+            CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
+            ") VALUES ( \"Step\", \"marn\", \"Stephan\", \"MARN\", \"1994-08-13\", \"Masculin\", \"EPL\" ,\"LLN\");";
+
+    public static final String  CLIENT_TABLE_EX4 = " INSERT INTO " + CLIENT_TABLE_NAME +
+            " (" +
+            CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
+            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\");";
+
+
+
+
     // Table Genre
     public static final String GENRE_TABLE_NAME="Genre";
     public static final String GENRE_LOGIN="login";
@@ -123,10 +150,7 @@ public class DataBase extends SQLiteOpenHelper
             " (" +
             AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
             ") VALUES ( \"MM\", \"Step\", 1, 1);";
-    public static final String  AMIS_TABLE_EX6 = " INSERT INTO " + AMIS_TABLE_NAME +
-            " (" +
-            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
-            ") VALUES ( \"Noe\", \"Step\", 0, 0);";
+
 
     // Table chatmessages
     public static final String CHAT_TABLE_NAME = "chatmsg";
@@ -167,14 +191,20 @@ public class DataBase extends SQLiteOpenHelper
     @Override
     public void onCreate(SQLiteDatabase db)
     {
+
+        db.execSQL(CLIENT_CREATE_TABLE);
+        db.execSQL(CLIENT_TABLE_EX1);
+        db.execSQL(CLIENT_TABLE_EX2);
+        db.execSQL(CLIENT_TABLE_EX3);
+        db.execSQL(CLIENT_TABLE_EX4);
+
         db.execSQL(AMIS_TABLE_CREATE);
         db.execSQL(AMIS_TABLE_EX1);
         db.execSQL(AMIS_TABLE_EX2);
         db.execSQL(AMIS_TABLE_EX3);
         db.execSQL(AMIS_TABLE_EX4);
         db.execSQL(AMIS_TABLE_EX5);
-        db.execSQL(AMIS_TABLE_EX6);
-        db.execSQL(CLIENT_CREATE_TABLE);
+
         db.execSQL(CHAT_TABLE_CREATE);
         db.execSQL(MEET_TABLE_CREATE);
         db.execSQL(GENRE_CREATE_TABLE);
