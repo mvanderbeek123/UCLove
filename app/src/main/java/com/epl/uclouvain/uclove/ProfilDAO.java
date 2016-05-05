@@ -34,7 +34,7 @@ public class ProfilDAO extends DAOBase {
     public void ajouter(Profil a)
     {
         ContentValues value = new ContentValues();
-        value.put(ProfilDAO.CLIENT_LOGIN, a.getLogin());
+        /*value.put(ProfilDAO.CLIENT_LOGIN, a.getLogin());
         value.put(ProfilDAO.CLIENT_MDP, a.getMot_de_passe());
         value.put(ProfilDAO.CLIENT_NAME, a.getPrenom());
         value.put(ProfilDAO.CLIENT_LASTNAME, a.getNom());
@@ -45,7 +45,7 @@ public class ProfilDAO extends DAOBase {
         value.put(ProfilDAO.CLIENT_NUM, a.getNumero_de_telephone());
         value.put(ProfilDAO.CLIENT_HAIR, a.getCheveux());
         value.put(ProfilDAO.CLIENT_EYES, a.getYeux());
-        value.put(ProfilDAO.CLIENT_SKIN, a.getPeau());
+        value.put(ProfilDAO.CLIENT_SKIN, a.getPeau());*/
         mDb.insert(ProfilDAO.CLIENT_TABLE_NAME, null, value);
     }
 
