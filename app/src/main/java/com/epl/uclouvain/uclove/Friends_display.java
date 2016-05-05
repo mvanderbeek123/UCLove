@@ -174,25 +174,27 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
+
             Resources res = getResources();
             String texte;
-            if(favori.isChecked()) // L'ami est déjà en favori, on veut le retirer.
+            CheckBox ch = (CheckBox)v;
+            if(ch.isChecked()) // L'ami est déjà en favori, on veut le retirer.
             {
                 aDAO.open();
                 aDAO.supprimer_favori(login_global, login_ami);
                 aDAO.close();
-                favori.setChecked(false);
+                ch.setChecked(false);
                 texte = res.getString(R.string.favori1);
-                favori.setText(texte);
+                ch.setText(texte);
             }
             else // On veut mettre l'ami en favori.
             {
                 aDAO.open();
                 aDAO.ajouter_favori(login_global, login_ami);
                 aDAO.close();
-                favori.setChecked(true);
+                ch.setChecked(true);
                 texte = res.getString(R.string.favori2);
-                favori.setText(texte);
+                ch.setText(texte);
             }
         }
     };

@@ -212,5 +212,4 @@ public class ProfilDAO extends DAOBase {
         c.close();
         return liste;
     }
-
 }
