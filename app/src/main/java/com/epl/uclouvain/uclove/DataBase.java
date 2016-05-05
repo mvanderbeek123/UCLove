@@ -152,7 +152,7 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String MEET_TABLE_CREATE = "CREATE TABLE " + MEET_TABLE_NAME + " (" +
             LOGIN + " TEXT, " +
-            DATE + " INTEGER, " +
+            DATE + " LONG, " +
             HOURSTART + " INTEGER, " +
             HOUREND + " INTEGER " +");";
 
