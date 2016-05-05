@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by delphine on 05/05/16.
+ * Created by steph on 05/05/16.
  */
 public class RequestSelectActivity extends Activity
 {
@@ -70,7 +70,6 @@ public class RequestSelectActivity extends Activity
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Controler.chat_user = logins.get(position);
-                    // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                     Intent i = new Intent(RequestSelectActivity.this, MyRequests.class);
                     startActivity(i);
                 }
