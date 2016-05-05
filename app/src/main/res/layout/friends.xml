@@ -8,11 +8,11 @@
         android:id="@+id/textAmis"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:paddingTop="10dip"
         android:paddingLeft="15dip"
         android:text="Liste d'amis"
         />
+
     <ImageView
         android:src="@android:drawable/divider_horizontal_textfield"
         android:id="@+id/separation"
@@ -24,6 +24,13 @@
         android:paddingBottom="2dp"
         android:paddingTop="5dp"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cheveux"
+        android:id="@+id/textView4" />
+
     <Spinner
         android:id="@+id/cheveux"
         android:layout_width="wrap_content"
@@ -31,11 +38,25 @@
         android:paddingTop="10dip"
         >
     </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yeux"
+        android:id="@+id/textView5" />
+
     <Spinner
         android:id="@+id/yeux"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </Spinner>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orientation"
+        android:id="@+id/textView6" />
+
     <Spinner
         android:id="@+id/sexe"
         android:layout_width="wrap_content"
