@@ -23,7 +23,7 @@ public class Requests extends Activity {
         my_request.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Requests.this, MyRequests.class);
+                Intent intent = new Intent(Requests.this, RequestSelectActivity.class);
                 startActivity(intent);
             }
         });

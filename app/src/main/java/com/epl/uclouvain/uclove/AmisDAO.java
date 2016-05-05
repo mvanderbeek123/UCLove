@@ -85,4 +85,25 @@ public class AmisDAO extends DAOBase
         return liste;
     }
 
+    public ArrayList<Amis> selectionner_listRequetes(String login_user)
+    {
+        String requete = "select login1, login2, isFavori " +
+                " from " + DataBase.AMIS_TABLE_NAME +
+                " where (login2 = \"" + login_user + "\")"+
+                " and   (isAmi = 0);" ;
+        Cursor c = mDb.rawQuery(requete, new String[]{});
+
+        ArrayList<Amis> liste = new ArrayList<Amis>();
+        while (c.moveToNext())
+        {
+            String login1 = c.getString(0); ;
+            String login2 = c.getString(1);
+            int isFavori = c.getInt(2);
+            Amis a = new Amis(login1 , login2, 0, isFavori);
+            liste.add(a);
+        }
+        c.close();
+        return liste;
+    }
+
 }
