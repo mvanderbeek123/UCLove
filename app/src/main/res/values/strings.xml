@@ -5,7 +5,6 @@
     <string name="button" translatable="false">ok</string>
     <string name="display" translatable="false">UCLove</string>
 
-
     <string name="listeAmis">Liste d\'amis</string>
     <string name="noAmis">Vous n\'avez pas encore d\'amis.</string>
     <string name="supprimer">Supprimer</string>
@@ -14,7 +13,6 @@
     <string name="favori2">Retirer des favoris</string>
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
-    <string name="amisMessage">Message Ami</string>
 
     <string name="noFilters">Pas de filtres</string>
     <string name="brun">Brun</string>
@@ -79,5 +77,13 @@
     <string name="pseudoFriend">Pseudo de ton ami</string>
     <string name="lieuRdv">Lieu</string>
     <string name="bi">Bi</string>
+
+    <string name="people">Personnes</string>
+    <string name="preferences">Préférences</string>
+    <string name="profil">Profil</string>
+    <string name="amis">Amis</string>
+    <string name="requete">Requêtes</string>
+    <string name="chat">Conversation</string>
+    <string name="rencontre">Rencontre</string>
 
 </resources>
