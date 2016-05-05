@@ -87,9 +87,17 @@ public class Friends_display extends Activity
         String yeux = profil.getYeux();
         String localisation = profil.getLocalisation();
 
-        /* PreferenceDAO pref_dao = new PreferenceDAO(this);
-        sex =
-        */
+        GenreDAO gDAO = new GenreDAO(this);
+        ArrayList<Genre> listGenre = gDAO.selectionner(login_ami);
+        String sexpref;
+        if(listGenre.size() == 2)
+        {
+            sexpref = "Bi";
+        }
+        else
+        {
+            sexpref = listGenre.get(0).getGenre();
+        }
 
 
         nom_view = (TextView)findViewById(R.id.nomAmi);
@@ -111,11 +119,11 @@ public class Friends_display extends Activity
         localisation_view = (TextView)findViewById(R.id.localisation);
         localisation_view.setText(localisation);
 
-        /* sexpref_view = (TextView)findViewById(R.id.sexpref);
+        sexpref_view = (TextView)findViewById(R.id.sexpref);
         sexpref_view.setText(sexpref);
 
         // image va être du style R.drawable.image
-        String image = profil.getImage();
+        /* String image = profil.getImage();
         photo_profil.setImageResource(image); */
 
         supprimer = (Button)findViewById(R.id.supprimer);
