@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 /**
  * Created by Steph on 2/05/2016.
@@ -16,42 +17,24 @@ import android.widget.Button;
  * de dialogue s'affiche pour lui dire qu'il 'y a pas de nouvelles demandes
  */
 public class MyRequests extends Activity {
-    private final static int nberOfRequest = 1;
     Button profile = null;
     Button yes = null;
     Button no = null;
     final Context context = this;
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-        if (nberOfRequest == 0) {
-            setContentView(R.layout.blank);
-            alertDialogBuilder.setTitle("Request Message");
-            alertDialogBuilder.setMessage("You don't have new request");
-            alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    //Rajouter la requete dans la base de donnée
-                    MyRequests.this.finish();
-                }
-            });
-            AlertDialog theAlert = alertDialogBuilder.create();
-            theAlert.show();
-        } else {
-            setContentView(R.layout.myrequest);
-            profile = (Button) findViewById(R.id.viewProfile);
-            profile.setOnClickListener(goToProfileListerner);
-            yes = (Button) findViewById(R.id.yesbutton);
-            yes.setOnClickListener(yesListener);
-            no = (Button) findViewById(R.id.nobutton);
-            no.setOnClickListener(noListener);
-        }
-
-
+        setContentView(R.layout.myrequest);
+        profile = (Button) findViewById(R.id.viewProfile);
+        profile.setOnClickListener(goToProfileListerner);
+        yes = (Button) findViewById(R.id.yesbutton);
+        yes.setOnClickListener(yesListener);
+        no = (Button) findViewById(R.id.nobutton);
+        no.setOnClickListener(noListener);
     }
 
     private View.OnClickListener goToProfileListerner = new View.OnClickListener() {
@@ -64,23 +47,24 @@ public class MyRequests extends Activity {
     private View.OnClickListener yesListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            showDialog(0);
+            Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
+            toast.show();
         }
     };
     private View.OnClickListener noListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-            alertDialogBuilder.setTitle("Confirmation");
-            alertDialogBuilder.setMessage("Are you sure to block this request");
+            alertDialogBuilder.setTitle(R.string.confirmation);
+            alertDialogBuilder.setMessage(R.string.blockRequestConfirmation);
             alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     //On confirme que la demande est supprimée/bloquée
                     showDialog(1);
                 }
             });
-            alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     //on retourne simplement en arrière
                     dialog.cancel();
@@ -95,13 +79,9 @@ public class MyRequests extends Activity {
     public Dialog onCreateDialog(int id) {
         Dialog myBox = null;
         switch (id) {
-            case 0:
-                myBox = new Dialog(this);
-                myBox.setTitle("Super, you have a new friend");
-                break;
             case 1:
                 myBox = new Dialog(this);
-                myBox.setTitle("You delete this request");
+                myBox.setTitle(R.string.deleteRequest);
                 break;
         }
         return myBox;

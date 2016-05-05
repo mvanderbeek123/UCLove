@@ -71,16 +71,20 @@ public class InscriptionActivity extends Activity {
                 inetude=etude.getText().toString();
                 genre = String.valueOf(liste.getSelectedItem());
                 Date datedenaissance=new Date(date.getYear(),date.getMonth(),date.getDayOfMonth());
-                Profil profil = new Profil(inlogin,inmdp,inprénom,innom,datedenaissance,genre,inetude,inloc);
                 profildao=new ProfilDAO(getApplicationContext());
                 profildao.open();
-                profildao.ajouter(profil);
-                profildao.close();
-                Intent intent = new Intent(InscriptionActivity.this, ProfilActivity.class);
-                startActivity(intent);
-                Toast toast=Toast.makeText(getApplicationContext(),"Vous n'êtes actuellement pas encore inscrit. Enregistrez-vous et venez nous rejoindre!",Toast.LENGTH_LONG);
-                toast.show();
-    }
-});
+                if (profildao.existant(inlogin)==false) {
+                    Profil profil = new Profil(inlogin, inmdp, inprénom, innom, datedenaissance, genre, inetude, inloc);
+                    profildao.ajouter(profil);
+                    profildao.close();
+                    Intent intent = new Intent(InscriptionActivity.this, Menu.class);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Toast toast=Toast.makeText(getApplicationContext(),"ce login est déja utilisé",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+    }});
     }
 }

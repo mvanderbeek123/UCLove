@@ -35,4 +35,16 @@
     <string name="send">SEND</string>
     <string name="supprimer">Delete</string>
     <string name="yeux">Eye color</string>
+    <string name="bleu">Blue</string>
+    <string name="blond">Blond</string>
+    <string name="brun">Brown</string>
+    <string name="button" translatable="false"></string>
+    <string name="féminin">Female</string>
+    <string name="gris">Grey</string>
+    <string name="info">Please fill your personnal informations</string>
+    <string name="masculin">Male</string>
+    <string name="noFilters">No Filters</string>
+    <string name="noir">Black</string>
+    <string name="roux">Ginger</string>
+    <string name="vert">Green</string>
 </resources>

@@ -58,8 +58,7 @@
         <activity
             android:name=".FriendsActivity"
             android:label="FriendsActivity"
-            android:theme="@style/AppTheme"
-            android:finishOnTaskLaunch="true">
+            android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".Friends_display"

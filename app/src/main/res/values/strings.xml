@@ -14,14 +14,30 @@
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
 
+    <string name="noFilters">Pas de filtres</string>
+    <string name="brun">Brun</string>
+    <string name="noir">Noir</string>
+    <string name="blond">Blond</string>
+    <string name="roux">Roux</string>
+    <string name="gris">Gris</string>
+    <string name="vert">Vert</string>
+    <string name="bleu">Bleu</string>
+    <string name="masculin">Masculin</string>
+    <string name="féminin">Féminin</string>
+
     <!--Pour Request-->
     <string name="myRequests">Mes requêtes</string>
     <string name="newRequest">Nouvelle requête</string>
     <string name="pseudo">Pseudonyme :</string>
     <string name="pseudoOfFriend">Le pseudo de ton nouvel ami</string>
     <string name="send">ENVOYER</string>
+    <string name="newFriend">Super, tu as un nouvel ami !</string>
+    <string name="deleteRequest">Tu as supprimé l\'invitation</string>
+    <string name="non">Non</string>
+    <string name="oui">Oui</string>
+    <string name="blockRequestConfirmation">Es tu sûre de vouloir bloquer cette demande ?</string>
+    <string name="confirmation">Confirmationne</string>
 
-    <!--ajouté pour compolilé mais c'est pas ma partie steph-->
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>
 
@@ -45,7 +61,5 @@
     <string name="perimetre">Périmètre </string>
 
     <string name="info"> Veuillez remplir vos informations personnelles </string>
-
-
 
 </resources>
