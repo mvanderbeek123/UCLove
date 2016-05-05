@@ -81,19 +81,19 @@ public class ProfilDAO extends DAOBase {
 
     public Profil selectionner(String login2){
         Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where " + CLIENT_LOGIN + " = ?", new String[]{login2});
-        String login = c.getString(1);
-        String mdp = c.getString(2);
-        String name  = c.getString(3);
-        String lastname= c.getString(4);
-        String date=c.getString(5);
+        String login = c.getString(0);
+        String mdp = c.getString(1);
+        String name  = c.getString(2);
+        String lastname= c.getString(3);
+        String date=c.getString(4);
         Date date1=Date.valueOf(date);
-        String genre=c.getString(6);
-        String etude=c.getString(7);
-        String place=c.getString(8);
-        int num=c.getInt(9);
-        String cheveux=c.getString(10);
-        String peau=c.getString(11);
-        String yeux=c.getString(12);
+        String genre=c.getString(5);
+        String etude=c.getString(6);
+        String place=c.getString(9);
+        int num=c.getInt(10);
+        String cheveux=c.getString(11);
+        String peau=c.getString(12);
+        String yeux=c.getString(13);
         Profil a = new Profil(login,mdp,name,lastname,date1,genre,etude,place,cheveux,peau,yeux);
         c.close();
         return a;
@@ -126,5 +126,48 @@ public class ProfilDAO extends DAOBase {
         {
             return false;
         }
+    }
+
+    public ArrayList<String> filre-cheveux (String cheveux)
+    {
+        Cursor c=mDb.rawQuery("SELECT " + CLIENT_LOGIN + " from " + CLIENT_TABLE_NAME +
+                " where " + CLIENT_HAIR + " = ?", new String[]{cheveux});
+        c.moveToFirst();
+        ArrayList<String> liste = new ArrayList<String>();
+        while (c.moveToNext())
+        {
+            String login1 = c.getString(0);
+            liste.add(login1);
+        }
+        c.close();
+        return liste;
+    }
+    public ArrayList<String> filre-genre (String genre)
+    {
+        Cursor c=mDb.rawQuery("SELECT " + CLIENT_LOGIN + " from " + CLIENT_TABLE_NAME +
+                " where " + CLIENT_GENRE + " = ?", new String[]{genre});
+        c.moveToFirst();
+        ArrayList<String> liste = new ArrayList<String>();
+        while (c.moveToNext())
+        {
+            String login1 = c.getString(0);
+            liste.add(login1);
+        }
+        c.close();
+        return liste;
+    }
+    public ArrayList<String> filre-yeux (String yeux)
+    {
+        Cursor c=mDb.rawQuery("SELECT " + CLIENT_LOGIN + " from " + CLIENT_TABLE_NAME +
+                " where " + CLIENT_EYES + " = ?", new String[]{yeux});
+        c.moveToFirst();
+        ArrayList<String> liste = new ArrayList<String>();
+        while (c.moveToNext())
+        {
+            String login1 = c.getString(0);
+            liste.add(login1);
+        }
+        c.close();
+        return liste;
     }
 }
