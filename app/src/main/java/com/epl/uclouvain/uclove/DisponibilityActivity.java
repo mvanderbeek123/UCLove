@@ -22,8 +22,8 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
 
     CalendarView calendarView;
     TextView dateDisplay;
-    EditText hourStart;
-    EditText hourEnd;
+    EditText log2;
+    EditText lieu;
     private MeetDAO meetdao;
     Meet m;
 
@@ -33,8 +33,8 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
         setContentView(R.layout.disponibility);
 
         Button b=(Button) findViewById(R.id.button);
-        hourStart=(EditText) findViewById(R.id.editText);
-        hourEnd= (EditText) findViewById(R.id.editText2);
+        log2=(EditText) findViewById(R.id.editText3);
+        lieu=(EditText) findViewById(R.id.editText4);
         b.setOnTouchListener(this);
 
         calendarView = (CalendarView) findViewById(R.id.calendarView);
@@ -48,15 +48,15 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
 
                 Toast.makeText(getApplicationContext(), "Selected Date:\n" + "Day = " + day + "\n" + "Month = " + month + "\n" + "Year = " + year, Toast.LENGTH_LONG).show();
                 long time=calendarView.getDate();
-                m=new Meet(Controler.logged_user,time,0,0);
+                m=new Meet(Controler.logged_user,"",time,"");
             }
         });
     }
 
     @Override
     public boolean onTouch(View view, MotionEvent event) {
-        m.setHourStart(hourStart.getInputType());
-        m.setHourEnd(hourEnd.getInputType());
+        m.setLogin2(log2.getText().toString());
+        m.setLieu(lieu.getText().toString());
         meetdao=new MeetDAO(getApplicationContext());
         meetdao.open();
         meetdao.ajouter(m);

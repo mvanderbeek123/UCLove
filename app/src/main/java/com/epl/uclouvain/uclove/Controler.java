@@ -8,4 +8,5 @@ public class Controler {
     public static String logged_user = "";
     public static String chat_user = "";
     public static String requete_user = "";
+    public static String meet_user = "";
 }
