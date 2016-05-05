@@ -9,9 +9,21 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Liste d'amis"
-        android:elegantTextHeight="false" />
-
+        android:paddingTop="10dip"
+        android:paddingLeft="15dip"
+        android:text="Liste de requetes"
+        />
+    <ImageView
+        android:src="@android:drawable/divider_horizontal_textfield"
+        android:id="@+id/separation"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="2dp"
+        android:paddingTop="5dp"
+        />
     <ListView
         android:id="@+id/listAmis"
         android:layout_width="fill_parent"
