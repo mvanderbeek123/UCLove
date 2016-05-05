@@ -79,6 +79,7 @@
         android:textStyle="bold|italic"
         android:textColor="#ffffff"
         android:gravity="center"
-        android:background="@drawable/button"/>
+        android:background="@drawable/button"
+        />
 
 </LinearLayout>

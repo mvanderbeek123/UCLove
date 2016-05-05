@@ -51,4 +51,7 @@
     <string name="chauve">Bald</string>
     <string name="error_entree">No match found . Make sure that you haven\'t a typo</string>
     <string name="clic_to_confirm">Click Yes to confirm</string>
+    <string name="ok_text">Ok</string>
+    <string name="noNewRequest">You don\'t have new request</string>
+    <string name="requestMessage">Request Message</string>
 </resources>
