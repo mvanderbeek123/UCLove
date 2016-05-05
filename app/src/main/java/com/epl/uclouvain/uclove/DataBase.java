@@ -202,6 +202,12 @@ public class DataBase extends SQLiteOpenHelper
 
     public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
 
+    //Table Photos
+    public static final String PHOTO_TABLE_NAME = "Photo";
+    public static final String LOGIN="login";
+    public static final String PHOTO_NOM="nom";
+    public static final String PHOTO_PROFIL="profil";
+    public static final String PHOTO_TABLE_CREATE="CREATE TABLE " + PHOTO_TABLE_NAME + " ( " + LOGIN + " TEXT, " + PHOTO_NOM + " TEXT, " + PHOTO
 
     public DataBase(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
     {
