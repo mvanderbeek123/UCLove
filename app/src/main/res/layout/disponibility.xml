@@ -34,7 +34,6 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:hint="@string/pseudoFriend"
-        android:ems="10"
         android:id="@+id/editText3"
         android:layout_above="@+id/textView"
         android:layout_alignParentLeft="true"
@@ -45,10 +44,11 @@
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
         android:hint="@string/lieuRdv"
-        android:ems="10"
         android:id="@+id/editText4"
-        android:layout_alignTop="@+id/editText3"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_toRightOf="@+id/editText3"
+        android:layout_toEndOf="@+id/editText3" />
 
 </RelativeLayout>
