@@ -14,6 +14,17 @@
     <string name="rencontre">Rencontrer</string>
     <string name="amis">Amis</string>
 
+    <string name="noFilters">Pas de filtres</string>
+    <string name="brun">Brun</string>
+    <string name="noir">Noir</string>
+    <string name="blond">Blond</string>
+    <string name="roux">Roux</string>
+    <string name="gris">Gris</string>
+    <string name="vert">Vert</string>
+    <string name="bleu">Bleu</string>
+    <string name="masculin">Masculin</string>
+    <string name="féminin">Féminin</string>
+
     <!--Pour Request-->
     <string name="myRequests">Mes requêtes</string>
     <string name="newRequest">Nouvelle requête</string>

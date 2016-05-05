@@ -69,11 +69,10 @@ public class Friends_display extends Activity
         login_ami = i.getStringExtra("com.epl.uclouvain.uclove.amis.LOGIN2");
         login_global = i.getStringExtra("login");
 
-        // Inutile ça non ?
-        aDAO = new AmisDAO(this);
+        /* aDAO = new AmisDAO(this);
         aDAO.open();
         Amis a = aDAO.selectionner_ami(login_global, login_ami);
-        aDAO.close();
+        aDAO.close(); */
 
         ProfilDAO profil_dao = new ProfilDAO(this);
         profil_dao.open();
