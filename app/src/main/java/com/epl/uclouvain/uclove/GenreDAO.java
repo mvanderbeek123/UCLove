@@ -32,11 +32,11 @@ public class GenreDAO extends DAOBase {
         mDb.delete(GENRE_TABLE_NAME, GENRE_LOGIN + " = ? AND " + GENRE_GENRE + " = ?", new String[]{a.getLogin(), a.getGenre()});
     }
 
-    public void modifier(Genre a, String ValPrecedent)
+    public void modifier(Genre a, String nouvelleVal)
     {
         ContentValues value = new ContentValues();
-        value.put(GENRE_GENRE, a.getGenre());
-        mDb.update(GENRE_TABLE_NAME, value, GENRE_LOGIN + " = ? AND " + GENRE_GENRE + " = ?", new String[]{a.getLogin(), ValPrecedent});
+        value.put(GENRE_GENRE, nouvelleVal);
+        mDb.update(GENRE_TABLE_NAME, value, GENRE_LOGIN + " = ? AND " + GENRE_GENRE + " = ?", new String[]{a.getLogin(), a.getGenre()});
     }
     public ArrayList<Genre> selectionner(String login)
     {
