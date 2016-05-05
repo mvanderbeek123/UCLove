@@ -34,7 +34,7 @@ public class ProfilDAO extends DAOBase {
     public void ajouter(Profil a)
     {
         ContentValues value = new ContentValues();
-        /*value.put(ProfilDAO.CLIENT_LOGIN, a.getLogin());
+        value.put(ProfilDAO.CLIENT_LOGIN, a.getLogin());
         value.put(ProfilDAO.CLIENT_MDP, a.getMot_de_passe());
         value.put(ProfilDAO.CLIENT_NAME, a.getPrenom());
         value.put(ProfilDAO.CLIENT_LASTNAME, a.getNom());
@@ -45,7 +45,7 @@ public class ProfilDAO extends DAOBase {
         value.put(ProfilDAO.CLIENT_NUM, a.getNumero_de_telephone());
         value.put(ProfilDAO.CLIENT_HAIR, a.getCheveux());
         value.put(ProfilDAO.CLIENT_EYES, a.getYeux());
-        value.put(ProfilDAO.CLIENT_SKIN, a.getPeau());*/
+        value.put(ProfilDAO.CLIENT_SKIN, a.getPeau());
         mDb.insert(ProfilDAO.CLIENT_TABLE_NAME, null, value);
     }
 
@@ -63,10 +63,22 @@ public class ProfilDAO extends DAOBase {
     public void modifier(Profil a)
     {
         ContentValues value = new ContentValues();
-        //value.put(Colonne, a.getSalaire());
+        value.put(ProfilDAO.CLIENT_LOGIN, a.getLogin());
+        value.put(ProfilDAO.CLIENT_MDP, a.getMot_de_passe());
+        value.put(ProfilDAO.CLIENT_NAME, a.getPrenom());
+        value.put(ProfilDAO.CLIENT_LASTNAME, a.getNom());
+        value.put(ProfilDAO.CLIENT_DATE, a.getDate_de_naissance().toString());
+        value.put(ProfilDAO.CLIENT_GENRE, a.getGenre());
+        value.put(ProfilDAO.CLIENT_ETUDE, a.getEtude());
+        value.put(ProfilDAO.CLIENT_PLACE, a.getLocalisation());
+        value.put(ProfilDAO.CLIENT_NUM, a.getNumero_de_telephone());
+        value.put(ProfilDAO.CLIENT_HAIR, a.getCheveux());
+        value.put(ProfilDAO.CLIENT_EYES, a.getYeux());
+        value.put(ProfilDAO.CLIENT_SKIN, a.getPeau());
         mDb.update(CLIENT_TABLE_NAME, value, CLIENT_LOGIN + " = ?", new String[]{a.getLogin()});
 
     }
+
     public Profil selectionner(String login2){
         Cursor c = mDb.rawQuery("select " + "*" + " from " + CLIENT_TABLE_NAME + " where " + CLIENT_LOGIN + " = ?", new String[]{login2});
         String login = c.getString(1);
@@ -89,11 +101,30 @@ public class ProfilDAO extends DAOBase {
     public boolean identifier(String login, String mdp)
     {
         Cursor c=mDb.rawQuery("SELECT COUNT(*) from " + CLIENT_TABLE_NAME +
-                " where " + CLIENT_LOGIN + " = ? AND " + CLIENT_MDP + " = ? ", new String[]{login,mdp});
-
-        if (c.getInt(0)==1){
+                " where " + CLIENT_LOGIN + " = ? AND " + CLIENT_MDP + " = ? ", new String[]{login, mdp});
+        c.moveToFirst();
+        int i = c.getInt(0);
+        c.close();
+        if (i>=1)
+        {
             return true;
         }
         else {return false;}
+    }
+    public boolean existant(String login)
+    {
+        Cursor c=mDb.rawQuery("SELECT COUNT(*) from " + CLIENT_TABLE_NAME +
+                " where " + CLIENT_LOGIN + " = ?", new String[]{login});
+        c.moveToFirst();
+        int i = c.getInt(0);
+        c.close();
+        if (i==1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
