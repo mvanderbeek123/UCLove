@@ -79,7 +79,7 @@ public class Friends_display extends Activity
         String nom = profil.getPrenom() + " " + profil.getNom();
         nom_view = (TextView)findViewById(R.id.nomAmi);
         nom_view.setText(nom);
-        nom_view.setTextColor(0x112233);
+        //nom_view.setTextColor(0x112233);
 
         String genre = profil.getGenre();
         genre_view = (TextView)findViewById(R.id.genre);
