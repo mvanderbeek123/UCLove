@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import android.widget.ArrayAdapter;
@@ -108,26 +110,51 @@ public class FriendsActivity extends Activity
         sexe.setAdapter(adapter_sexe);
 
 
-
         aDAO = new AmisDAO(this);
         aDAO.open();
+
+        ProfilDAO pDAO = new ProfilDAO(FriendsActivity.this);
+        pDAO.open();
+
+        ArrayList<String> list_login_cheveux = null;
+        ArrayList<String> list_login_yeux = null;
+        ArrayList<String> list_login_sexe = null;
+
         String selection_cheveux = String.valueOf(cheveux.getSelectedItem());
-        if(selection_cheveux.equals("Pas de filtres"))
+        if(selection_cheveux.equals("Pas de filtres")) {}
+        else
         {
-            selection_cheveux = null ;
+            list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
         }
         String selection_yeux = String.valueOf(yeux.getSelectedItem());
-        if(selection_yeux.equals("Pas de filtres"))
+        if(selection_yeux.equals("Pas de filtres")) {}
+        else
         {
-            selection_yeux = null;
+            list_login_yeux = pDAO.filtreYeux(selection_yeux);
         }
         String selection_sexe = String.valueOf(sexe.getSelectedItem());
-        if(selection_sexe.equals("Pas de filtres"))
+        if(selection_sexe.equals("Pas de filtres")) {}
+        else
         {
-            selection_sexe = null;
+            list_login_sexe = pDAO.filtreGenre(selection_sexe);
         }
 
-        ListAmis = aDAO.selectionner_listAmis(login_global);
+        if(selection_cheveux.equals("Pas de filtres") && selection_yeux.equals("Pas de filtres") && selection_sexe.equals("Pas de filtres"))
+        {
+            ListAmis = aDAO.selectionner_listAmis(login_global);
+        }
+        else
+        {
+            for (String login : list_login_sexe)
+            {
+                if (list_login_cheveux.contains(login) && list_login_yeux.contains(login))
+                {
+                    Amis a = aDAO.selectionner_ami(login_global, login);
+                    ListAmis.add(a);
+                }
+            }
+        }
+
         aDAO.close();
 
         if(ListAmis == null)
