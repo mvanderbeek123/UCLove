@@ -41,7 +41,7 @@ public class ChatSelectActivity extends Activity
         if (alist.size() == 0) {
             setContentView(R.layout.blank);
             alertDialogBuilder.setTitle(R.string.chatMessage);
-            alertDialogBuilder.setMessage(R.string.noNewRequest);
+            alertDialogBuilder.setMessage(R.string.noAmis);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
