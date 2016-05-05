@@ -13,46 +13,32 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/titrepop"
         />
-    <ImageView
-        android:src="@android:drawable/divider_horizontal_textfield"
-        android:id="@+id/separation"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:layout_below="@id/titrepop"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:paddingBottom="2dp"
-        android:paddingTop="10dp"
-        />
     <TextView
         android:id="@+id/nompop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Nom"
         android:paddingTop="20dip"
-        android:layout_below="@id/separation"
         android:layout_alignParentLeft="true"
-        />
+        android:layout_below="@id/titrepop" />
     <Button
         android:id="@+id/ajout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ajoutamis"
         android:paddingTop="20dip"
-        android:layout_below="@+id/separation"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/titrepop" />
     <ImageView
         android:id="@+id/photo_profil"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/ajout"/>
+        android:layout_below="@id/ajout"
+        android:src="@mipmap/profil"/>
     <TextView
         android:id="@+id/genrepop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="genre"
         android:paddingTop="10dip"
         android:layout_below="@+id/photo_profil"
         android:layout_alignParentLeft="true"
@@ -61,7 +47,6 @@
         android:id="@+id/cheveuxpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cheveux"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/genrepop"
         android:paddingTop="15dip"
@@ -70,7 +55,6 @@
         android:id="@+id/localisationpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="localisation"
         android:paddingTop="15dip"
         android:layout_below="@id/cheveuxpop"
         android:layout_alignParentLeft="true"
@@ -79,7 +63,6 @@
         android:id="@+id/agepop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="age"
         android:paddingTop="10dip"
         android:layout_below="@+id/photo_profil"
         android:layout_alignRight="@+id/yeuxpop"
@@ -88,7 +71,6 @@
         android:id="@+id/yeuxpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="yeux"
         android:layout_alignParentRight="true"
         android:layout_below="@id/agepop"
         android:paddingTop="15dip"
@@ -98,7 +80,6 @@
         android:id="@+id/sexprefpop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="orientation sexuelle"
         android:layout_alignParentRight="true"
         android:layout_below="@id/yeuxpop"
         android:paddingTop="15dip"

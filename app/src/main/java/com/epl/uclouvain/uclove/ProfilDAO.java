@@ -99,8 +99,8 @@ public class ProfilDAO extends DAOBase {
         c.close();
         return a;
     }
-    public ArrayList<String> selectionnerAleatoire(){
-        Cursor c = mDb.rawQuery("select " + CLIENT_LOGIN + " from " + CLIENT_TABLE_NAME, new String[]{});
+    public ArrayList<String> selectionnerAleatoire(String log){
+        Cursor c = mDb.rawQuery("select " + CLIENT_LOGIN + " from " + CLIENT_TABLE_NAME + " WHERE " + CLIENT_LOGIN +" IS NOT ?",new String[]{log});
         c.moveToFirst();
         ArrayList<String> liste=new ArrayList<>();
         while (c.isAfterLast() == false) {

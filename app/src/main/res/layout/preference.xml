@@ -43,52 +43,26 @@
             android:layout_below="@id/spinnergenre1"
             android:layout_alignLeft="@+id/spinnergenre1"
             android:layout_alignStart="@+id/spinnergenre1" />
-        <TextView
-            android:layout_width="180dp"
-            android:text="@string/prefAge"
-            android:layout_height="35dp"
-            android:textSize="20sp"
-            android:id="@+id/nom13"
-            android:layout_below="@+id/spinnergenre2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnerage"
-            android:layout_below="@id/spinnergenre2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/spinnergenre1"
-            android:layout_alignStart="@+id/spinnergenre1" />
+
         <TextView
             android:layout_width="180dp"
             android:layout_height="35dp"
             android:text="@string/Cheveux"
             android:id="@+id/nom14"
             android:textSize="20dp"
-            android:layout_below="@+id/spinnerage"
+            android:layout_alignTop="@+id/spinnercheveux"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button14"
-            android:layout_below="@id/spinnerage"
-            android:layout_alignTop="@+id/nom13"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/spinnerage"
-            android:layout_alignStart="@+id/spinnerage" />
+
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/spinnercheveux"
-            android:layout_below="@id/spinnerage"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/spinnerage"
-            android:layout_alignStart="@+id/spinnerage" />
+            android:layout_below="@id/spinnergenre2"
+            android:layout_alignLeft="@+id/spinnergenre1"
+            android:layout_alignStart="@+id/spinnergenre1" />
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -96,18 +70,9 @@
             android:layout_below="@id/spinnercheveux"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/spinnerage"
-            android:layout_alignStart="@+id/spinnerage" />
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinnercheveux3"
-            android:layout_below="@id/spinnercheveux2"
-            android:layout_alignTop="@+id/nom13"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/spinnerage"
-            android:layout_alignStart="@+id/spinnerage" />
+            android:layout_alignLeft="@+id/spinnergenre1"
+            android:layout_alignStart="@+id/spinnergenre1" />
+
         <TextView
             android:layout_width="180dp"
             android:layout_height="35dp"
@@ -124,8 +89,8 @@
             android:layout_below="@id/spinnercheveux2"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignLeft="@+id/button14"
-            android:layout_alignStart="@+id/button14" />
+            android:layout_alignLeft="@+id/spinnergenre1"
+            android:layout_alignStart="@+id/spinnergenre1" />
         <TextView
             android:layout_width="180dp"
             android:layout_height="35dp"

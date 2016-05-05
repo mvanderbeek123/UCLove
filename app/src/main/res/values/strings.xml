@@ -83,5 +83,6 @@
     <string name="profil">Profil</string>
     <string name="requete">Requêtes</string>
     <string name="chat">Conversation</string>
+    <string name="orientation">Orientation</string>
 
 </resources>

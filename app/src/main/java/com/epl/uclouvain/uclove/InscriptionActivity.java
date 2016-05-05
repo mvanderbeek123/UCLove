@@ -42,8 +42,8 @@ public class InscriptionActivity extends Activity {
 
         final Spinner liste = (Spinner) findViewById(R.id.spinner);
         List<String> exemple = new ArrayList<String>();
-        exemple.add("Masculin");
-        exemple.add("Féminin");
+        exemple.add("masculin");//TODO
+        exemple.add("féminin");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, exemple);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         liste.setAdapter(adapter);

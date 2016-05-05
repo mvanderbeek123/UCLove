@@ -23,7 +23,7 @@
             android:layout_height="200dp"
             android:id="@+id/photo"
             android:contentDescription="@string/Nom"
-            android:src="@android:drawable/divider_horizontal_textfield"
+            android:src="@mipmap/profil"
             android:layout_below="@+id/Profil"
             android:layout_centerHorizontal="true" />
 

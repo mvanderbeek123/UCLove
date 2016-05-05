@@ -2,6 +2,7 @@ package com.epl.uclouvain.uclove;
 
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 /**
  * Created by marie-marie on 2/05/16.
@@ -25,6 +26,7 @@ public class Profil  {
         private int visibilite_yeux;
         private String peau;
         private int visibilite_peau;
+        ArrayList<Photos> photo;
 
 
         public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, String genre, String etude, String localisation)
@@ -47,6 +49,7 @@ public class Profil  {
             this.visibilite_yeux=0;
             this.peau=null;
             this.visibilite_peau=0;
+            photo=new ArrayList<Photos>();
         }
     public Profil(String login, String mot_de_passe, String prenom, String nom, Date date_de_naissance, String genre, String etude, String localisation,String cheveux,String peau,String yeux)
     {

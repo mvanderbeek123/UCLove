@@ -48,8 +48,9 @@ public class ProfilAffichageActivity extends Activity {
         String login=intent.getStringExtra("login");
         profildao=new ProfilDAO(this);
         genredao=new GenreDAO(this);
+        String log=Controler.logged_user;
         profildao.open();
-        liste=profildao.selectionnerAleatoire();
+        liste=profildao.selectionnerAleatoire(log);
         profildao.close();
         afficher(liste.get(i));
         suivant.setOnClickListener(new View.OnClickListener() {
@@ -85,19 +86,23 @@ public class ProfilAffichageActivity extends Activity {
         Profil a=profildao.selectionner(login);
         profildao.close();
         name.setText(a.getPrenom()+" "+a.getNom());
-        cheveux.setText("cheveux de couleur " + a.getCheveux());
+        if (a.getCheveux()!=null){
+        cheveux.setText(R.string.Cheveux + " : " + a.getCheveux());
+        }
         genre.setText(a.getGenre());
-        localisation.setText(a.getLocalisation());
-        yeux.setText("yeux de couleur " + a.getYeux());
+        if (a.getLocalisation()!=null){
+        localisation.setText(a.getLocalisation());}
+        if(a.getYeux()!=null){
+        yeux.setText(R.id.yeux + " : "+ a.getYeux());}
         genredao.open();
         ArrayList<Genre> genrelist=genredao.selectionner(login);
         genredao.close();
         if (genrelist.size()==2){
-            sexpref.setText("bi");
+            sexpref.setText(R.string.orientation +": bi");
         }
         else if(genrelist.size()==1)
         {
-            sexpref.setText((genrelist.get(0)).getGenre());
+            sexpref.setText(R.string.orientation + " : " + (genrelist.get(0)).getGenre());
         }
         age.setText(a.getDate_de_naissance().toString());
     }

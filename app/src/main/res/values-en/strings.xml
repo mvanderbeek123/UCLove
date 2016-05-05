@@ -5,7 +5,7 @@
     <string name="Etude">Studies</string>
     <string name="Genre">Sex</string>
     <string name="Localisation">City</string>
-    <string name="Nom">Name</string>
+    <string name="Nom">Lastname</string>
     <string name="Numéro">Phone number</string>
     <string name="Peau">Skin color</string>
     <string name="Preference">Preference</string>
@@ -67,4 +67,6 @@
     <string name="profil">Profil</string>
     <string name="requete">Requests</string>
     <string name="chat">Chat</string>
+    <string name="orientation">Orientation</string>
+
 </resources>
