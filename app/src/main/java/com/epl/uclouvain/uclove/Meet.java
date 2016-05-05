@@ -8,11 +8,11 @@ import java.sql.Time;
  */
 public class Meet {
     private String login;   //toujours voir si login ou id
-    private int date;
+    private long date;
     private int hourStart;      //voir comment on fonctionne: intervalle d'heures exactes ou à peu près
     private int hourEnd;
 
-    public Meet(String login, int date,int hourStart,int hourEnd)
+    public Meet(String login, long date,int hourStart,int hourEnd)
     {
         super();
         this.login=login;
@@ -25,7 +25,7 @@ public class Meet {
         return login;
     }
 
-    public int getDate() {
+    public long getDate() {
         return date;
     }
 
