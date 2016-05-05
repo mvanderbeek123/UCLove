@@ -46,8 +46,9 @@ public class DataBase extends SQLiteOpenHelper
     public static final String  CLIENT_TABLE_EX1 = " INSERT INTO " + CLIENT_TABLE_NAME +
             " (" +
             CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
-            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
-            ") VALUES ( \"Del\", \"dt\", \"Delphine\", \"DT\", \"1995-06-09\", \"Féminin\", \"EPL\" ,\"LLN\" );";
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE + " , " +
+            CLIENT_NUM + " , " + CLIENT_HAIR + " , " + CLIENT_SKIN + " , " + CLIENT_EYES +
+            ") VALUES ( \"Del\", \"dt\", \"Delphine\", \"DT\", \"1995-06-09\", \"Féminin\", \"EPL\" ,\"LLN\", 0485523246, \"Noir\", \"Blanc\", \"Brun\" );";
 
     public static final String  CLIENT_TABLE_EX2 = " INSERT INTO " + CLIENT_TABLE_NAME +
             " (" +
@@ -64,8 +65,9 @@ public class DataBase extends SQLiteOpenHelper
     public static final String  CLIENT_TABLE_EX4 = " INSERT INTO " + CLIENT_TABLE_NAME +
             " (" +
             CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
-            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
-            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\");";
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +" , " +
+            CLIENT_NUM + " , " + CLIENT_HAIR + " , " + CLIENT_SKIN + " , " + CLIENT_EYES +
+            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\", 0494694892, \"Noir\", \"Blanc\", \"Vert\" );";
 
 
 
@@ -79,6 +81,15 @@ public class DataBase extends SQLiteOpenHelper
             GENRE_GENRE + " TEXT NOT NULL);";
     public static final String GENRE_DROP = "DROP TABLE IF EXISTS " + GENRE_TABLE_NAME+";";
 
+    public static final String  GENRE_TABLE_EX1 = " INSERT INTO " + GENRE_TABLE_NAME +
+            " (" +
+            GENRE_LOGIN + " , " + GENRE_GENRE  +
+            ") VALUES ( \"Del\", \"Homme\");";
+    public static final String  GENRE_TABLE_EX2 = " INSERT INTO " + GENRE_TABLE_NAME +
+            " (" +
+            GENRE_LOGIN + " , " + GENRE_GENRE  +
+            ") VALUES ( \"Jul\", \"Femme\");";
+
     // Table Cheveux
     public static final String CHEVEUX_TABLE_NAME="Cheveux";
     public static final String CHEVEUX_LOGIN="login";
@@ -88,6 +99,15 @@ public class DataBase extends SQLiteOpenHelper
             CHEVEUX_COLOR + " TEXT NOT NULL);";
     public static final String CHEVEUX_DROP = "DROP TABLE IF EXISTS " + CHEVEUX_TABLE_NAME+";";
 
+    public static final String  CHEVEUX_TABLE_EX1 = " INSERT INTO " + CHEVEUX_TABLE_NAME +
+            " (" +
+            CHEVEUX_LOGIN + " , " + CHEVEUX_COLOR  +
+            ") VALUES ( \"Del\", \"Noirs\");";
+    public static final String  CHEVEUX_TABLE_EX2 = " INSERT INTO " + CHEVEUX_TABLE_NAME +
+            " (" +
+            CHEVEUX_LOGIN + " , " + CHEVEUX_COLOR  +
+            ") VALUES ( \"Jul\", \"Bruns\");";
+
     // Table yeux
     public static final String YEUX_TABLE_NAME="Yeux";
     public static final String YEUX_LOGIN="login";
@@ -96,6 +116,7 @@ public class DataBase extends SQLiteOpenHelper
             YEUX_LOGIN + " TEXT NOT NULL REFERENCES CLIENT, " +
             YEUX_COLOR + " TEXT NOT NULL);";
     public static final String YEUX_DROP = "DROP TABLE IF EXISTS " + YEUX_TABLE_NAME+";";
+
 
     // Table Peau
     public static final String PEAU_TABLE_NAME="Peau";
@@ -177,7 +198,7 @@ public class DataBase extends SQLiteOpenHelper
             LOG1 + " TEXT, " +
             LOG2 + " TEXT, " +
             DATE + " LONG, " +
-            LIEU + " TEXT, " + ");";
+            LIEU + " TEXT " + ");";
 
     public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
 
@@ -206,8 +227,15 @@ public class DataBase extends SQLiteOpenHelper
 
         db.execSQL(CHAT_TABLE_CREATE);
         db.execSQL(MEET_TABLE_CREATE);
+
         db.execSQL(GENRE_CREATE_TABLE);
+        db.execSQL(GENRE_TABLE_EX1);
+        db.execSQL(GENRE_TABLE_EX2);
+
         db.execSQL(CHEVEUX_CREATE_TABLE);
+        db.execSQL(CHEVEUX_TABLE_EX1);
+        db.execSQL(CHEVEUX_TABLE_EX2);
+
         db.execSQL(YEUX_CREATE_TABLE);
         db.execSQL(PEAU_CREATE_TABLE);
         db.execSQL(ETUDE_CREATE_TABLE);
