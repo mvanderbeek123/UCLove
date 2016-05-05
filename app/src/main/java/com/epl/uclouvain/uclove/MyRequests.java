@@ -74,7 +74,7 @@ public class MyRequests extends Activity {
                     aDAO.modif_requete_non(Controler.requete_user,Controler.logged_user);
                     aDAO.close();
                     //On confirme que la demande est supprimée/bloquée
-                    Toast toast=Toast.makeText(getApplicationContext(),"La demande a bien été annulée",Toast.LENGTH_SHORT);
+                    Toast toast=Toast.makeText(getApplicationContext(),R.string.deleteRequest,Toast.LENGTH_SHORT);
                     toast.show();
                     MyRequests.this.finish();
                 }

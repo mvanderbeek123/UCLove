@@ -37,7 +37,10 @@
     <string name="non">Non</string>
     <string name="oui">Oui</string>
     <string name="blockRequestConfirmation">Es tu sûre de vouloir bloquer cette demande ?</string>
-    <string name="confirmation">Confirmationne</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="error_entree">Pas de correspondance. Vérifiez que vous n\'avez pas fait une faute de frappe</string>
+    <string name="clic_to_confirm">Clique sur oui pour confirmer</string>
+    <string name="envoiNewRequest">Votre requête à bien été envoyée</string>
 
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>

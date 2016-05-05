@@ -49,4 +49,6 @@
     <string name="vert">Green</string>
     <string name="bi">Bisexual</string>
     <string name="chauve">Bald</string>
+    <string name="error_entree">No match found . Make sure that you haven\'t a typo</string>
+    <string name="clic_to_confirm">Click Yes to confirm</string>
 </resources>

@@ -26,6 +26,8 @@ public class NewRequest extends Activity {
     private Button toSend=null;
     private final static String NULL_VALUE="0";
     final Context context = this;
+    ProfilDAO list;
+    AmisDAO adao;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -34,6 +36,8 @@ public class NewRequest extends Activity {
         pseudo=(EditText) findViewById(R.id.edit_pseudonyme);
         toSend=(Button)findViewById(R.id.send);
         toSend.setOnClickListener(toSendListener);
+        list=new ProfilDAO(this);
+        adao = new AmisDAO(this);
     }
     private View.OnClickListener toSendListener = new View.OnClickListener() {
         @Override
@@ -41,24 +45,31 @@ public class NewRequest extends Activity {
         {
             String text=pseudo.getText().toString();
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-            if(text.equals(NULL_VALUE))
+            list.open();
+            Boolean isExist= list.existant(pseudo.getText().toString());
+            if(isExist==false)
             {
                 showDialog(0);
             }
             else
             {
-                alertDialogBuilder.setTitle("Confirmation");
-                alertDialogBuilder.setMessage("Click Yes to confirm");
+                alertDialogBuilder.setTitle(R.string.confirmation);
+                alertDialogBuilder.setMessage(R.string.clic_to_confirm);
                 alertDialogBuilder.setCancelable(false);
-                alertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Rajouter la requete dans la base de donnée
-                        Toast toast=Toast.makeText(getApplicationContext(),R.string.newFriend,Toast.LENGTH_SHORT);
+                        Amis a= new Amis(Controler.logged_user,pseudo.getText().toString(),0,0);
+                        adao.open();
+                        adao.ajouter(a);
+                        adao.close();
+                        Toast toast=Toast.makeText(getApplicationContext(),R.string.envoiNewRequest,Toast.LENGTH_SHORT);
                         toast.show();
                         NewRequest.this.finish();
+                        //si la demande existe deja dans un sens ou l'autre + changer message
                     }
                 });
-                alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //On retourne juste en arrièr en gardant le texte, car si c'est une long
                         //pseudo, il ne devra pas le retapper.
@@ -77,7 +88,7 @@ public class NewRequest extends Activity {
         switch (id) {
             case 0:
                 myBox = new Dialog(this);
-                myBox.setTitle("No match found . Make sure that you haven't a typo");
+                myBox.setTitle(R.string.error_entree);
                 break;
         }
         return myBox;
