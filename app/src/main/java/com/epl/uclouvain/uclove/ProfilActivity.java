@@ -12,5 +12,6 @@ public class ProfilActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profil);
 
+
     }
 }
