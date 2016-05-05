@@ -25,13 +25,15 @@
         android:text="Confirmer demande de rdv"
         android:id="@+id/button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button"
+        style="@style/ButtonText"/>
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="@string/pseudoFriend"
         android:ems="10"
         android:id="@+id/editText3"
         android:layout_above="@+id/textView"
@@ -42,9 +44,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPostalAddress"
+        android:hint="@string/lieuRdv"
         android:ems="10"
         android:id="@+id/editText4"
-        android:text="Lieu"
         android:layout_alignTop="@+id/editText3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />

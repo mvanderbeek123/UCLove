@@ -65,5 +65,7 @@
     <string name="perimetre">Périmètre </string>
 
     <string name="info"> Veuillez remplir vos informations personnelles </string>
+    <string name="pseudoFriend">Pseudo de ton ami</string>
+    <string name="lieuRdv">Lieu</string>
 
 </resources>
