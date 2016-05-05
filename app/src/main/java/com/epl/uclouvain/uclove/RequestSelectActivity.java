@@ -16,12 +16,11 @@ import java.util.List;
 /**
  * Created by steph on 05/05/16.
  */
-public class RequestSelectActivity extends Activity
-{
+public class RequestSelectActivity extends Activity {
     ListView listView;
     ArrayAdapter<String> amiAdapteur;
     List<String> logins;
-    AmisDAO  adao;
+    AmisDAO adao;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,8 +35,7 @@ public class RequestSelectActivity extends Activity
         ArrayList<Amis> alist = adao.selectionner_listRequetes(Controler.logged_user);
         adao.close();
 
-        if(alist.size()==0)
-        {
+        if (alist.size() == 0) {
             setContentView(R.layout.blank);
             alertDialogBuilder.setTitle("Request Message");
             alertDialogBuilder.setMessage("You don't have new request");
@@ -52,15 +50,13 @@ public class RequestSelectActivity extends Activity
             theAlert.show();
 
         }
+
         else {
             for (int i = 0; i < alist.size(); i++) {
                 Amis amis = alist.get(i);
                 String log1 = amis.getLogin1();
                 String log2 = amis.getLogin2();
-                if (log1.equals(Controler.logged_user))
-                    logins.add(log2);
-                else
-                    logins.add(log1);
+                logins.add(log1);
             }
 
             amiAdapteur = new ArrayAdapter<String>(RequestSelectActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, logins);
@@ -70,11 +66,12 @@ public class RequestSelectActivity extends Activity
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Controler.chat_user = logins.get(position);
+                    // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                     Intent i = new Intent(RequestSelectActivity.this, MyRequests.class);
                     startActivity(i);
                 }
             });
-        }
 
+        }
     }
 }
