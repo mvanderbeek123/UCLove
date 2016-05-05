@@ -15,16 +15,17 @@
         android:text="New Text"
         android:id="@+id/textView"
         android:layout_gravity="center_horizontal"
-        android:layout_below="@+id/calendarView" />
+        android:layout_above="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirmer demande de rdv"
         android:id="@+id/button"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:layout_below="@+id/calendarView" />
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -33,7 +34,9 @@
         android:text="Name"
         android:ems="10"
         android:id="@+id/editText3"
-        android:layout_alignBottom="@+id/calendarView" />
+        android:layout_above="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -41,9 +44,9 @@
         android:inputType="textPostalAddress"
         android:ems="10"
         android:id="@+id/editText4"
-        android:layout_alignBottom="@+id/calendarView"
-        android:layout_toRightOf="@+id/editText3"
-        android:layout_toEndOf="@+id/editText3"
-        android:text="Lieu" />
+        android:text="Lieu"
+        android:layout_alignTop="@+id/editText3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

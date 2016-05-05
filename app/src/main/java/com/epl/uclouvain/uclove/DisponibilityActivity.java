@@ -38,6 +38,8 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
         b.setOnTouchListener(this);
 
         calendarView = (CalendarView) findViewById(R.id.calendarView);
+        calendarView.setShowWeekNumber(false);
+        calendarView.setFirstDayOfWeek(2);
         dateDisplay = (TextView) findViewById(R.id.textView);
         dateDisplay.setText("Date: ");
 
@@ -46,7 +48,7 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
                 dateDisplay.setText("Date: " + day + " / " + month + " / " + year);
 
-                Toast.makeText(getApplicationContext(), "Selected Date:\n" + "Day = " + day + "\n" + "Month = " + month + "\n" + "Year = " + year, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Selected Date:\n" + "Day = " + day + "\n" + "Month = " + month + "\n" + "Year = " + year, Toast.LENGTH_SHORT).show();
                 long time=calendarView.getDate();
                 m=new Meet(Controler.logged_user,"",time,"");
             }
