@@ -103,7 +103,7 @@ public class Friends_display extends Activity
         localisation_view = (TextView)findViewById(R.id.localisation);
         localisation_view.setText(localisation);
 
-        gDAO = new GenreDAO(this);
+        /*gDAO = new GenreDAO(this);
         gDAO.open();
         ArrayList<Genre> listGenre = gDAO.selectionner(Controler.friend_user);
         gDAO.close();
@@ -122,7 +122,7 @@ public class Friends_display extends Activity
         {
             sexpref_view = (TextView)findViewById(R.id.sexpref);
             sexpref_view.setText("");
-        }
+        }*/
 
 
 

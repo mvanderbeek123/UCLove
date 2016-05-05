@@ -39,6 +39,7 @@ public class FriendsActivity extends Activity
     Spinner cheveux;
     Spinner yeux;
     Spinner sexe;
+    ProfilDAO pDAO;
 
     public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.LOGIN2";
     @Override
@@ -113,7 +114,7 @@ public class FriendsActivity extends Activity
         aDAO = new AmisDAO(this);
         aDAO.open();
 
-        ProfilDAO pDAO = new ProfilDAO(FriendsActivity.this);
+        pDAO = new ProfilDAO(FriendsActivity.this);
         pDAO.open();
 
         ArrayList<String> list_login_cheveux = null;
@@ -121,25 +122,26 @@ public class FriendsActivity extends Activity
         ArrayList<String> list_login_sexe = null;
 
         String selection_cheveux = String.valueOf(cheveux.getSelectedItem());
-        if(selection_cheveux.equals("Pas de filtres")) {}
+        if(selection_cheveux.equals(res.getString(R.string.noFilters))) {}
         else
         {
             list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
         }
         String selection_yeux = String.valueOf(yeux.getSelectedItem());
-        if(selection_yeux.equals("Pas de filtres")) {}
+        if(selection_yeux.equals(res.getString(R.string.noFilters))) {}
         else
         {
             list_login_yeux = pDAO.filtreYeux(selection_yeux);
         }
         String selection_sexe = String.valueOf(sexe.getSelectedItem());
-        if(selection_sexe.equals("Pas de filtres")) {}
+        if(selection_sexe.equals(res.getString(R.string.noFilters))) {}
         else
         {
             list_login_sexe = pDAO.filtreGenre(selection_sexe);
         }
+        pDAO.close();
 
-        if(selection_cheveux.equals("Pas de filtres") && selection_yeux.equals("Pas de filtres") && selection_sexe.equals("Pas de filtres"))
+        if(selection_cheveux.equals(res.getString(R.string.noFilters)) && selection_yeux.equals(res.getString(R.string.noFilters)) && selection_sexe.equals(res.getString(R.string.noFilters)))
         {
             ListAmis = aDAO.selectionner_listAmis(login_global);
         }
