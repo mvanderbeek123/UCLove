@@ -30,6 +30,8 @@ public class FriendsActivity extends Activity
     AmisDAO aDAO;
     ArrayList<Amis> ListAmis;
     ArrayList<String> ListLogin;
+    ArrayAdapter<String> adapter;
+
     public final static String NOM_INTENT = "com.epl.uclouvain.uclove.amis.LOGIN2";
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -40,16 +42,19 @@ public class FriendsActivity extends Activity
         Intent i=getIntent();
         login_global = i.getStringExtra("login");
 
+        liste = (ListView) findViewById(R.id.listAmis);
+        ListLogin = new ArrayList<String>();
+
         Resources res = getResources();
         String texte = res.getString(R.string.listeAmis);
         TextView vue = (TextView)findViewById(R.id.textAmis);
         vue.setText(texte);
 
-        liste = (ListView) findViewById(R.id.listAmis);ListLogin = new ArrayList<String>();
-
         aDAO = new AmisDAO(this);
         aDAO.open();
         ListAmis = aDAO.selectionner_listAmis(login_global);
+        aDAO.close();
+
         if(ListAmis == null)
         {
             String texte_2 = res.getString(R.string.noAmis);
@@ -57,22 +62,23 @@ public class FriendsActivity extends Activity
         }
         else
         {
-            for (Amis a : ListAmis)
+            for (int k=0; k<ListAmis.size(); k++)
             {
+                Amis a = ListAmis.get(k);
                 String log1 = a.getLogin1();
                 String log2 = a.getLogin2();
-                if(log1 == login_global)
+                if(log1.equals(login_global))
                 {
                     ListLogin.add(log2);
                 }
-                if(log2 == login_global)
+                else
                 {
                     ListLogin.add(log1);
                 }
             }
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.friends, ListLogin);
+        adapter = new ArrayAdapter<String>(FriendsActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, ListLogin);
         liste.setAdapter(adapter);
 
         liste.setOnItemClickListener(new AdapterView.OnItemClickListener()
@@ -88,6 +94,5 @@ public class FriendsActivity extends Activity
                 startActivity(i);
             }
         });
-        aDAO.close();
     }
 }

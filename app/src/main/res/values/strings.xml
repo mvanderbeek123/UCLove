@@ -44,6 +44,8 @@
     <string name="prefAge">Tranche d\'age </string>
     <string name="perimetre">Périmètre </string>
 
+    <string name="info"> Veuillez remplir vos informations personnelles </string>
+
 
 
 </resources>
