@@ -47,7 +47,7 @@ public class Friends_display extends Activity
     Button supprimer = null;
     Button contact = null;
     CheckBox favori = null;
-    Button details = null;
+    //Button details = null;
     Button rencontre = null;
 
     Profil profil = null;
@@ -81,7 +81,7 @@ public class Friends_display extends Activity
         profil = profil_dao.selectionner(login_ami);
         profil_dao.close();
 
-        String nom = profil.getNom();
+        String nom = profil.getPrenom() + profil.getNom();
         String genre = profil.getGenre();
         String date_naissance = new SimpleDateFormat("YYYY").format(profil.getDate_de_naissance());
         String date_actuelle = new SimpleDateFormat("YYYY").format(Calendar.getInstance().getTime());
@@ -130,9 +130,9 @@ public class Friends_display extends Activity
         favori = (CheckBox) findViewById(R.id.favori);
         texte = res.getString(R.string.favori1);
         favori.setText(texte);
-        details = (Button)findViewById(R.id.details);
-        texte = res.getString(R.string.details);
-        details.setText(texte);
+        //details = (Button)findViewById(R.id.details);
+        //texte = res.getString(R.string.details);
+        //details.setText(texte);
         rencontre = (Button)findViewById(R.id.rencontre);
         texte = res.getString(R.string.rencontre);
         rencontre.setText(texte);
@@ -140,7 +140,7 @@ public class Friends_display extends Activity
         supprimer.setOnClickListener(supprimerListener);
         contact.setOnClickListener(contactListener);
         favori.setOnClickListener(favoriListener);
-        details.setOnClickListener(detailsListener);
+        //details.setOnClickListener(detailsListener);
         rencontre.setOnClickListener(rencontreListener);
     }
 
@@ -196,14 +196,14 @@ public class Friends_display extends Activity
         }
     };
 
-    private OnClickListener detailsListener = new OnClickListener()
+    /* private OnClickListener detailsListener = new OnClickListener()
     {
         @Override
         public void onClick(View v)
         {
             // Copier le layout Profil de Marie.
         }
-    };
+    }; */
 
     private OnClickListener rencontreListener = new OnClickListener()
     {

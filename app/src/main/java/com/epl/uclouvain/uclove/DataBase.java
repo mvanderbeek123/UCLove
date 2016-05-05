@@ -52,7 +52,7 @@ public class DataBase extends SQLiteOpenHelper
             GENRE_GENRE + " TEXT NOT NULL);";
     public static final String GENRE_DROP = "DROP TABLE IF EXISTS " + GENRE_TABLE_NAME+";";
 
-    // Table Cheveuxc
+    // Table Cheveux
     public static final String CHEVEUX_TABLE_NAME="Cheveux";
     public static final String CHEVEUX_LOGIN="login";
     public static final String CHEVEUX_COLOR="couleur";
@@ -97,8 +97,8 @@ public class DataBase extends SQLiteOpenHelper
     public static final String AMIS_TABLE_CREATE = "CREATE TABLE " + AMIS_TABLE_NAME + " (" +
             AMIS_LOGIN1 + " TEXT, " +
             AMIS_LOGIN2 + " TEXT, " +
-            AMIS_FAVORI + " INTEGER " +
-            AMIS_ISAMI + " INTEGER " + ");";
+            AMIS_ISAMI + " INTEGER, " +
+            AMIS_FAVORI + " INTEGER " + ");";
     public static final String AMIS_TABLE_DROP = "DROP TABLE IF EXISTS " + AMIS_TABLE_NAME + ";";
 
     // INSERT INTO table_name (column1,column2,column3,...)     VALUES (value1,value2,value3,...);
@@ -191,5 +191,4 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(ETUDE_DROP);
         onCreate(db);
     }
-    // Autres tables. A ajouter en suivant le même schéma que j'ai fait pour la table Amis.
 }
