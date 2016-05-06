@@ -10,9 +10,5 @@ public class Controler {
     public static String requete_user = "";
     public static String meet_user = "";
     public static String friend_user="";
-    public static String rdv_user = "";
-    public static String rdv_date = "";
-    public static String rdv_lieu = "";
-
     public static String pw_user ="";
 }

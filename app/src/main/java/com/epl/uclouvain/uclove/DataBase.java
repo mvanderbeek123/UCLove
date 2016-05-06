@@ -54,7 +54,7 @@ public class DataBase extends SQLiteOpenHelper
             " (" +
             CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
             CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
-            ") VALUES ( \"MM\", \"vdb\", \"Marie-Marie\", \"VDB\", \"1995-12-20\", \"Féminin\", \"EPL\" ,\"LLN\" );";
+            ") VALUES ( \"MM\", \"vdb\", \"Marie-Marie\", \"VDB\", \"1995-12-20\", \"Féminin\", \"EPL\" ,\"LLN\");";
 
     public static final String  CLIENT_TABLE_EX3 = " INSERT INTO " + CLIENT_TABLE_NAME +
             " (" +
@@ -67,8 +67,13 @@ public class DataBase extends SQLiteOpenHelper
             CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
             CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +" , " +
             CLIENT_NUM + " , " + CLIENT_HAIR + " , " + CLIENT_SKIN + " , " + CLIENT_EYES +
-            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\", \"0494694892\", \"Noir\", \"Blanc\", \"Vert\" );";
+            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\", \"0494694892\", \"Brun\", \"Blanc\", \"Vert\" );";
 
+    public static final String  CLIENT_TABLE_EX5 = " INSERT INTO " + CLIENT_TABLE_NAME +
+            " (" +
+            CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
+            CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +
+            ") VALUES ( \"Noe\", \"des\", \"Noé\", \"DES\", \"1996-02-26\", \"Masculin\", \"EPL\" ,\"LLN\");";
 
 
 
@@ -102,11 +107,11 @@ public class DataBase extends SQLiteOpenHelper
     public static final String  CHEVEUX_TABLE_EX1 = " INSERT INTO " + CHEVEUX_TABLE_NAME +
             " (" +
             CHEVEUX_LOGIN + " , " + CHEVEUX_COLOR  +
-            ") VALUES ( \"Del\", \"Noirs\");";
+            ") VALUES ( \"Del\", \"Noir\");";
     public static final String  CHEVEUX_TABLE_EX2 = " INSERT INTO " + CHEVEUX_TABLE_NAME +
             " (" +
             CHEVEUX_LOGIN + " , " + CHEVEUX_COLOR  +
-            ") VALUES ( \"Jul\", \"Bruns\");";
+            ") VALUES ( \"Jul\", \"Brun\");";
 
     // Table yeux
     public static final String YEUX_TABLE_NAME="Yeux";
@@ -171,6 +176,7 @@ public class DataBase extends SQLiteOpenHelper
             " (" +
             AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + AMIS_ISAMI + " , " + AMIS_FAVORI +
             ") VALUES ( \"MM\", \"Step\", 1, 1);";
+
 
 
     // Table chatmessages
@@ -242,6 +248,7 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(CLIENT_TABLE_EX2);
         db.execSQL(CLIENT_TABLE_EX3);
         db.execSQL(CLIENT_TABLE_EX4);
+        db.execSQL(CLIENT_TABLE_EX5);
 
         db.execSQL(AMIS_TABLE_CREATE);
         db.execSQL(AMIS_TABLE_EX1);

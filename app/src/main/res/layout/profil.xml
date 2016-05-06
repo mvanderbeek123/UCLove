@@ -210,7 +210,6 @@
             android:id="@+id/button4"
             android:calendarViewShown="false"
             android:layout_alignTop="@+id/nom4"
-            android:layout_toEndOf="@+id/nom4"
             android:layout_alignLeft="@+id/button5"
             android:layout_alignStart="@+id/button5" />
 

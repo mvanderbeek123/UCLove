@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="Cheveux">Hair color</string>
+    <string name="Cheveux">Hair</string>
     <string name="Date_de_naissance">Birth date</string>
     <string name="Etude">Studies</string>
     <string name="Genre">Sex</string>
@@ -10,12 +10,12 @@
     <string name="Peau">Skin color</string>
     <string name="Preference">Preference</string>
     <string name="Profil">Profile</string>
-    <string name="Prénom">Name</string>
+    <string name="Prénom">First Name</string>
     <string name="action_settings">Settings</string>
     <string name="amis">Friends</string>
     <string name="contact">Get in touch</string>
-    <string name="details"></string>
-    <string name="display"></string>
+    <string name="details">Details</string>
+    <string name="display">Uclove</string>
     <string name="editText">Your text</string>
     <string name="envoyer">Send</string>
     <string name="favori1">Mark as favorite</string>
@@ -25,7 +25,7 @@
     <string name="message">Message</string>
     <string name="myRequests">My requests</string>
     <string name="newRequest">New request</string>
-    <string name="noAmis">You don\'t have any friends</string>
+    <string name="noAmis">You don\'t have any friends.</string>
     <string name="perimetre">Perimeter</string>
     <string name="prefAge">Age range</string>
     <string name="pseudo">Pseudo :</string>
@@ -38,7 +38,7 @@
     <string name="bleu">Blue</string>
     <string name="blond">Blond</string>
     <string name="brun">Brown</string>
-    <string name="button" translatable="false"></string>
+    <string name="button" translatable="false">ok</string>
     <string name="féminin">Female</string>
     <string name="gris">Grey</string>
     <string name="info">Please fill your personnal informations</string>
@@ -48,23 +48,23 @@
     <string name="roux">Ginger</string>
     <string name="vert">Green</string>
     <string name="bi">Bisexual</string>
-    <string name="chauve">Bald</string>
+    <string name="chauve">Bold</string>
     <string name="error_entree">No match found . Make sure that you haven\'t a typo</string>
     <string name="clic_to_confirm">Click Yes to confirm</string>
     <string name="ok_text">Ok</string>
     <string name="noNewRequest">You don\'t have new request</string>
     <string name="requestMessage">Request Message</string>
     <string name="amisMessage">Friend Message</string>
-    <string name="blockRequestConfirmation">Do you want to block this demand?</string>
+    <string name="blockRequestConfirmation">Do you want to block this request?</string>
     <string name="chatMessage">Chat Message</string>
     <string name="confirmation">Confirmation</string>
-    <string name="deleteRequest">You deleted the information</string>
+    <string name="deleteRequest">You deleted the request</string>
     <string name="newFriend">Nice, you have a new friend !</string>
     <string name="non">No</string>
     <string name="oui">Yes</string>
     <string name="people">People</string>
     <string name="preferences">Preferences</string>
-    <string name="profil">Profil</string>
+    <string name="profil">Profile</string>
     <string name="requete">Requests</string>
     <string name="chat">Chat</string>
     <string name="orientation">Orientation</string>
@@ -78,6 +78,40 @@
     <string name="Histoire">History</string>
     <string name="vide">Every box must contain information...</string>
     <string name="blanc">White</string>
-    <string name="metisse">mixed-race</string>
+    <string name="metisse">Mixed-race</string>
     <string name="jaune">yellow</string>
+    <string name="Prenom">First Name</string>
+    <string name="RDVMessage">Meet\'s message</string>
+    <string name="Yeux">Eyes</string>
+    <string name="age">Age</string>
+    <string name="ajoutamis">Add</string>
+    <string name="cheveux">hair color</string>
+    <string name="compte">Create an account</string>
+    <string name="confirm">Send date</string>
+    <string name="connexion">Connection</string>
+    <string name="deleteRDV">You deleted the meeting</string>
+    <string name="envoiNewProp">Well send!</string>
+    <string name="envoiNewRequest">Well send!</string>
+    <string name="favori">Add favorite</string>
+    <string name="inscription">Inscription</string>
+    <string name="lieuRdv">Meeting point</string>
+    <string name="login">Login</string>
+    <string name="lrdv">Meeting list</string>
+    <string name="lrequete">Request list</string>
+    <string name="mdp">Password</string>
+    <string name="myMeet">My meetings</string>
+    <string name="newMeet">New meet</string>
+    <string name="newRDV">Great! You have a new meeting</string>
+    <string name="newRdv">Date confirmed!</string>
+    <string name="noNewProp">You have no new date</string>
+    <string name="noNewRDV">You have no new date</string>
+    <string name="persoRDV">You can\'t date yourself!</string>
+    <string name="persoRequest">You can\'t be friend with yourself!</string>
+    <string name="population">Population</string>
+    <string name="precedent">Back</string>
+    <string name="pseudoFriend">Freidn\'s pseudo</string>
+    <string name="refuseProp">Are you sure to delete the appointement?</string>
+    <string name="refuseProp2">You deleted the appointement</string>
+    <string name="suivant">Next</string>
+    <string name="valider">Valid</string>
 </resources>

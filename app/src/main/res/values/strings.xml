@@ -1,9 +1,48 @@
 <resources>
+    <!--Pour ContentMain-->
+    <string name="connexion">Connexion</string>
+    <string name="inscription">Inscription</string>
+
+    <!--Pour RDV-->
+    <string name="myMeet">Mes rendez-vous</string>
+    <string name="newMeet">Nouveau rendez-vous</string>
+    <string name="noNewRDV">Vous n\'avez pas de nouveau RDV</string>
+    <string name="RDVMessage">Message de RDV</string>
+    <string name="newRDV">Super, tu as un nouveau RDV!</string>
+    <string name="deleteRDV">Tu as supprimé le RDV</string>
+    <string name="persoRDV">Tu ne peux pas te donner rdv</string>
+    <string name="confirm">Envoyer RDV</string>
+
+    <string name="cheveux">Couleur cheveux</string>
+    <string name="yeux">Couleur yeux</string>
+    <string name="Yeux">Yeux</string>
+
+    <string name="age">Age</string>
+
+    <string name="favori">Ajouter au favori</string>
+
+    <string name="login">Login</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="compte">Créer un compte</string>
+
+
+    <string name="lrdv">Liste de RDV</string>
+
+    <string name="population">Population</string>
+    <string name="lrequete">Liste de requêtes</string>
+
+
+
+
+
+
+
+
     <string name="app_name" translatable="false">UCLove</string>
     <string name="action_settings">Réglages</string>
-    <string name="editText">votre Texte</string>
-    <string name="button" translatable="false">ok</string>
-    <string name="display" translatable="false">UCLove</string>
+    <string name="editText">Votre Texte</string>
+    <string name="button">ok</string>
+    <string name="display">UCLove</string>
 
     <string name="listeAmis">Liste d\'amis</string>
     <string name="noAmis">Vous n\'avez pas encore d\'amis.</string>
@@ -45,14 +84,14 @@
     <string name="non">Non</string>
     <string name="oui">Oui</string>
     <string name="blockRequestConfirmation">Es tu sûre de vouloir bloquer cette demande ?</string>
-    <string name="confirmation" translatable="false">Confirmation</string>
-    <string name="error_entree">Pas de correspondance.</string>
+    <string name="confirmation">Confirmation</string>
+    <string name="error_entree">Pas de correspondance. Vérifier l\'orthographe</string>
     <string name="clic_to_confirm">Clique sur oui pour confirmer</string>
     <string name="envoiNewRequest">Votre requête a bien été envoyée</string>
     <string name="ok_text">Ok</string>
     <string name="noNewRequest">Vous n\'avez pas de nouvelle requête</string>
     <string name="requestMessage">Message de requête</string>
-    <string name="persoRequest">Tu ne peux pas être amis avec toi même </string>
+    <string name="persoRequest">Tu ne peux pas être ami avec toi même </string>
 
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>
@@ -69,14 +108,13 @@
     <string name="Profil">Profil</string>
     <string name="Preference">Préference</string>
     <string name="Nom">Nom</string>
-    <string name="Prénom">Prénom</string>
+    <string name="Prenom">Prénom</string>
     <string name="Date_de_naissance">Date de naissance</string>
     <string name="Genre">Sexe</string>
     <string name="Etude">Etudes</string>
     <string name="Localisation">Ville</string>
     <string name="Numéro">Numéro de téléphone</string>
-    <string name="Cheveux">Couleur de cheveux</string>
-    <string name="yeux">Couleur de yeux</string>
+    <string name="Cheveux">Cheveux</string>
     <string name="Peau">Couleur de la peau</string>
     <string name="prefAge">Tranche d\'age </string>
     <string name="perimetre">Périmètre </string>
@@ -85,7 +123,7 @@
     <string name="ajoutamis"> Ajouter </string>
     <string name="suivant"> Suivant </string>
     <string name="precedent"> Précedent </string>
-    <string name="valider"> valider </string>
+    <string name="valider">Valider</string>
 
     <string name="pseudoFriend">Pseudo de ton ami</string>
     <string name="lieuRdv">Lieu</string>
@@ -99,19 +137,15 @@
     <string name="orientation">Orientation</string>
     <string name="up">Vos données sont mises à jour</string>
     <string name="vide">Tous les champs doivent être completés...</string>
-    <string name="blanc">blanc</string>
-    <string name="metisse">métisse</string>
+    <string name="blanc">Blanc</string>
+    <string name="metisse">Métisse</string>
     <string name="jaune">jaune</string>
-
-
-
-    <!--Pour RDV-->
-    <string name="myMeet">Mes rendez-vous</string>
-    <string name="newMeet">Nouveau rendez-vous</string>
-    <string name="noNewRDV">Vous n\'avez pas de nouveau RDV</string>
-    <string name="RDVMessage">Message de RDV</string>
-    <string name="newRDV">Super, tu as un nouveau RDV!</string>
-    <string name="deleteRDV">Tu as supprimé le RDV</string>
+    <string name="Prénom">Prénom</string>
+    <string name="amisMessage">Message d\'amis</string>
+    <string name="chatMessage">Message de Chat</string>
+    <string name="Contact">Contacter</string>
+    <string name="details">Détails</string>
+    <string name="Orientation">Orientation</string>
 
 
 </resources>

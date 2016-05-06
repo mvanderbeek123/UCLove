@@ -2,6 +2,7 @@ package com.epl.uclouvain.uclove;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -29,9 +30,8 @@ public class DisponibilityActivity extends Activity {
     EditText log2;
     EditText lieu;
     String date;
-    private MeetDAO meetdao;
-    Meet m;
     Button confirm;
+
     AmisDAO adao;
     ArrayList listamis;
     MeetDAO mdao;
@@ -46,9 +46,11 @@ public class DisponibilityActivity extends Activity {
         log2 = (EditText) findViewById(R.id.editText3);
         lieu = (EditText) findViewById(R.id.editText4);
         confirm.setOnClickListener(confirmListener);
-        adao = new AmisDAO(this);
         mdao = new MeetDAO(this);
+        adao = new AmisDAO(this);
+
         listamis = new ArrayList<String>();
+
 
         calendarView = (CalendarView) findViewById(R.id.calendarView);
         calendarView.setShowWeekNumber(false);
@@ -69,16 +71,16 @@ public class DisponibilityActivity extends Activity {
     private View.OnClickListener confirmListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            String text = log2.getText().toString();
+
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-            adao.open();
-            listamis = adao.selectionner_listAmis(Controler.logged_user);
-            adao.close();
+            mdao.open();
+            listamis = mdao.selectionner_listProp(Controler.logged_user);
+            mdao.close();
             boolean checked = listamis.contains(log2.getText().toString());
             if (checked == false) {
                 //si le log entré n'est pas ami
                 showDialog(0);
-            } else if (log2.getText().toString().compareTo(Controler.logged_user) == 0) {
+            } else if (log2.getText().toString().equals(Controler.logged_user)) {
                 //Si l'utilisateur essaie de s'envoyer un rdv à lui-même
                 showDialog(1);
             } else {
@@ -110,51 +112,20 @@ public class DisponibilityActivity extends Activity {
             }
         }
     };
+
+    public Dialog onCreateDialog (int id) {
+        Dialog myBox = null;
+        switch (id) {
+            case 0:
+                myBox = new Dialog(this);
+                myBox.setTitle(R.string.error_entree);
+                break;
+            case 1:
+                myBox = new Dialog(this);
+                myBox.setTitle(R.string.persoRDV);
+                break;
+        }
+        return myBox;
+    }
+
 }
-
-    /*@Override
-    public boolean onTouch(View view, MotionEvent event) {
-        m.setLogin2(log2.getText().toString());
-        m.setLieu(lieu.getText().toString());
-        meetdao = new MeetDAO(getApplicationContext());
-        meetdao.open();
-        meetdao.ajouter(m);
-        meetdao.close();
-        return true;
-    }
-
-}*/
-
-    /*CalendarView calendar;
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.disponibility);
-        initializeCalendar();
-    }
-
-    public void initializeCalendar() {
-        calendar = (CalendarView) findViewById(R.id.calendarView);
-        calendar.setShowWeekNumber(false);
-        //lundi 1er jour de la semaine
-        calendar.setFirstDayOfWeek(2);
-        calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            //show the selected date as a toast
-            @Override
-            public void onSelectedDayChange(CalendarView view, int year, int month, int day) {
-                Toast.makeText(getApplicationContext(), day + "/" + month + "/" + year, Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-
-        //calendar=(CalendarView) findViewById(R.id.calendarView);
-        //Date date=new Date(calendar.getDate());
-
-        //Meet m=new Meet(Controler.logged_user, date.getDate(), date.getHours(), date.getHours()+3);
-        //MeetDAO.ajouter(m);
-
-
-
-}*/

@@ -210,7 +210,7 @@ public class Friends_display extends Activity
         @Override
         public void onClick(View v)
         {
-            Intent i = new Intent(Friends_display.this, MeetActivity.class);
+            Intent i = new Intent(Friends_display.this, Meets.class);
             startActivity(i);
         }
     };

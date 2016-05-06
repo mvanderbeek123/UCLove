@@ -11,7 +11,7 @@
         android:layout_gravity="center"
         android:paddingTop="10dip"
         android:paddingLeft="15dip"
-        android:text="Liste d'amis"
+        android:text="@string/listeAmis"
         />
     <ImageView
         android:src="@android:drawable/divider_horizontal_textfield"

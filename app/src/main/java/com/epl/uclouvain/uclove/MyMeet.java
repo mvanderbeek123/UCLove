@@ -20,21 +20,18 @@ import java.util.ArrayList;
  * de dialogue s'affiche pour lui dire qu'il 'y a pas de nouvelles demandes
  */
 public class MyMeet extends Activity {
-    AmisDAO aDAO;
+    MeetDAO mDAO;
     Button profile = null;
     Button yes = null;
     Button no = null;
     Context context=this;
-    TextView lieu;
-    TextView date;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.mymeet);
 
-        aDAO = new AmisDAO(this);
+        mDAO = new MeetDAO(this);
 
         profile = (Button) findViewById(R.id.viewProfile);
         profile.setOnClickListener(goToProfileListerner);
@@ -47,16 +44,16 @@ public class MyMeet extends Activity {
     private View.OnClickListener goToProfileListerner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(MyMeet.this, ProfilActivity.class);
+            Intent intent = new Intent(MyMeet.this, ProfilAffichageActivity.class);
             startActivity(intent);
         }
     };
     private View.OnClickListener yesListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            aDAO.open();
-            aDAO.modif_RDV_oui(Controler.requete_user,Controler.logged_user);
-            aDAO.close();
+            mDAO.open();
+            mDAO.modif_prop_oui(Controler.requete_user,Controler.logged_user);
+            mDAO.close();
             Toast toast=Toast.makeText(getApplicationContext(),R.string.newRDV,Toast.LENGTH_SHORT);
             toast.show();
             MyMeet.this.finish();
@@ -73,9 +70,9 @@ public class MyMeet extends Activity {
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    aDAO.open();
-                    aDAO.modif_RDV_non(Controler.requete_user,Controler.logged_user);
-                    aDAO.close();
+                    mDAO.open();
+                    mDAO.modif_prop_non(Controler.requete_user,Controler.logged_user);
+                    mDAO.close();
                     //On confirme que la demande est supprimée/bloquée
                     Toast toast=Toast.makeText(getApplicationContext(),R.string.deleteRDV,Toast.LENGTH_SHORT);
                     toast.show();

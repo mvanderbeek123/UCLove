@@ -21,13 +21,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Login" />
+            android:text="@string/login" />
         <EditText
             android:layout_gravity="center_horizontal"
             android:id="@+id/login_inscription"
             android:layout_width="254dp"
             android:layout_height="wrap_content"
-            android:hint="Login"
+            android:hint="@string/login"
             android:inputType="text"
             android:gravity="left"
             />
@@ -35,13 +35,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Mot de passe" />
+            android:text="@string/mdp" />
         <EditText
             android:layout_gravity="center_horizontal"
             android:id="@+id/motdepasse"
             android:layout_width="254dp"
             android:layout_height="wrap_content"
-            android:hint="Mot de passe"
+            android:hint="@string/mdp"
             android:inputType="textPassword"
             android:gravity="left"
             />
@@ -49,13 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Prénom" />
+            android:text="@string/Prenom" />
         <EditText
             android:layout_gravity="center_horizontal"
             android:id="@+id/prénom"
             android:layout_width="254dp"
             android:layout_height="wrap_content"
-            android:hint="Prénom"
+            android:hint="@string/Prenom"
             android:inputType="text"
             android:gravity="left"
             />
@@ -63,13 +63,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Nom" />
+            android:text="@string/Nom" />
         <EditText
             android:layout_gravity="center_horizontal"
             android:id="@+id/nom"
             android:layout_width="254dp"
             android:layout_height="wrap_content"
-            android:hint="Nom"
+            android:hint="@string/Nom"
             android:inputType="text"
             android:gravity="left"
             />
@@ -77,7 +77,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Date de Naissance" />
+            android:text="@string/Date_de_naissance" />
 
         <DatePicker
             android:id="@+id/datePicker"
@@ -104,13 +104,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Localisation" />
+            android:text="@string/Localisation" />
         <EditText
             android:layout_gravity="center_horizontal"
             android:id="@+id/localisation"
             android:layout_width="254dp"
             android:layout_height="wrap_content"
-            android:hint="Ville"
+            android:hint="@string/Localisation"
             android:inputType="text"
             android:gravity="left"
             />
@@ -118,7 +118,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Etude" />
+            android:text="@string/Etude" />
         <Spinner
             android:layout_gravity="center_horizontal"
             android:id="@+id/etude"
@@ -131,7 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="25sp"
-            android:text="créer compte"
+            android:text="@string/compte"
             android:background="@drawable/button"
             style="@style/ButtonText"/>
 

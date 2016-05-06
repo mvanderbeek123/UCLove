@@ -14,17 +14,17 @@
         android:id="@+id/nobutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No"
+        android:text="@string/non"
         android:layout_alignParentBottom="true"
-        android:textColor="@color/red"
+        android:textColor="#f9f9f9"
         android:background="@drawable/button"
         />
     <Button
         android:id="@+id/yesbutton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yes"
-        android:textColor="@color/green"
+        android:text="@string/oui"
+        android:textColor="#f9f9f9"
         android:layout_above="@id/nobutton"
         android:background="@drawable/button"
         />

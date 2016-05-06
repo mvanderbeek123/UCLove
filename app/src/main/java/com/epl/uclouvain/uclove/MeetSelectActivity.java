@@ -39,7 +39,7 @@ public class MeetSelectActivity extends Activity {
 
         if (mlist.size() == 0) {
             setContentView(R.layout.blank);
-            alertDialogBuilder.setTitle(R.string.requestMessage);
+            alertDialogBuilder.setTitle(R.string.RDVMessage);
             alertDialogBuilder.setMessage(R.string.noNewProp);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
@@ -57,7 +57,7 @@ public class MeetSelectActivity extends Activity {
                 String log1 = meet.getLogin1();
                 String date = meet.getDate();
                 String lieu = meet.getLieu();
-                logins.add(log1 + " souhaiterait vous voir le\n" + date + " à " + lieu);
+                logins.add(log1 + "\nDate:   " + date + "   -   " + lieu);
             }
 
             amiAdapteur = new ArrayAdapter<String>(MeetSelectActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, logins);
@@ -68,7 +68,7 @@ public class MeetSelectActivity extends Activity {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Controler.meet_user = logins.get(position);
                     // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
-                    Intent i = new Intent(MeetSelectActivity.this, MyRequests.class);
+                    Intent i = new Intent(MeetSelectActivity.this, MyMeet.class);
                     startActivity(i);
                     MeetSelectActivity.this.finish();
                 }
@@ -78,62 +78,3 @@ public class MeetSelectActivity extends Activity {
     }
 
 }
-    /*ListView listView;
-    ArrayAdapter<String> amiAdapteur;
-    List<String> logins;
-    AmisDAO adao;
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.meet_select);
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        listView = (ListView) findViewById(R.id.listAmis);
-        logins = new ArrayList<String>();
-
-        adao = new AmisDAO(this);
-        adao.open();
-        ArrayList<Amis> alist = adao.selectionner_listRDV(Controler.logged_user);
-        adao.close();
-
-        if (alist.size() == 0) {
-            setContentView(R.layout.blank);
-            alertDialogBuilder.setTitle(R.string.RDVMessage);
-            alertDialogBuilder.setMessage(R.string.noNewRDV);
-            alertDialogBuilder.setCancelable(false);
-            alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int id) {
-                    MeetSelectActivity.this.finish();
-                }
-            });
-            AlertDialog theAlert = alertDialogBuilder.create();
-            theAlert.show();
-
-        }
-
-        else {
-            for (int i = 0; i < alist.size(); i++) {
-                Amis amis = alist.get(i);
-                String log1 = amis.getLogin1();
-                String log2 = amis.getLogin2();
-                logins.add(log1);
-            }
-
-            amiAdapteur = new ArrayAdapter<String>(MeetSelectActivity.this, android.R.layout.simple_list_item_1, android.R.id.text1, logins);
-            listView.setAdapter(amiAdapteur);
-
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Controler.rdv_user = logins.get(position);
-                    // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
-                    Intent i = new Intent(MeetSelectActivity.this, MyMeet.class);
-                    startActivity(i);
-                    MeetSelectActivity.this.finish();
-                }
-            });
-
-        }
-    }
-}*/

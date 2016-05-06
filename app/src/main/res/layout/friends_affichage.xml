@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:text="Amis"
+        android:text="@string/amis"
         android:layout_centerHorizontal="true"
         />
     <ImageView
@@ -29,7 +29,7 @@
         android:id="@+id/nomAmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Nom ami"
+        android:text="@string/Nom"
         android:paddingTop="20dip"
         android:layout_below="@id/separation"
         android:layout_alignParentLeft="true"
@@ -38,7 +38,7 @@
         android:id="@+id/supprimer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Supprimer"
+        android:text="@string/supprimer"
         android:paddingTop="20dip"
         android:layout_below="@+id/separation"
         android:layout_alignParentRight="true"
@@ -53,7 +53,7 @@
         android:id="@+id/genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="genre"
+        android:text="@string/Genre"
         android:paddingTop="10dip"
         android:layout_below="@+id/photo_profil"
         android:layout_alignParentLeft="true"
@@ -62,16 +62,16 @@
         android:id="@+id/cheveux"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="cheveux"
+        android:text="@string/cheveux"
         android:paddingTop="15dip"
         android:layout_below="@+id/genre"
-        android:layout_toRightOf="@+id/nomAmi"
-        android:layout_toEndOf="@+id/nomAmi" />
+        android:layout_alignRight="@+id/contact"
+        android:layout_alignEnd="@+id/contact" />
     <TextView
         android:id="@+id/localisation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="localisation"
+        android:text="@string/Localisation"
         android:paddingTop="15dip"
         android:layout_below="@+id/cheveux"
         android:layout_alignParentLeft="true"
@@ -80,7 +80,7 @@
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="age"
+        android:text="@string/age"
         android:paddingTop="10dip"
         android:layout_below="@+id/photo_profil"
         android:layout_alignRight="@+id/yeux"
@@ -89,7 +89,7 @@
         android:id="@+id/yeux"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="yeux"
+        android:text="@string/yeux"
         android:layout_alignParentRight="true"
         android:layout_below="@id/age"
         android:paddingTop="15dip"
@@ -99,7 +99,7 @@
         android:id="@+id/contact"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Entrer en contact"
+        android:text="@string/contact"
         android:layout_below="@+id/localisation"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
@@ -107,7 +107,7 @@
         android:id="@+id/favori"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Marquer comme favori"
+        android:text="@string/favori"
         android:layout_below="@id/contact"
         android:layout_toRightOf="@id/contact"
         android:layout_alignParentLeft="true"
@@ -117,7 +117,7 @@
         android:id="@+id/rencontre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recontrer"
+        android:text="@string/rencontre"
         android:layout_above="@+id/favori"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -125,7 +125,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cheveux:"
+        android:text="@string/Cheveux"
         android:id="@+id/textView7"
         android:layout_above="@+id/localisation"
         android:layout_alignParentLeft="true"
@@ -134,9 +134,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Yeux:"
+        android:text="@string/Yeux"
         android:id="@+id/textView8"
         android:layout_alignBottom="@+id/yeux"
-        android:layout_alignLeft="@+id/supprimer"
-        android:layout_alignStart="@+id/supprimer" />
+        android:layout_toLeftOf="@+id/rencontre"
+        android:layout_toStartOf="@+id/rencontre" />
 </RelativeLayout>
