@@ -26,6 +26,7 @@ import android.content.res.Resources;
 public class MeetActivity extends Activity {
     Button dispo = null;
     Button rdv = null;
+    Button prop=null;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +47,14 @@ public class MeetActivity extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MeetActivity.this, RdvActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        prop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MeetActivity.this, PropositionsActivity.class);
                 startActivity(intent);
             }
         });

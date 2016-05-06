@@ -9,5 +9,6 @@ public class Controler {
     public static String chat_user = "";
     public static String requete_user = "";
     public static String meet_user = "";
+    public static String rdv_user = "";
     public static String friend_user="";
 }

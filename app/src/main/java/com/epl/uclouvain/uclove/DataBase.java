@@ -194,11 +194,13 @@ public class DataBase extends SQLiteOpenHelper
     public static final String LOG2 = "login2";
     public static final String DATE = "date";
     public static final String LIEU = "lieu";
+    public static final String ISCONFIRMED = "isConfirmed";
     public static final String MEET_TABLE_CREATE = "CREATE TABLE " + MEET_TABLE_NAME + " (" +
             LOG1 + " TEXT, " +
             LOG2 + " TEXT, " +
             DATE + " LONG, " +
-            LIEU + " TEXT " + ");";
+            LIEU + " TEXT, " +
+            ISCONFIRMED + " INTEGER " + ");";
 
     public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
 

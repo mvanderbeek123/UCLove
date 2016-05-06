@@ -1,6 +1,9 @@
 package com.epl.uclouvain.uclove;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -13,12 +16,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
  * Created by noe on 02/05/16.
  */
-public class DisponibilityActivity extends Activity implements View.OnTouchListener{
+public class DisponibilityActivity extends Activity {
 
     CalendarView calendarView;
     TextView dateDisplay;
@@ -26,16 +30,24 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
     EditText lieu;
     private MeetDAO meetdao;
     Meet m;
+    Button confirm;
+    AmisDAO adao;
+    ArrayList listamis;
+    MeetDAO mdao;
+    final Context context= this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.disponibility);
 
-        Button b=(Button) findViewById(R.id.button);
-        log2=(EditText) findViewById(R.id.editText3);
-        lieu=(EditText) findViewById(R.id.editText4);
-        b.setOnTouchListener(this);
+        confirm = (Button) findViewById(R.id.button);
+        log2 = (EditText) findViewById(R.id.editText3);
+        lieu = (EditText) findViewById(R.id.editText4);
+        confirm.setOnClickListener(confirmListener);
+        adao = new AmisDAO(this);
+        mdao = new MeetDAO(this);
+        listamis = new ArrayList<String>();
 
         calendarView = (CalendarView) findViewById(R.id.calendarView);
         calendarView.setShowWeekNumber(false);
@@ -47,26 +59,69 @@ public class DisponibilityActivity extends Activity implements View.OnTouchListe
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
                 dateDisplay.setText("Date: " + day + " / " + month + " / " + year);
-
-                Toast.makeText(getApplicationContext(), "Selected Date:\n" + "Day = " + day + "\n" + "Month = " + month + "\n" + "Year = " + year, Toast.LENGTH_SHORT).show();
-                long time=calendarView.getDate();
-                m=new Meet(Controler.logged_user,"",time,"");
             }
         });
     }
 
-    @Override
+
+    private View.OnClickListener confirmListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String text = log2.getText().toString();
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+            adao.open();
+            listamis = adao.selectionner_listAmis(Controler.logged_user);
+            adao.close();
+            boolean checked = listamis.contains(log2.getText().toString());
+            if (checked == false) {
+                //si le log entré n'est pas ami
+                showDialog(0);
+            } else if (log2.getText().toString().compareTo(Controler.logged_user) == 0) {
+                //Si l'utilisateur essaie de s'envoyer un rdv à lui-même
+                showDialog(1);
+            } else {
+                alertDialogBuilder.setTitle(R.string.confirmation);
+                alertDialogBuilder.setMessage(R.string.clic_to_confirm);
+                alertDialogBuilder.setCancelable(false);
+                alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Rajouter la requete dans la base de donnée
+                        Meet m = new Meet(Controler.logged_user, log2.getText().toString(), calendarView.getDate(), lieu.getText().toString(), 0);
+                        mdao.open();
+                        mdao.ajouter(m);
+                        mdao.close();
+                        Toast toast = Toast.makeText(getApplicationContext(), R.string.envoiNewProp, Toast.LENGTH_SHORT);
+                        toast.show();
+                        DisponibilityActivity.this.finish();
+
+                    }
+                });
+                alertDialogBuilder.setNegativeButton(R.string.non, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //On retourne juste en arrièr en gardant le texte, car si c'est une long
+                        //pseudo, il ne devra pas le retapper.
+                        dialog.cancel();
+                    }
+                });
+                AlertDialog theAlert = alertDialogBuilder.create();
+                theAlert.show();
+            }
+        }
+    };
+}
+
+    /*@Override
     public boolean onTouch(View view, MotionEvent event) {
         m.setLogin2(log2.getText().toString());
         m.setLieu(lieu.getText().toString());
-        meetdao=new MeetDAO(getApplicationContext());
+        meetdao = new MeetDAO(getApplicationContext());
         meetdao.open();
         meetdao.ajouter(m);
         meetdao.close();
         return true;
     }
 
-}
+}*/
 
     /*CalendarView calendar;
 

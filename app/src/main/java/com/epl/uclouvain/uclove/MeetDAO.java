@@ -17,6 +17,7 @@ import java.util.ArrayList;
     public static final String LOGIN2 = "login2";
     public static final String DATE = "date";
     public static final String LIEU = "lieu";
+    public static final String ISCONFIRMED = "isConfirmed";
 
     public MeetDAO(Context pContext)
     {
@@ -30,6 +31,7 @@ import java.util.ArrayList;
         value.put(MeetDAO.LOGIN2, m.getLogin2());
         value.put(MeetDAO.DATE, m.getDate());
         value.put(MeetDAO.LIEU, m.getLieu());
+        value.put(MeetDAO.ISCONFIRMED, m.getConfirmed());
         mDb.insert(MeetDAO.TABLE_NAME, null, value);
     }
 
@@ -38,14 +40,15 @@ import java.util.ArrayList;
         String requete = "select login1, login2, date, lieu" +
                 " from " + DataBase.MEET_TABLE_NAME +
                 " where (login1 = \"" + l1 + "\" or login1 = \"" + l2 + "\")"+
-                " and   (login2 = \"" + l1 + "\" or login2 = \"" + l2 + "\");" ;
+                " and   (login2 = \"" + l1 + "\" or login2 = \"" + l2 + "\");"+
+                " and isConfirmed=1";
 
         Cursor c = mDb.rawQuery(requete, new String[]{});
 
         ArrayList<Meet> liste = new ArrayList<Meet>();
         while (c.moveToNext())
         {
-            Meet m=new Meet("","",0,"");
+            Meet m=new Meet("","",0,"",1);
 
             m.setLogin1(c.getString(0));
             m.setLogin2(c.getString(1));
@@ -55,6 +58,42 @@ import java.util.ArrayList;
         }
         c.close();
         return liste;
+    }
+
+    public ArrayList<Meet> selectionner_listProp(String login_user)
+    {
+        String requete = "select login1, login2, date, lieu " +
+                " from " + DataBase.MEET_TABLE_NAME +
+                " where (login2 = \"" + login_user + "\")"+
+                " and   (isConfirmed = 0);" ;
+        Cursor c = mDb.rawQuery(requete, new String[]{});
+
+        ArrayList<Meet> liste = new ArrayList<Meet>();
+        while (c.moveToNext())
+        {
+            String log1 = c.getString(0); ;
+            String log2 = c.getString(1);
+            long date=c.getLong(2);
+            String lieu=c.getString(3);
+            Meet m = new Meet(log1,log2,date,lieu,0);
+            liste.add(m);
+        }
+        c.close();
+        return liste;
+    }
+
+    public void modif_prop_oui(String login1, String login2)
+    {
+        ContentValues value = new ContentValues();
+        value.put(ISCONFIRMED, 1);
+        mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
+    }
+
+    public void modif_prop_non(String login1, String login2)
+    {
+        ContentValues value = new ContentValues();
+        value.put(ISCONFIRMED, 2);
+        mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
     }
 
     /*public ArrayList<Amis> selectionner_listAmis(String login_user)

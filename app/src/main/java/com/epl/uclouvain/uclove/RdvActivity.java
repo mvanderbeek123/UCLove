@@ -52,7 +52,7 @@ public class RdvActivity extends Activity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Controler.meet_user = logins.get(position);
+                Controler.rdv_user = logins.get(position);
                 // id n'est pas l'id de l'ami mais celui de la vue, il faut encore le récupérer.
                 Intent i = new Intent(RdvActivity.this, PersonnalMeetActivity.class);
                 startActivity(i);
