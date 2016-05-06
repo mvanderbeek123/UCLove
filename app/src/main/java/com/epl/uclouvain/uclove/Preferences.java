@@ -31,11 +31,18 @@ public class Preferences extends Activity {
     YeuxDAO yeuxDAO;
     PeauDAO peauDAO;
     EtudeDAO etudeDAO;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preference);
         //spinner genre 1
+        genreDAO=new GenreDAO(this);
+        yeuxDAO=new YeuxDAO(this);
+        cheveuxDAO=new CheveuxDAO(this);
+        peauDAO=new PeauDAO(this);
+        etudeDAO=new EtudeDAO(this);
+
         final Spinner liste = (Spinner) findViewById(R.id.spinnergenre1);
         List<String> exemple = new ArrayList<String>();
         exemple.add(getString(R.string.noFilters));
@@ -132,6 +139,7 @@ public class Preferences extends Activity {
                     genreDAO.ajouter(a);
                 }
                 genreDAO.close();
+                cheveuxDAO.open();
                 String cheveux1=String.valueOf(liste4.getSelectedItem());
                 if(!cheveux1.equals(R.string.noFilters)){
                     Cheveux a=new Cheveux(Controler.logged_user,cheveux1);
