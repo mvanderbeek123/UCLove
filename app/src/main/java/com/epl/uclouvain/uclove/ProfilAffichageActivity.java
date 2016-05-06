@@ -1,6 +1,8 @@
 package com.epl.uclouvain.uclove;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -27,7 +29,7 @@ public class ProfilAffichageActivity extends Activity {
     GenreDAO genredao;
     int i=0;
     ArrayList<String> liste;
-
+    Button b;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +44,7 @@ public class ProfilAffichageActivity extends Activity {
         yeux=(TextView) findViewById(R.id.yeuxpop);
         sexpref=(TextView) findViewById(R.id.sexprefpop);
         age=(TextView) findViewById(R.id.agepop);
-
+        b=(Button) findViewById(R.id.ajout);
         Intent intent=getIntent();
         String login=intent.getStringExtra("login");
         profildao=new ProfilDAO(this);
