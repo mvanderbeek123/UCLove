@@ -22,7 +22,7 @@ public class Preferences extends Activity {
         //spinner genre 1
         final Spinner liste = (Spinner) findViewById(R.id.spinnergenre1);
         List<String> exemple = new ArrayList<String>();
-        exemple.add("masculin");//TODO
+        exemple.add("Masculin");//TODO
         exemple.add("féminin");
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, exemple);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
