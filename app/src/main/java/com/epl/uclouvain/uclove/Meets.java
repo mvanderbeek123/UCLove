@@ -30,7 +30,7 @@ public class Meets extends Activity {
         new_meet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Meets.this, MeetListAmis.class);
+                Intent intent = new Intent(Meets.this, DisponibilityActivity.class);
                 startActivity(intent);
             }
         });
