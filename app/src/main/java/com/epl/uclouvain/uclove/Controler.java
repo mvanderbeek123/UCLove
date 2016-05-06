@@ -14,4 +14,5 @@ public class Controler {
     public static String rdv_date = "";
     public static String rdv_lieu = "";
 
+    public static String pw_user ="";
 }

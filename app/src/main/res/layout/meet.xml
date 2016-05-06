@@ -9,7 +9,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mes disponibilités"
+        android:text="Proposer une rencontre"
         android:id="@+id/disponibility"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button"
@@ -18,7 +18,16 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Rendez_vous"
+        android:text="Propositions"
+        android:id="@+id/propositionButton"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button"
+        style="@style/ButtonText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rendez-vous"
         android:id="@+id/rdv"
         android:layout_gravity="center_horizontal"
         android:background="@drawable/button"

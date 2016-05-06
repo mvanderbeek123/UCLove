@@ -26,6 +26,14 @@
     <string name="féminin">Féminin</string>
     <string name="chauve">Chauve</string>
 
+
+    <string name="droit">Droit</string>
+    <string name="Ingenieur">Ingénieur civil</string>
+    <string name="Inge">Ingénieur de gestion</string>
+    <string name="bioinge">Bioingénieur</string>
+    <string name="Architecture">Architecture</string>
+    <string name="Histoire">Histoire</string>
+
     <!--Pour Request-->
     <string name="myRequests">Mes requêtes</string>
     <string name="newRequest">Nouvelle requête</string>
@@ -40,7 +48,7 @@
     <string name="confirmation" translatable="false">Confirmation</string>
     <string name="error_entree">Pas de correspondance.</string>
     <string name="clic_to_confirm">Clique sur oui pour confirmer</string>
-    <string name="envoiNewRequest">Votre requête à bien été envoyée</string>
+    <string name="envoiNewRequest">Votre requête a bien été envoyée</string>
     <string name="ok_text">Ok</string>
     <string name="noNewRequest">Vous n\'avez pas de nouvelle requête</string>
     <string name="requestMessage">Message de requête</string>
@@ -48,6 +56,11 @@
 
     <string name="mes_disponibilit_s">Mes disponibilités</string>
     <string name="rendez_vous">Rendez-vous</string>
+    <string name="envoiNewProp">Votre proposition a bien été envoyée</string>
+    <string name="noNewProp">Vous n\'avez pas de nouvelle proposition</string>
+    <string name="newRdv">Rdv confirmé !</string>
+    <string name="refuseProp">Es tu sûre de vouloir refuser ce rdv ?</string>
+    <string name="refuseProp2">Tu as refusé la proposition</string>
 
     <!--Pour chat-->
     <string name="message">Message</string>
@@ -84,6 +97,12 @@
     <string name="requete">Requêtes</string>
     <string name="chat">Conversation</string>
     <string name="orientation">Orientation</string>
+    <string name="up">Vos données sont mises à jour</string>
+    <string name="vide">Tous les champs doivent être completés...</string>
+    <string name="blanc">blanc</string>
+    <string name="metisse">métisse</string>
+    <string name="jaune">jaune</string>
+
 
 
     <!--Pour RDV-->

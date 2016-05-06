@@ -40,6 +40,7 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
         profildao.close();
         if (bool==true) {
             Controler.logged_user = log;
+            Controler.pw_user = motdepasse;
             Intent intent = new Intent(PageAcceuil.this, Menu.class);
             intent.putExtra("login",log);
             startActivity(intent);

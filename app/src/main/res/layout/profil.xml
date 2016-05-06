@@ -4,9 +4,9 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:orientation="vertical" android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:weightSum="1">
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,13 +65,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom3"/>
-        <EditText
-            android:layout_width="190dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/button4"
-            android:layout_alignBottom="@id/nom4"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -80,13 +74,15 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom4"/>
-        <EditText
+        <Spinner
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button5"
-            android:layout_alignBottom="@id/nom5"
+            android:layout_below="@+id/nom4"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:layout_above="@+id/nom6" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -95,20 +91,15 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom5"/>
-        <EditText
+        <Spinner
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button6"
-            android:layout_alignBottom="@id/nom6"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <ToggleButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@id/button6"
-            android:layout_alignTop="@id/button6"/>
+            android:layout_below="@+id/button5"
+            android:layout_above="@+id/nom7" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -121,38 +112,29 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button7"
-            android:layout_alignBottom="@id/nom7"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <ToggleButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@id/button7"
-            android:layout_alignTop="@id/button7"/>
+            android:layout_alignBottom="@+id/nom8"
+            android:layout_alignLeft="@+id/button6"
+            android:layout_alignStart="@+id/button6"
+            android:layout_below="@+id/nom7" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
             android:text="@string/Numéro"
             android:id="@+id/nom8"
+            android:layout_below="@+id/nom7"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@id/nom7"/>
+            android:layout_alignParentStart="true" />
         <EditText
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button8"
-            android:layout_alignBottom="@id/nom8"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <ToggleButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:digits="0123456789+"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@id/button8"
-            android:layout_alignTop="@id/button8"/>
+            android:layout_below="@+id/nom6" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -161,20 +143,15 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom8"/>
-        <EditText
+       <Spinner
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button9"
-            android:layout_alignBottom="@id/nom9"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <ToggleButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@id/button9"
-            android:layout_alignTop="@id/button9"/>
+           android:layout_above="@+id/nom11"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentEnd="true"
+           android:layout_below="@+id/nom9" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -183,21 +160,15 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom9"/>
-        <TextView
+        <Spinner
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button10"
-            android:layout_alignBottom="@id/nom10"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_below="@+id/button9" />
-        <ToggleButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@id/button10"
-            android:layout_alignTop="@id/button10"/>
+            android:layout_below="@+id/button7"
+            android:layout_above="@+id/button9" />
+
         <TextView
             android:layout_width="200dp"
             android:layout_height="35dp"
@@ -206,21 +177,17 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/nom10"/>
-        <EditText
+        <Spinner
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button11"
-            android:layout_alignBottom="@id/nom11"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-        <ToggleButton
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignBottom="@id/button11"
-            android:layout_alignTop="@id/button11"/>
+            android:layout_below="@+id/button9"
+            android:layout_above="@+id/valider" />
+
         <Button
+            android:id="@+id/valider"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -230,7 +197,21 @@
             android:layout_alignRight="@+id/photo"
             android:layout_alignEnd="@+id/photo"
             android:layout_alignLeft="@+id/photo"
-            android:layout_alignStart="@+id/photo" />
+            android:layout_alignStart="@+id/photo"
+            android:layout_alignParentBottom="true"
+            android:paddingTop="10dp"
+            />
+
+        <DatePicker
+            android:layout_width="180dp"
+            android:layout_height="70dp"
+            android:startYear="1926"
+            android:endYear="2016"
+            android:id="@+id/button4"
+            android:calendarViewShown="false"
+            android:layout_below="@+id/nom3"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

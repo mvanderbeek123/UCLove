@@ -34,6 +34,7 @@ public class InscriptionActivity extends Activity {
     String inloc;
     String inetude;
     String genre;
+    ArrayAdapter<String> adapter2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,32 +59,46 @@ public class InscriptionActivity extends Activity {
         final EditText prénom=(EditText) findViewById(R.id.prénom);
         final EditText nom=(EditText) findViewById(R.id.nom);
         final EditText loc=(EditText) findViewById(R.id.localisation);
-        final EditText etude=(EditText) findViewById(R.id.etude);
+        final Spinner etude=(Spinner) findViewById(R.id.etude);
         final Button valider = (Button) findViewById(R.id.comptecreation);
+        List<String> exemple2 = new ArrayList<String>();
+        exemple2.add(getString(R.string.droit));
+        exemple2.add(getString(R.string.Ingenieur));
+        exemple2.add(getString(R.string.Inge));
+        exemple2.add(getString(R.string.bioinge));
+        exemple2.add(getString(R.string.Architecture));
+        exemple2.add(getString(R.string.Histoire));
+        adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, exemple2);
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        etude.setAdapter(adapter2);
         valider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inlogin = login.getText().toString();
-                inmdp = mdp.getText().toString();
-                inprénom = prénom.getText().toString();
-                innom=nom.getText().toString();
-                inloc=loc.getText().toString();
-                inetude=etude.getText().toString();
-                genre = String.valueOf(liste.getSelectedItem());
-                Date datedenaissance=new Date(date.getYear(),date.getMonth(),date.getDayOfMonth());
-                profildao=new ProfilDAO(getApplicationContext());
-                profildao.open();
-                if (profildao.existant(inlogin)==false) {
-                    Profil profil = new Profil(inlogin, inmdp, inprénom, innom, datedenaissance, genre, inetude, inloc);
-                    profildao.ajouter(profil);
-                    profildao.close();
-                    Intent intent = new Intent(InscriptionActivity.this, Menu.class);
-                    startActivity(intent);
-                }
-                else
-                {
-                    Toast toast=Toast.makeText(getApplicationContext(),"ce login est déja utilisé",Toast.LENGTH_SHORT);
+                if (login.getText().toString().equals("") || mdp.getText().toString().equals("") || prénom.getText().toString().equals("")||nom.getText().toString().equals("")||loc.getText().toString().equals("")){
+                    Toast toast = Toast.makeText(getApplicationContext(), R.string.vide, Toast.LENGTH_SHORT);
                     toast.show();
+                }
+                else {
+                    inlogin = login.getText().toString();
+                    inmdp = mdp.getText().toString();
+                    inprénom = prénom.getText().toString();
+                    innom = nom.getText().toString();
+                    inloc = loc.getText().toString();
+                    inetude = String.valueOf(etude.getSelectedItem());
+                    genre = String.valueOf(liste.getSelectedItem());
+                    Date datedenaissance = new Date(date.getYear(), date.getMonth(), date.getDayOfMonth());
+                    profildao = new ProfilDAO(getApplicationContext());
+                    profildao.open();
+                    if (profildao.existant(inlogin) == false) {
+                        Profil profil = new Profil(inlogin, inmdp, inprénom, innom, datedenaissance, genre, inetude, inloc);
+                        profildao.ajouter(profil);
+                        profildao.close();
+                        Intent intent = new Intent(InscriptionActivity.this, Menu.class);
+                        startActivity(intent);
+                    } else {
+                        Toast toast = Toast.makeText(getApplicationContext(), "ce login est déja utilisé", Toast.LENGTH_SHORT);
+                        toast.show();
+                    }
                 }
     }});
     }

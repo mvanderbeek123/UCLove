@@ -91,7 +91,7 @@ public class ProfilDAO extends DAOBase {
         String genre=c.getString(5);
         String etude=c.getString(6);
         String place=c.getString(7);
-        int num=c.getInt(8);
+        String num=c.getString(8);
         String cheveux=c.getString(9);
         String peau=c.getString(10);
         String yeux=c.getString(11);

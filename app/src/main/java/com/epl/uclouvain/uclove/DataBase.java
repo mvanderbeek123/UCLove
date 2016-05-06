@@ -36,7 +36,7 @@ public class DataBase extends SQLiteOpenHelper
             CLIENT_GENRE + " TEXT NOT NULL, " +
             CLIENT_ETUDE + " TEXT NOT NULL, "+
             CLIENT_PLACE + " TEXT NOT NULL, " +
-            CLIENT_NUM + " INTEGER ," +
+            CLIENT_NUM + " TEXT," +
             CLIENT_HAIR + " TEXT, " +
             CLIENT_SKIN + " TEXT, " +
             CLIENT_EYES + " TEXT " + ");";
@@ -48,7 +48,7 @@ public class DataBase extends SQLiteOpenHelper
             CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
             CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE + " , " +
             CLIENT_NUM + " , " + CLIENT_HAIR + " , " + CLIENT_SKIN + " , " + CLIENT_EYES +
-            ") VALUES ( \"Del\", \"dt\", \"Delphine\", \"DT\", \"1995-06-09\", \"Féminin\", \"EPL\" ,\"LLN\", 0485523246, \"Noir\", \"Blanc\", \"Brun\" );";
+            ") VALUES ( \"Del\", \"dt\", \"Delphine\", \"DT\", \"1995-06-09\", \"Féminin\", \"EPL\" ,\"LLN\", \"0485523246\", \"Noir\", \"Blanc\", \"Brun\" );";
 
     public static final String  CLIENT_TABLE_EX2 = " INSERT INTO " + CLIENT_TABLE_NAME +
             " (" +
@@ -67,7 +67,7 @@ public class DataBase extends SQLiteOpenHelper
             CLIENT_LOGIN + " , " + CLIENT_MDP + " , " + CLIENT_NAME + " , " + CLIENT_LASTNAME + " , " +
             CLIENT_DATE + " , " + CLIENT_GENRE + " , " + CLIENT_ETUDE + " , " + CLIENT_PLACE +" , " +
             CLIENT_NUM + " , " + CLIENT_HAIR + " , " + CLIENT_SKIN + " , " + CLIENT_EYES +
-            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\", 0494694892, \"Noir\", \"Blanc\", \"Vert\" );";
+            ") VALUES ( \"Jul\", \"mer\", \"Julien\", \"MER\", \"1996-01-09\", \"Masculin\", \"EPL\" ,\"LLN\", \"0494694892\", \"Noir\", \"Blanc\", \"Vert\" );";
 
 
 
@@ -251,6 +251,7 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(AMIS_TABLE_EX5);
 
         db.execSQL(CHAT_TABLE_CREATE);
+        db.execSQL(MEET_TABLE_CREATE);
 
         db.execSQL(GENRE_CREATE_TABLE);
         db.execSQL(GENRE_TABLE_EX1);
