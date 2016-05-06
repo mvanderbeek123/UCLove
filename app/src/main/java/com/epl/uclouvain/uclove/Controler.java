@@ -11,4 +11,5 @@ public class Controler {
     public static String meet_user = "";
     public static String rdv_user = "";
     public static String friend_user="";
+    public static String pw_user ="";
 }

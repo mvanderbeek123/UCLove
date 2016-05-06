@@ -68,5 +68,16 @@
     <string name="requete">Requests</string>
     <string name="chat">Chat</string>
     <string name="orientation">Orientation</string>
+    <string name="up">Your informations are up to date!</string>
 
+    <string name="droit">Law</string>
+    <string name="Ingenieur">Civil engineer</string>
+    <string name="Inge">Management</string>
+    <string name="bioinge">Bio-engineer</string>
+    <string name="Architecture">Architecture</string>
+    <string name="Histoire">History</string>
+    <string name="vide">Every box must contain information...</string>
+    <string name="blanc">White</string>
+    <string name="metisse">mixed-race</string>
+    <string name="jaune">yellow</string>
 </resources>

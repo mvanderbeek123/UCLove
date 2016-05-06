@@ -26,6 +26,14 @@
     <string name="féminin">Féminin</string>
     <string name="chauve">Chauve</string>
 
+
+    <string name="droit">Droit</string>
+    <string name="Ingenieur">Ingénieur civil</string>
+    <string name="Inge">Ingénieur de gestion</string>
+    <string name="bioinge">Bioingénieur</string>
+    <string name="Architecture">Architecture</string>
+    <string name="Histoire">Histoire</string>
+
     <!--Pour Request-->
     <string name="myRequests">Mes requêtes</string>
     <string name="newRequest">Nouvelle requête</string>
@@ -89,5 +97,11 @@
     <string name="requete">Requêtes</string>
     <string name="chat">Conversation</string>
     <string name="orientation">Orientation</string>
+    <string name="up">Vos données sont mises à jour</string>
+    <string name="vide">Tous les champs doivent être completés...</string>
+    <string name="blanc">blanc</string>
+    <string name="metisse">métisse</string>
+    <string name="jaune">jaune</string>
+
 
 </resources>

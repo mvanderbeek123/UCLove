@@ -18,7 +18,7 @@ public class Profil  {
         private int visibilite_etude;
         private String localisation;
         private int visibilite_loc;
-        private int numero_de_telephone;
+        private String numero_de_telephone;
         private int visibilite_num;
         private String cheveux;
         private int visibilite_cheveux;
@@ -41,7 +41,7 @@ public class Profil  {
             this.visibilite_etude=2;
             this.localisation=localisation;
             this.visibilite_loc=2;
-            this.numero_de_telephone=0;
+            this.numero_de_telephone=null;
             this.visibilite_num=0;
             this.cheveux=null;
             this.visibilite_cheveux=0;
@@ -63,7 +63,7 @@ public class Profil  {
         this.visibilite_etude=2;
         this.localisation=localisation;
         this.visibilite_loc=2;
-        this.numero_de_telephone=0;
+        this.numero_de_telephone=null;
         this.visibilite_num=0;
         this.cheveux=cheveux;
         this.visibilite_cheveux=2;
@@ -105,7 +105,7 @@ public class Profil  {
     public int getVisibilite_loc() {
         return visibilite_loc;
     }
-    public int getNumero_de_telephone() {return numero_de_telephone;}
+    public String getNumero_de_telephone() {return numero_de_telephone;}
 
     public int getVisibilite_num() {
         return visibilite_num;
@@ -164,7 +164,7 @@ public class Profil  {
         this.visibilite_loc = visibilite_loc;
     }
 
-    public void setNumero_de_telephone(int num) {
+    public void setNumero_de_telephone(String num) {
         this.numero_de_telephone = num;
         this.visibilite_num=2;
     }
