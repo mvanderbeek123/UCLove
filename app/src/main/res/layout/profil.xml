@@ -112,6 +112,8 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button7"
+            android:inputType="phone"
+            android:digits="0123456789+"
             android:layout_alignBottom="@+id/nom8"
             android:layout_alignLeft="@+id/button6"
             android:layout_alignStart="@+id/button6"
@@ -129,8 +131,6 @@
             android:layout_width="190dp"
             android:layout_height="wrap_content"
             android:id="@+id/button8"
-            android:inputType="phone"
-            android:digits="0123456789+"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:layout_below="@+id/nom6" />
@@ -210,8 +210,9 @@
             android:id="@+id/button4"
             android:calendarViewShown="false"
             android:layout_alignTop="@+id/nom4"
-            android:layout_toRightOf="@+id/nom4"
-            android:layout_toEndOf="@+id/nom4" />
+            android:layout_toEndOf="@+id/nom4"
+            android:layout_alignLeft="@+id/button5"
+            android:layout_alignStart="@+id/button5" />
 
     </RelativeLayout>
 

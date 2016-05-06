@@ -48,13 +48,13 @@ public class PageAcceuil extends Activity implements View.OnTouchListener{
         }
         else if(bool2==true){
 
-            Toast toast=Toast.makeText(getApplicationContext(),"Mot de passe incorrect",Toast.LENGTH_LONG);
+            Toast toast=Toast.makeText(getApplicationContext(),"Mot de passe incorrect",Toast.LENGTH_SHORT);
             toast.show();
             return true;
         }
         else
         {
-            Toast toast=Toast.makeText(getApplicationContext(),"Login inexistant",Toast.LENGTH_LONG);
+            Toast toast=Toast.makeText(getApplicationContext(),"Login inexistant",Toast.LENGTH_SHORT);
             toast.show();
             return true;
         }

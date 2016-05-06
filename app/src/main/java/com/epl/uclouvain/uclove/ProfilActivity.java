@@ -66,8 +66,8 @@ public class ProfilActivity extends Activity {
         date.init(year, month, day, null);
         sexe=(Spinner) findViewById(R.id.button5);
         etude=(Spinner) findViewById(R.id.button6);
-        ville=(EditText) findViewById(R.id.button7);
-        num=(EditText) findViewById(R.id.button8);
+        ville=(EditText) findViewById(R.id.button8);
+        num=(EditText) findViewById(R.id.button7);
         cheveux=(Spinner) findViewById(R.id.button10);
         yeux=(Spinner) findViewById(R.id.button9);
         peau=(Spinner) findViewById(R.id.button11);
