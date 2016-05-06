@@ -48,11 +48,11 @@ import java.util.ArrayList;
         ArrayList<Meet> liste = new ArrayList<Meet>();
         while (c.moveToNext())
         {
-            Meet m=new Meet("","",0,"",1);
+            Meet m=new Meet("","","","",1);
 
             m.setLogin1(c.getString(0));
             m.setLogin2(c.getString(1));
-            m.setDate(c.getLong(2));
+            m.setDate(c.getString(2));
             m.setLieu(c.getString(3));
             liste.add(m);
         }
@@ -73,7 +73,7 @@ import java.util.ArrayList;
         {
             String log1 = c.getString(0); ;
             String log2 = c.getString(1);
-            long date=c.getLong(2);
+            String date=c.getString(2);
             String lieu=c.getString(3);
             Meet m = new Meet(log1,log2,date,lieu,0);
             liste.add(m);

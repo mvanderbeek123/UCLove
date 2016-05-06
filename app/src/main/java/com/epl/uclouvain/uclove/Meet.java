@@ -9,11 +9,11 @@ import java.sql.Time;
 public class Meet {
     private String login1;   //toujours voir si login ou id
     private String login2;
-    private long date;
+    private String date;
     private String lieu;
     private int confirmed;
 
-    public Meet(String login1, String login2, long date, String lieu, int confirmed)
+    public Meet(String login1, String login2, String date, String lieu, int confirmed)
     {
         super();
         this.login1=login1;
@@ -31,7 +31,7 @@ public class Meet {
         return login2;
     }
 
-    public long getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -43,7 +43,7 @@ public class Meet {
         this.login1 = login1;
     }
 
-    public void setDate(long date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

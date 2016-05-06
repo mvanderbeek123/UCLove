@@ -28,6 +28,7 @@ public class DisponibilityActivity extends Activity {
     TextView dateDisplay;
     EditText log2;
     EditText lieu;
+    String date;
     private MeetDAO meetdao;
     Meet m;
     Button confirm;
@@ -59,6 +60,7 @@ public class DisponibilityActivity extends Activity {
             @Override
             public void onSelectedDayChange(CalendarView calendarView, int year, int month, int day) {
                 dateDisplay.setText("Date: " + day + " / " + month + " / " + year);
+                date="Date: " + day + " / " + month + " / " + year;
             }
         });
     }
@@ -86,7 +88,7 @@ public class DisponibilityActivity extends Activity {
                 alertDialogBuilder.setPositiveButton(R.string.oui, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         //Rajouter la requete dans la base de donnée
-                        Meet m = new Meet(Controler.logged_user, log2.getText().toString(), calendarView.getDate(), lieu.getText().toString(), 0);
+                        Meet m = new Meet(Controler.logged_user, log2.getText().toString(), date, lieu.getText().toString(), 0);
                         mdao.open();
                         mdao.ajouter(m);
                         mdao.close();
