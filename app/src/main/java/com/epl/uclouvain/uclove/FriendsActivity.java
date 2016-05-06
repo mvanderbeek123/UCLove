@@ -116,7 +116,6 @@ public class FriendsActivity extends Activity
 
 
         aDAO = new AmisDAO(this);
-        aDAO.open();
 
         pDAO = new ProfilDAO(FriendsActivity.this);
         pDAO.open();
@@ -126,31 +125,27 @@ public class FriendsActivity extends Activity
         ArrayList<String> list_login_sexe = null;
 
         String selection_cheveux = String.valueOf(cheveux.getSelectedItem());
-        if(selection_cheveux.equals(res.getString(R.string.noFilters))) {}
-        else
-        {
-            list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
-        }
         String selection_yeux = String.valueOf(yeux.getSelectedItem());
-        if(selection_yeux.equals(res.getString(R.string.noFilters))) {}
-        else
-        {
-            list_login_yeux = pDAO.filtreYeux(selection_yeux);
-        }
         String selection_sexe = String.valueOf(sexe.getSelectedItem());
-        if(selection_sexe.equals(res.getString(R.string.noFilters))) {}
-        else
-        {
-            list_login_sexe = pDAO.filtreGenre(selection_sexe);
-        }
-        pDAO.close();
 
         if(selection_cheveux.equals(res.getString(R.string.noFilters)) && selection_yeux.equals(res.getString(R.string.noFilters)) && selection_sexe.equals(res.getString(R.string.noFilters)))
         {
+            aDAO.open();
             ListAmis = aDAO.selectionner_listAmis(login_global);
+            aDAO.close();
         }
         else
         {
+
+//TODO
+
+
+
+
+
+
+
+
             for (String login : list_login_sexe)
             {
                 if (list_login_cheveux.contains(login) && list_login_yeux.contains(login))
@@ -160,6 +155,27 @@ public class FriendsActivity extends Activity
                 }
             }
         }
+
+        if(selection_cheveux.equals(res.getString(R.string.noFilters))) {}
+        else
+        {
+            list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
+        }
+
+        if(selection_yeux.equals(res.getString(R.string.noFilters))) {}
+        else
+        {
+            list_login_yeux = pDAO.filtreYeux(selection_yeux);
+        }
+
+        if(selection_sexe.equals(res.getString(R.string.noFilters))) {}
+        else
+        {
+            list_login_sexe = pDAO.filtreGenre(selection_sexe);
+        }
+        pDAO.close();
+
+
 
         aDAO.close();
 

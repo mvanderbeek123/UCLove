@@ -36,7 +36,7 @@ public class Preferences extends Activity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         liste2.setAdapter(adapter2);
         //spinner age
-        final Spinner liste3 = (Spinner) findViewById(R.id.spinnercheveux3);
+        final Spinner liste3 = (Spinner) findViewById(R.id.spinnercheveux);
         List<String> exemple3 = new ArrayList<String>();
         exemple3.add("brun");
         exemple3.add("blond");
