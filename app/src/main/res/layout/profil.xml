@@ -204,14 +204,14 @@
 
         <DatePicker
             android:layout_width="180dp"
-            android:layout_height="70dp"
+            android:layout_height="40dp"
             android:startYear="1926"
             android:endYear="2016"
             android:id="@+id/button4"
             android:calendarViewShown="false"
-            android:layout_below="@+id/nom3"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignTop="@+id/nom4"
+            android:layout_toRightOf="@+id/nom4"
+            android:layout_toEndOf="@+id/nom4" />
 
     </RelativeLayout>
 

@@ -48,9 +48,14 @@ public class ProfilAffichageActivity extends Activity {
         profildao=new ProfilDAO(this);
         genredao=new GenreDAO(this);
         String log=Controler.logged_user;
+        if(login.equals("aleatoire")){
         profildao.open();
         liste=profildao.selectionnerAleatoire(log);
-        profildao.close();
+        profildao.close(); }
+        else{
+            liste=new ArrayList<String>();
+            liste.add(login);
+        }
         afficher(liste.get(i));
         suivant.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,13 +91,13 @@ public class ProfilAffichageActivity extends Activity {
         profildao.close();
         name.setText(a.getPrenom()+" "+a.getNom());
         if (a.getCheveux()!=null){
-        cheveux.setText(R.string.Cheveux + " : " + a.getCheveux());
+        cheveux.setText(getString(R.string.Cheveux) + " : " + a.getCheveux());
         }
         genre.setText(a.getGenre());
         if (a.getLocalisation()!=null){
         localisation.setText(a.getLocalisation());}
         if(a.getYeux()!=null){
-        yeux.setText(R.id.yeux + " : "+ a.getYeux());}
+        yeux.setText(getString(R.string.yeux) + " : "+ a.getYeux());}
         genredao.open();
         ArrayList<Genre> genrelist=genredao.selectionner(login);
         genredao.close();

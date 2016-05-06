@@ -47,7 +47,8 @@
         android:id="@+id/photo_profil"
         android:layout_width="fill_parent"
         android:layout_height="200dp"
-        android:layout_below="@id/supprimer"/>
+        android:layout_below="@id/supprimer"
+        android:src="@mipmap/profil"/>
     <TextView
         android:id="@+id/genre"
         android:layout_width="wrap_content"

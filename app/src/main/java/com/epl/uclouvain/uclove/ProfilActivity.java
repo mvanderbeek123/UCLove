@@ -68,8 +68,8 @@ public class ProfilActivity extends Activity {
         etude=(Spinner) findViewById(R.id.button6);
         ville=(EditText) findViewById(R.id.button7);
         num=(EditText) findViewById(R.id.button8);
-        cheveux=(Spinner) findViewById(R.id.button9);
-        yeux=(Spinner) findViewById(R.id.button10);
+        cheveux=(Spinner) findViewById(R.id.button10);
+        yeux=(Spinner) findViewById(R.id.button9);
         peau=(Spinner) findViewById(R.id.button11);
         b=(Button) findViewById(R.id.valider);
         profildao=new ProfilDAO(this);
@@ -175,6 +175,7 @@ public class ProfilActivity extends Activity {
                 profildao.close();
                 Toast toast = Toast.makeText(getApplicationContext(), R.string.up, Toast.LENGTH_SHORT);
                 toast.show();
+                ProfilActivity.this.finish();
             }
         });
     }

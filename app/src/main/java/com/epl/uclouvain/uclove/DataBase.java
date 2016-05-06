@@ -251,7 +251,6 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(AMIS_TABLE_EX5);
 
         db.execSQL(CHAT_TABLE_CREATE);
-        db.execSQL(MEET_TABLE_CREATE);
 
         db.execSQL(GENRE_CREATE_TABLE);
         db.execSQL(GENRE_TABLE_EX1);

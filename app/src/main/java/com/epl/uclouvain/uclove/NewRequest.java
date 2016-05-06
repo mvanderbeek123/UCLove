@@ -55,7 +55,7 @@ public class NewRequest extends Activity {
             if (isExist == false) {
                 //si le loggin n'existe pas
                 showDialog(0);
-            } else if (pseudo.getText().toString().compareTo(Controler.logged_user) == 0) {
+            } else if ((pseudo.getText().toString()).equals(Controler.logged_user)) {
                 //Si l'utilisateur essaye de s'ajouter lui meme
                 showDialog(1);
             } else if (checked == true) {

@@ -44,7 +44,8 @@ public class MyRequests extends Activity {
     private View.OnClickListener goToProfileListerner = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent intent = new Intent(MyRequests.this, ProfilActivity.class);
+            Intent intent = new Intent(MyRequests.this, ProfilAffichageActivity.class);
+            intent.putExtra("login",Controler.requete_user);
             startActivity(intent);
         }
     };
