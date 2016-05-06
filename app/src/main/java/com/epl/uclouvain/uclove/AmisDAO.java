@@ -28,12 +28,16 @@ public class AmisDAO extends DAOBase
 
     public void ajouter(Amis a)
     {
-        ContentValues value = new ContentValues();
-        value.put(AmisDAO.LOGIN1, a.getLogin1());
-        value.put(AmisDAO.LOGIN2, a.getLogin2());
-        value.put(AmisDAO.ISAMI, a.getIsAmi());
-        value.put(AmisDAO.ISFAVORI, a.getIsFavori());
-        mDb.insert(AmisDAO.TABLE_NAME, null, value);
+        Amis a2 = this.selectionner_ami(a.getLogin1(),a.getLogin2());
+        if(a2 == null)
+        {
+            ContentValues value = new ContentValues();
+            value.put(AmisDAO.LOGIN1, a.getLogin1());
+            value.put(AmisDAO.LOGIN2, a.getLogin2());
+            value.put(AmisDAO.ISAMI, a.getIsAmi());
+            value.put(AmisDAO.ISFAVORI, a.getIsFavori());
+            mDb.insert(AmisDAO.TABLE_NAME, null, value);
+        }
     }
 
     public void supprimer(String login1, String login2)
