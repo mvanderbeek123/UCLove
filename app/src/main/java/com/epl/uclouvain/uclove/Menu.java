@@ -86,7 +86,7 @@ public class Menu extends Activity {
         meet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Menu.this, MeetActivity.class);
+                Intent intent = new Intent(Menu.this, Meets.class);
                 intent.putExtra("login",login);
                 startActivity(intent);
             }

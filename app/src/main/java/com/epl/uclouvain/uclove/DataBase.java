@@ -194,13 +194,32 @@ public class DataBase extends SQLiteOpenHelper
     public static final String LOG2 = "login2";
     public static final String DATE = "date";
     public static final String LIEU = "lieu";
+    public static final String RDV = "rdv";
     public static final String MEET_TABLE_CREATE = "CREATE TABLE " + MEET_TABLE_NAME + " (" +
             LOG1 + " TEXT, " +
             LOG2 + " TEXT, " +
-            DATE + " LONG, " +
-            LIEU + " TEXT " + ");";
+            DATE + " TEXT, " +
+            LIEU + " TEXT, " +
+            RDV  + " INT " +");";
 
     public static final String MEET_TABLE_DROP = "DROP TABLE IF EXISTS " + MEET_TABLE_NAME + ";";
+
+    public static final String  MEET_TABLE_EX1 = " INSERT INTO " + MEET_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + DATE + " , " + LIEU + " , " + RDV +
+            ") VALUES ( \"Del\", \"Jul\", \"2016-05-06\" , \"Cinescope\" , 0);";
+    public static final String  MEET_TABLE_EX2 = " INSERT INTO " + MEET_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + DATE + " , " + LIEU + " , " + RDV +
+            ") VALUES ( \"Del\", \"MM\", \"2016-06-09\" , \"Genieskot\" , 0);";
+    public static final String  MEET_TABLE_EX3 = " INSERT INTO " +  MEET_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + DATE + " , " + LIEU + " , " + RDV +
+            ") VALUES ( \"Step\", \"Jul\",\"2016-10-12\" , \"CI\" , 1);";
+    public static final String  MEET_TABLE_EX4 = " INSERT INTO " +  MEET_TABLE_NAME +
+            " (" +
+            AMIS_LOGIN1 + " , " + AMIS_LOGIN2 + " , " + DATE + " , " + LIEU + " , " + RDV +
+            ") VALUES ( \"MM\", \"Step\",\"2016-12-25\" , \"Bxl\" , 2);";
 
     //Table Photos
     public static final String PHOTO_TABLE_NAME = "Photo";
@@ -232,7 +251,6 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(AMIS_TABLE_EX5);
 
         db.execSQL(CHAT_TABLE_CREATE);
-        db.execSQL(MEET_TABLE_CREATE);
 
         db.execSQL(GENRE_CREATE_TABLE);
         db.execSQL(GENRE_TABLE_EX1);
@@ -246,6 +264,12 @@ public class DataBase extends SQLiteOpenHelper
         db.execSQL(PEAU_CREATE_TABLE);
         db.execSQL(ETUDE_CREATE_TABLE);
         db.execSQL(PHOTO_TABLE_CREATE);
+
+        db.execSQL(MEET_TABLE_CREATE);
+        db.execSQL(MEET_TABLE_EX1);
+        db.execSQL(MEET_TABLE_EX2);
+        db.execSQL(MEET_TABLE_EX3);
+        db.execSQL(MEET_TABLE_EX4);
     }
 
     @Override

@@ -110,6 +110,36 @@
         </activity>
 
         <activity
+            android:name=".Meets"
+            android:label="Meets"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".MeetSelectActivity"
+            android:label="MeetSelectActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".MyMeet"
+            android:label="MyMeet"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".MeetListAmis"
+            android:label="MeetListAmis"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".NewMeet"
+            android:label="NewMeet"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
             android:name=".PersonnalMeetActivity"
             android:label="PersonnalMeetActivity"
             android:theme="@style/AppTheme">

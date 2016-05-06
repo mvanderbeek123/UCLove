@@ -85,4 +85,14 @@
     <string name="chat">Conversation</string>
     <string name="orientation">Orientation</string>
 
+
+    <!--Pour RDV-->
+    <string name="myMeet">Mes rendez-vous</string>
+    <string name="newMeet">Nouveau rendez-vous</string>
+    <string name="noNewRDV">Vous n\'avez pas de nouveau RDV</string>
+    <string name="RDVMessage">Message de RDV</string>
+    <string name="newRDV">Super, tu as un nouveau RDV!</string>
+    <string name="deleteRDV">Tu as supprimé le RDV</string>
+
+
 </resources>

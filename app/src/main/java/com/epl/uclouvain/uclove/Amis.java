@@ -19,6 +19,14 @@ public class Amis
         this.isFavori = isFavori;
     }
 
+    public Amis(String login1, String login2)
+    {
+        super();
+        this.login1 = login1;
+        this.login2 = login2;
+    }
+
+
     public String getLogin1()
     {
         return login1;

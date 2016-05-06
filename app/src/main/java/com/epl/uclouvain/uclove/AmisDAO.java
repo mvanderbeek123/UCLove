@@ -16,6 +16,11 @@ public class AmisDAO extends DAOBase
     public static final String ISAMI = "isAmi";
     public static final String ISFAVORI = "isFavori";
 
+    public static final String RDV_TABLE_NAME = "RDV";
+    public static final String RDV_CONFIRM = "RDVConfirm";
+
+
+
     public AmisDAO(Context pContext)
     {
        super(pContext);
@@ -118,6 +123,40 @@ public class AmisDAO extends DAOBase
         ContentValues value = new ContentValues();
         value.put(ISAMI, 2);
         mDb.update(TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
+    }
+
+    public ArrayList<Amis> selectionner_listRDV(String login_user)
+    {
+        String rdv = "select login1, login2" +
+                " from " + DataBase.MEET_TABLE_NAME +
+                " where (login2 = \"" + login_user + "\")"+
+                " and  (rdv = 0);" ;
+        Cursor c = mDb.rawQuery(rdv, new String[]{});
+
+        ArrayList<Amis> liste = new ArrayList<Amis>();
+        while (c.moveToNext())
+        {
+            String login1 = c.getString(0); ;
+            String login2 = c.getString(1);
+            Amis a = new Amis(login1 , login2);
+            liste.add(a);
+        }
+        c.close();
+        return liste;
+    }
+
+    public void modif_RDV_oui(String login1, String login2)
+    {
+        ContentValues value = new ContentValues();
+        value.put(RDV_CONFIRM, 1);
+        mDb.update(RDV_TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
+    }
+
+    public void modif_RDV_non(String login1, String login2)
+    {
+        ContentValues value = new ContentValues();
+        value.put(RDV_CONFIRM, 2);
+        mDb.update(RDV_TABLE_NAME, value, " login1 = ?" + " AND login2 = ?", new String[] {login1, login2});
     }
 
 
