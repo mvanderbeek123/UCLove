@@ -83,6 +83,7 @@ public class MeetSelectActivity extends Activity {
     List<String> logins;
     AmisDAO adao;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
