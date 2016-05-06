@@ -75,6 +75,12 @@
             android:label="Inscription"
             android:theme="@style/AppTheme">
         </activity>
+
+        <activity
+            android:name=".Preferences"
+            android:label="@string/Preference"
+            android:theme="@style/AppTheme">
+        </activity>
         <activity
             android:name=".ChatActivity"
             android:label="Chat">

@@ -136,8 +136,25 @@ public class FriendsActivity extends Activity
         }
         else
         {
+            if(!selection_cheveux.equals(res.getString(R.string.noFilters))) {
 
-//TODO
+                pDAO.open();
+                list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
+                pDAO.close();
+
+            }
+
+            if(!selection_yeux.equals(res.getString(R.string.noFilters))) {
+                pDAO.open();
+                list_login_yeux = pDAO.filtreYeux(selection_yeux);
+                pDAO.close();
+            }
+
+            if(selection_sexe.equals(res.getString(R.string.noFilters))) {
+                pDAO.open();
+                list_login_sexe = pDAO.filtreGenre(selection_sexe);
+                pDAO.close();
+            }
 
 
 
@@ -156,24 +173,11 @@ public class FriendsActivity extends Activity
             }
         }
 
-        if(selection_cheveux.equals(res.getString(R.string.noFilters))) {}
-        else
-        {
-            list_login_cheveux = pDAO.filtreCheveux(selection_cheveux);
-        }
 
-        if(selection_yeux.equals(res.getString(R.string.noFilters))) {}
-        else
-        {
-            list_login_yeux = pDAO.filtreYeux(selection_yeux);
-        }
 
-        if(selection_sexe.equals(res.getString(R.string.noFilters))) {}
-        else
-        {
-            list_login_sexe = pDAO.filtreGenre(selection_sexe);
-        }
-        pDAO.close();
+
+
+
 
 
 

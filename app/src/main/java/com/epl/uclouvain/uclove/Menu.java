@@ -49,7 +49,6 @@ public class Menu extends Activity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Menu.this, Preferences.class);
-                intent.putExtra("login",login);
                 startActivity(intent);
             }
         });
