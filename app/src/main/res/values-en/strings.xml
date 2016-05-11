@@ -85,7 +85,7 @@
     <string name="Yeux">Eyes</string>
     <string name="age">Age</string>
     <string name="ajoutamis">Add</string>
-    <string name="cheveux">hair color</string>
+    <string name="cheveux">Hair color</string>
     <string name="compte">Create an account</string>
     <string name="confirm">Send date</string>
     <string name="connexion">Connection</string>
@@ -109,7 +109,7 @@
     <string name="persoRequest">You can\'t be friend with yourself!</string>
     <string name="population">Population</string>
     <string name="precedent">Back</string>
-    <string name="pseudoFriend">Freidn\'s pseudo</string>
+    <string name="pseudoFriend">Friend\'s pseudo</string>
     <string name="refuseProp">Are you sure to delete the appointement?</string>
     <string name="refuseProp2">You deleted the appointement</string>
     <string name="suivant">Next</string>

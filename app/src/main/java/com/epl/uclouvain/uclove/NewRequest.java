@@ -46,18 +46,38 @@ public class NewRequest extends Activity {
             String text = pseudo.getText().toString();
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
             list.open();
-            Boolean isExist = list.existant(pseudo.getText().toString());
+            Boolean isExist = list.existant(text);
             list.close();
             adao.open();
             listamis = adao.selectionner_listAmis(Controler.logged_user);
             adao.close();
-            boolean checked = listamis.contains(pseudo.getText().toString());
+            boolean checked = listamis.contains(text);
             if (isExist == false) {
                 //si le loggin n'existe pas
-                showDialog(0);
-            } else if ((pseudo.getText().toString()).equals(Controler.logged_user)) {
+                alertDialogBuilder.setTitle(R.string.requestMessage);
+                alertDialogBuilder.setMessage(R.string.error_entree);
+                alertDialogBuilder.setCancelable(false);
+                alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Rajouter la requete dans la base de donnée
+                        NewRequest.this.finish();
+                    }
+                });
+                AlertDialog theAlert = alertDialogBuilder.create();
+                theAlert.show();
+            } else if (text.equals(Controler.logged_user)) {
                 //Si l'utilisateur essaye de s'ajouter lui meme
-                showDialog(1);
+                alertDialogBuilder.setTitle(R.string.requestMessage);
+                alertDialogBuilder.setMessage(R.string.persoRequest);
+                alertDialogBuilder.setCancelable(false);
+                alertDialogBuilder.setPositiveButton(R.string.ok_text, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        //Rajouter la requete dans la base de donnée
+                        NewRequest.this.finish();
+                    }
+                });
+                AlertDialog theAlert = alertDialogBuilder.create();
+                theAlert.show();
             } else if (checked == true) {
                 //Dans ce cas-ci, soit la demande est deja envoyée, donc l'utilisateur ne voit pas d'erreur
                 //il a simplement une nouvelle requete mais ne l'as pas encore consultée
@@ -95,19 +115,4 @@ public class NewRequest extends Activity {
 
         }
     };
-    @Override
-    public Dialog onCreateDialog (int id) {
-        Dialog myBox = null;
-        switch (id) {
-            case 0:
-                myBox = new Dialog(this);
-                myBox.setTitle(R.string.error_entree);
-                break;
-            case 1:
-                myBox = new Dialog(this);
-                myBox.setTitle(R.string.persoRequest);
-                break;
-        }
-        return myBox;
-    }
 }

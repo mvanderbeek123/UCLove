@@ -28,8 +28,8 @@ public class AmisDAO extends DAOBase
 
     public void ajouter(Amis a)
     {
-        Amis a2 = this.selectionner_ami(a.getLogin1(),a.getLogin2());
-        if(a2 == null)
+        //Amis a2 = this.selectionner_ami(a.getLogin1(),a.getLogin2());
+        //if(a2 == null)
         {
             ContentValues value = new ContentValues();
             value.put(AmisDAO.LOGIN1, a.getLogin1());
